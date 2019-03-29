@@ -158,8 +158,6 @@
     SUBDIR += fgallery
     SUBDIR += firefox
     SUBDIR += firefox-esr
-    SUBDIR += firefox-esr-i18n
-    SUBDIR += firefox-i18n
     SUBDIR += flashplayer
     SUBDIR += flat-frog
     SUBDIR += flickcurl
@@ -1508,6 +1506,7 @@
     SUBDIR += py-cssselect
     SUBDIR += py-cssutils
     SUBDIR += py-ddgr
+    SUBDIR += py-dj21-django-auth-ldap
     SUBDIR += py-dj21-django-cors-headers
     SUBDIR += py-dj21-django-crispy-forms
     SUBDIR += py-dj21-django-debug-toolbar
@@ -2198,8 +2197,6 @@
     SUBDIR += rubygem-underscore-rails
     SUBDIR += rubygem-unicorn
     SUBDIR += rubygem-unicorn-worker-killer
-    SUBDIR += rubygem-unicorn-worker-killer044
-    SUBDIR += rubygem-unicorn51
     SUBDIR += rubygem-url_escape
     SUBDIR += rubygem-url_mount
     SUBDIR += rubygem-vegas
@@ -2220,7 +2217,6 @@
     SUBDIR += script4rss
     SUBDIR += seahub
     SUBDIR += seamonkey
-    SUBDIR += seamonkey-i18n
     SUBDIR += searx
     SUBDIR += selenium
     SUBDIR += serendipity

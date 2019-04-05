@@ -192,13 +192,8 @@
     SUBDIR += gnome-online-miners
     SUBDIR += gnu-dico
     SUBDIR += gnu-radius
-    SUBDIR += go-amqp
     SUBDIR += go-bapu
     SUBDIR += go-cs
-    SUBDIR += go-httppath
-    SUBDIR += go-httptreemux
-    SUBDIR += go-nats
-    SUBDIR += go.net
     SUBDIR += gobgp
     SUBDIR += gofish
     SUBDIR += gogoc
@@ -1235,7 +1230,6 @@
     SUBDIR += rubygem-fog-dynect
     SUBDIR += rubygem-fog-ecloud
     SUBDIR += rubygem-fog-google
-    SUBDIR += rubygem-fog-google17
     SUBDIR += rubygem-fog-internet-archive
     SUBDIR += rubygem-fog-joyent
     SUBDIR += rubygem-fog-local

@@ -167,8 +167,6 @@
     SUBDIR += freerdp1
     SUBDIR += freeswitch
     SUBDIR += freevrrpd
-    SUBDIR += frr3
-    SUBDIR += frr4
     SUBDIR += frr5
     SUBDIR += frr6
     SUBDIR += frr7
@@ -1021,6 +1019,7 @@
     SUBDIR += py-beanstalkc
     SUBDIR += py-cjdns
     SUBDIR += py-cloudflare-scrape
+    SUBDIR += py-cloudflare-scrape-js2py
     SUBDIR += py-coherence
     SUBDIR += py-confluent-kafka
     SUBDIR += py-cymruwhois

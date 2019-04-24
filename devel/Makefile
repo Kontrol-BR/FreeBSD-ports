@@ -105,6 +105,7 @@
     SUBDIR += amd64-binutils
     SUBDIR += amd64-gcc
     SUBDIR += amd64-xtoolchain-gcc
+    SUBDIR += amqp-cpp
     SUBDIR += android-tools-adb
     SUBDIR += android-tools-fastboot
     SUBDIR += android-tools-simpleperf
@@ -4934,6 +4935,7 @@
     SUBDIR += py-prettytable
     SUBDIR += py-prioritized_methods
     SUBDIR += py-proglog
+    SUBDIR += py-progress
     SUBDIR += py-promise
     SUBDIR += py-prompt_toolkit
     SUBDIR += py-prompt_toolkit1
@@ -5945,6 +5947,7 @@
     SUBDIR += rubygem-pry-rails
     SUBDIR += rubygem-pry-remote-em
     SUBDIR += rubygem-ptreloaded
+    SUBDIR += rubygem-puppet-resource_api
     SUBDIR += rubygem-pygments.rb
     SUBDIR += rubygem-r18n-core
     SUBDIR += rubygem-rabl

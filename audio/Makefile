@@ -135,6 +135,7 @@
     SUBDIR += eq10q-lv2
     SUBDIR += esound
     SUBDIR += espeak
+    SUBDIR += espressivo-lv2
     SUBDIR += etcd
     SUBDIR += eteroj-lv2
     SUBDIR += etktab
@@ -472,7 +473,6 @@
     SUBDIR += linux-c7-pulseaudio-utils
     SUBDIR += linux-c7-sdl_mixer
     SUBDIR += linux-laudio
-    SUBDIR += linux-skype_oss_wrapper
     SUBDIR += linuxsampler
     SUBDIR += listener
     SUBDIR += lmms
@@ -488,6 +488,7 @@
     SUBDIR += luppp
     SUBDIR += lv2
     SUBDIR += lv2file
+    SUBDIR += lv2lint
     SUBDIR += lvtk
     SUBDIR += lxmusic
     SUBDIR += mac
@@ -570,7 +571,6 @@
     SUBDIR += nuvolaplayer
     SUBDIR += oaml
     SUBDIR += ocp
-    SUBDIR += openal
     SUBDIR += openal-soft
     SUBDIR += opencore-amr
     SUBDIR += openspc
@@ -696,6 +696,7 @@
     SUBDIR += py-tagpy
     SUBDIR += py-vorbis
     SUBDIR += py-wavio
+    SUBDIR += py-webrtcvad
     SUBDIR += py-xmms2
     SUBDIR += pytone
     SUBDIR += qjackctl
@@ -812,6 +813,7 @@
     SUBDIR += teamspeak3-server
     SUBDIR += tempest_for_eliza
     SUBDIR += thunar-media-tags-plugin
+    SUBDIR += timely-lv2
     SUBDIR += timemachine
     SUBDIR += timidity
     SUBDIR += timidity++

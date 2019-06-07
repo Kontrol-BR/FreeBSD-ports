@@ -510,6 +510,7 @@
     SUBDIR += ntlmaps
     SUBDIR += ntopng
     SUBDIR += ntp
+    SUBDIR += ntp-devel
     SUBDIR += ntpa
     SUBDIR += ntraceroute
     SUBDIR += nusoap
@@ -526,6 +527,7 @@
     SUBDIR += opal
     SUBDIR += open-isns
     SUBDIR += openbgpd
+    SUBDIR += openbgpd6
     SUBDIR += openbsc
     SUBDIR += openggsn
     SUBDIR += openldap24-client

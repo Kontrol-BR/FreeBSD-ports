@@ -11,6 +11,9 @@ DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source 3D space simulator
 
+DEPRECATED=	Abandonware using sys/dir.h
+EXPIRATION_DATE=	2019-07-12
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
@@ -20,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/vegastrike.ico:games/vegastrike-data
 LIB_DEPENDS=	${PY_BOOST} \
 		libexpat.so:textproc/expat2 \
 		libogg.so:audio/libogg \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2

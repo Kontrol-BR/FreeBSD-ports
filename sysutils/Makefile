@@ -224,6 +224,7 @@
     SUBDIR += daemonize
     SUBDIR += daemontools
     SUBDIR += daemontools-encore
+    SUBDIR += daggy
     SUBDIR += dar
     SUBDIR += dateutils
     SUBDIR += dc3dd
@@ -294,6 +295,7 @@
     SUBDIR += dwatch-pwsnoop
     SUBDIR += e2fsprogs
     SUBDIR += ec2-scripts
+    SUBDIR += eclat
     SUBDIR += edid-decode
     SUBDIR += eject
     SUBDIR += eksctl

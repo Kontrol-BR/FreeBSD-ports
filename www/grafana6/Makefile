@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	grafana
-PORTVERSION=	6.2.1
+PORTVERSION=	6.2.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES+=	https://s3-us-west-2.amazonaws.com/grafana-releases/release/:public
@@ -17,9 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/go:lang/go
-
-USES=		compiler
+USES=		compiler go
 USE_RC_SUBR=	grafana
 
 USE_GITHUB=	yes

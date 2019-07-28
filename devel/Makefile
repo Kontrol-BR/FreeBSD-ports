@@ -6140,7 +6140,6 @@
     SUBDIR += subversion
     SUBDIR += subversion-book
     SUBDIR += subversion-lts
-    SUBDIR += subversion19
     SUBDIR += subversive
     SUBDIR += svk
     SUBDIR += svn2git
@@ -6258,6 +6257,7 @@
     SUBDIR += wandio
     SUBDIR += websocketpp
     SUBDIR += websvn
+    SUBDIR += wf-config
     SUBDIR += wininfo
     SUBDIR += wizardkit
     SUBDIR += woff2

@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	rav1e
-PORTVERSION=	s20190824
+PORTVERSION=	s20190830
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ BUILD_DEPENDS_amd64=	nasm:devel/nasm
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	xiph
-GH_TAGNAME=	dc34123f
+GH_TAGNAME=	f8008ce9
 PLIST_FILES=	bin/${PORTNAME}
 
 CARGO_CRATES=	adler32-1.0.3 \
@@ -24,7 +24,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		ansi_term-0.11.0 \
 		aom-sys-0.1.2 \
 		arc-swap-0.4.2 \
-		arg_enum_proc_macro-0.2.0 \
+		arg_enum_proc_macro-0.3.0 \
 		arrayvec-0.4.11 \
 		atty-0.2.13 \
 		autocfg-0.1.6 \
@@ -39,7 +39,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		byteorder-1.3.2 \
 		c2-chacha-0.2.2 \
 		cast-0.2.2 \
-		cc-1.0.40 \
+		cc-1.0.41 \
 		cexpr-0.3.5 \
 		cfg-if-0.1.9 \
 		chrono-0.4.7 \
@@ -71,17 +71,17 @@ CARGO_CRATES=	adler32-1.0.3 \
 		failure_derive-0.1.5 \
 		fuchsia-cprng-0.1.1 \
 		fxhash-0.2.1 \
-		getrandom-0.1.10 \
+		getrandom-0.1.11 \
 		gif-0.10.2 \
 		glob-0.3.0 \
 		humantime-1.2.0 \
 		image-0.22.1 \
 		inflate-0.4.5 \
-		interpolate_name-0.2.2 \
+		interpolate_name-0.2.3 \
 		itertools-0.8.0 \
 		itoa-0.4.4 \
-		jpeg-decoder-0.1.15 \
-		lazy_static-1.3.0 \
+		jpeg-decoder-0.1.16 \
+		lazy_static-1.4.0 \
 		libc-0.2.62 \
 		libloading-0.5.2 \
 		lock_api-0.3.1 \
@@ -118,7 +118,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		rand_chacha-0.2.1 \
 		rand_core-0.3.1 \
 		rand_core-0.4.2 \
-		rand_core-0.5.0 \
+		rand_core-0.5.1 \
 		rand_hc-0.2.0 \
 		rand_os-0.1.3 \
 		rand_xoshiro-0.1.0 \
@@ -147,7 +147,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		smallvec-0.6.10 \
 		strsim-0.8.0 \
 		syn-0.15.44 \
-		syn-1.0.4 \
+		syn-1.0.5 \
 		synstructure-0.10.2 \
 		termcolor-1.0.5 \
 		termios-0.3.1 \
@@ -167,7 +167,7 @@ CARGO_CRATES=	adler32-1.0.3 \
 		walkdir-2.2.9 \
 		wasi-0.5.0 \
 		which-2.0.1 \
-		winapi-0.3.7 \
+		winapi-0.3.8 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \

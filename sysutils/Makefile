@@ -434,6 +434,7 @@
     SUBDIR += gnome-settings-daemon
     SUBDIR += gnome-system-monitor
     SUBDIR += gnome_subr
+    SUBDIR += go-wtf
     SUBDIR += goaccess
     SUBDIR += goawk
     SUBDIR += gomplate
@@ -1429,6 +1430,7 @@
     SUBDIR += uefi-edk2-bhyve-csm
     SUBDIR += uefi-edk2-bhyve-devel
     SUBDIR += uefi-edk2-qemu
+    SUBDIR += ufetch
     SUBDIR += ufs_copy
     SUBDIR += uhidd
     SUBDIR += uif2iso

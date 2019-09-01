@@ -144,9 +144,9 @@
     SUBDIR += bitwise
     SUBDIR += blacs
     SUBDIR += blas
+    SUBDIR += blasfeo
     SUBDIR += blaze
     SUBDIR += blazeiterative
-    SUBDIR += blasfeo
     SUBDIR += blis
     SUBDIR += blitz++
     SUBDIR += blocksolve95
@@ -480,6 +480,7 @@
     SUBDIR += octomap
     SUBDIR += ogdf
     SUBDIR += oleo
+    SUBDIR += onnx
     SUBDIR += openblas
     SUBDIR += openfst
     SUBDIR += openlibm
@@ -671,8 +672,6 @@
     SUBDIR += prng
     SUBDIR += proofgeneral
     SUBDIR += pspp
-    SUBDIR += pure-mpfr
-    SUBDIR += pure-rational
     SUBDIR += py-CyLP
     SUBDIR += py-Diofant
     SUBDIR += py-GridDataFormats
@@ -738,6 +737,7 @@
     SUBDIR += py-numexpr
     SUBDIR += py-numpy
     SUBDIR += py-nzmath
+    SUBDIR += py-onnx
     SUBDIR += py-osqp
     SUBDIR += py-pandas
     SUBDIR += py-pandas-datareader
@@ -871,6 +871,7 @@
     SUBDIR += triangle
     SUBDIR += trlan
     SUBDIR += truthtable
+    SUBDIR += tvm
     SUBDIR += tvmet
     SUBDIR += ump
     SUBDIR += units

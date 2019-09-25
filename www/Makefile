@@ -200,6 +200,7 @@
     SUBDIR += gitlab-pages
     SUBDIR += gitlab-workhorse
     SUBDIR += glassfish
+    SUBDIR += glassfish5
     SUBDIR += glpi
     SUBDIR += gnome-user-share
     SUBDIR += go-appengine-sdk
@@ -283,6 +284,7 @@
     SUBDIR += jspwiki
     SUBDIR += jtoolkit
     SUBDIR += junkbuster
+    SUBDIR += jwt-cli
     SUBDIR += kanboard
     SUBDIR += kannel
     SUBDIR += kannel-sqlbox
@@ -326,6 +328,8 @@
     SUBDIR += ljdump
     SUBDIR += llgal
     SUBDIR += logtools
+    SUBDIR += lua-resty-core
+    SUBDIR += lua-resty-lrucache
     SUBDIR += luakit
     SUBDIR += lynx
     SUBDIR += lynx-current
@@ -407,6 +411,7 @@
     SUBDIR += mod_php71
     SUBDIR += mod_php72
     SUBDIR += mod_php73
+    SUBDIR += mod_php74
     SUBDIR += mod_proctitle
     SUBDIR += mod_proxy_xml
     SUBDIR += mod_python35
@@ -1400,6 +1405,9 @@
     SUBDIR += php73-opcache
     SUBDIR += php73-session
     SUBDIR += php73-tidy
+    SUBDIR += php74-opcache
+    SUBDIR += php74-session
+    SUBDIR += php74-tidy
     SUBDIR += phpbb
     SUBDIR += phpbb3
     SUBDIR += phpgroupware
@@ -1444,6 +1452,7 @@
     SUBDIR += py-amf
     SUBDIR += py-apachelog
     SUBDIR += py-arxiv
+    SUBDIR += py-asgiref
     SUBDIR += py-autobahn
     SUBDIR += py-aws-requests-auth
     SUBDIR += py-azure-common
@@ -2377,6 +2386,7 @@
     SUBDIR += trytond28_google_maps
     SUBDIR += tt-rss
     SUBDIR += ttf2eot
+    SUBDIR += tusd
     SUBDIR += twiki
     SUBDIR += twiki-BehaviourContrib
     SUBDIR += twiki-BlogAddOn

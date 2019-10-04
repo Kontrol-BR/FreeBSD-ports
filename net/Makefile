@@ -35,7 +35,6 @@
     SUBDIR += asterisk-chan_sccp
     SUBDIR += asterisk-g72x
     SUBDIR += asterisk13
-    SUBDIR += asterisk15
     SUBDIR += asterisk16
     SUBDIR += avahi
     SUBDIR += avahi-app
@@ -136,6 +135,7 @@
     SUBDIR += dtcp
     SUBDIR += dtcpclient
     SUBDIR += dual-dhclient
+    SUBDIR += dual-dhclient-daemon
     SUBDIR += easysoap
     SUBDIR += echoping
     SUBDIR += elixir-kafka_ex
@@ -1282,6 +1282,7 @@
     SUBDIR += rubygem-mqtt
     SUBDIR += rubygem-net-ldap
     SUBDIR += rubygem-net-netrc
+    SUBDIR += rubygem-net-ntp
     SUBDIR += rubygem-net-ping
     SUBDIR += rubygem-netrc
     SUBDIR += rubygem-network_interface

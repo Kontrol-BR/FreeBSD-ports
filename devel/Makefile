@@ -124,6 +124,11 @@
     SUBDIR += antlr3
     SUBDIR += antlr4
     SUBDIR += apache-ant
+    SUBDIR += apache-commons-configuration
+    SUBDIR += apache-commons-daemon
+    SUBDIR += apache-commons-io
+    SUBDIR += apache-commons-jxpath
+    SUBDIR += apache-commons-modeler
     SUBDIR += apache-rat
     SUBDIR += aphpbreakdown
     SUBDIR += aphpunit
@@ -1026,11 +1031,6 @@
     SUBDIR += itext
     SUBDIR += ivykis
     SUBDIR += iz
-    SUBDIR += jakarta-commons-configuration
-    SUBDIR += jakarta-commons-daemon
-    SUBDIR += jakarta-commons-io
-    SUBDIR += jakarta-commons-jxpath
-    SUBDIR += jakarta-commons-modeler
     SUBDIR += jam
     SUBDIR += jansson
     SUBDIR += java-findbugs
@@ -1523,6 +1523,7 @@
     SUBDIR += luafilesystem-51
     SUBDIR += luajava
     SUBDIR += lutok
+    SUBDIR += luv
     SUBDIR += lwp
     SUBDIR += lxqt-build-tools
     SUBDIR += m17n-db
@@ -4354,6 +4355,7 @@
     SUBDIR += py-coverage
     SUBDIR += py-crank
     SUBDIR += py-crcmod
+    SUBDIR += py-crc32c
     SUBDIR += py-ctags
     SUBDIR += py-cuisine
     SUBDIR += py-cursive
@@ -6045,6 +6047,7 @@
     SUBDIR += rubygem-nprogress-rails
     SUBDIR += rubygem-nsa-rails5
     SUBDIR += rubygem-numerizer
+    SUBDIR += rubygem-numerizer01
     SUBDIR += rubygem-octopress-hooks
     SUBDIR += rubygem-oj
     SUBDIR += rubygem-omniauth_crowd
@@ -6430,6 +6433,7 @@
     SUBDIR += spatialindex
     SUBDIR += spdlog
     SUBDIR += spice-protocol
+    SUBDIR += spin
     SUBDIR += spirv-tools
     SUBDIR += splint
     SUBDIR += spread-sheet-widget

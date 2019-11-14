@@ -13,7 +13,6 @@ COMMENT=	File splitter, GTK and CLI versions
 
 BROKEN=		unfetchable
 
-USE_GNOME=	#
 USES=		gmake pkgconfig
 
 MAKE_ARGS=	CC="${CC}"
@@ -27,6 +26,7 @@ LANG_EN_DESC=	language support
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK2}
+USES+=		gnome
 USE_GNOME+=	gtk20
 .endif
 

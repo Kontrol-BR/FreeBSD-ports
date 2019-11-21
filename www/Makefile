@@ -428,6 +428,7 @@
     SUBDIR += moodle35
     SUBDIR += moodle36
     SUBDIR += moodle37
+    SUBDIR += moodle38
     SUBDIR += morty
     SUBDIR += mozplugger
     SUBDIR += multisort
@@ -1448,6 +1449,7 @@
     SUBDIR += py-collective.easytemplate
     SUBDIR += py-collective.templateengines
     SUBDIR += py-cookies
+    SUBDIR += py-crossplane
     SUBDIR += py-css-parser
     SUBDIR += py-csscompressor
     SUBDIR += py-cssmin
@@ -2471,6 +2473,7 @@
     SUBDIR += yanopaste
     SUBDIR += yarn
     SUBDIR += yarn-node10
+    SUBDIR += yarn-node12
     SUBDIR += yarn-node8
     SUBDIR += yaws
     SUBDIR += you-get

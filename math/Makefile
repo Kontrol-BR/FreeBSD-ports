@@ -172,6 +172,7 @@
     SUBDIR += clblas
     SUBDIR += clblast
     SUBDIR += clfft
+    SUBDIR += clingo
     SUBDIR += cln
     SUBDIR += cloog
     SUBDIR += clp
@@ -212,6 +213,7 @@
     SUBDIR += eispack
     SUBDIR += elpa
     SUBDIR += emc2
+    SUBDIR += ensmallen
     SUBDIR += ent
     SUBDIR += entropy
     SUBDIR += eprover
@@ -429,6 +431,7 @@
     SUBDIR += octave-forge-io
     SUBDIR += octave-forge-irsa
     SUBDIR += octave-forge-level-set
+    SUBDIR += octave-forge-linear-algebra
     SUBDIR += octave-forge-lssa
     SUBDIR += octave-forge-ltfat
     SUBDIR += octave-forge-mapping

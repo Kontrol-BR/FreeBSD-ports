@@ -1,11 +1,11 @@
 # $FreeBSD$
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	3.0.11
-PORTREVISION=	1
+PORTVERSION=	3.0.12
 #PORTREVISION=	0
 CATEGORIES=	mail
-MASTER_SITES=	https://www.cyrusimap.org/releases/
+MASTER_SITES=	https://www.cyrusimap.org/releases/ \
+		https://github.com/cyrusimap/cyrus-imapd/releases/download/${PORTNAME}-${PORTVERSION}/
 PKGNAMESUFFIX=	30
 
 MAINTAINER=	ume@FreeBSD.org

@@ -2,11 +2,13 @@
 
 PORTNAME=	ktp-text-ui
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE chat window application
+
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libtelepathy-qt5.so:net-im/telepathy-qt \
 		libtelepathy-logger-qt.so:net-im/telepathy-logger-qt5 \
@@ -19,8 +21,8 @@ USE_KDE=	archive auth codecs completion config configwidgets coreaddons \
 		kcmutils kdewebkit kio notifications notifyconfig people \
 		service sonnet textwidgets wallet widgetsaddons windowsystem \
 		xmlgui
-USE_QT=		core dbus declarative gui location network speech webchannel \
-		webengine widgets xml \
+USE_QT=		concurrent core dbus declarative gui location network \
+		printsupport speech webchannel webengine widgets xml \
 		buildtools_build qmake_build
 USE_LDCONFIG=	yes
 

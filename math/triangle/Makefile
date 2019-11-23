@@ -14,7 +14,7 @@ COMMENT=	Two-Dimensional Quality Mesh Generator and Delaunay Triangulator
 
 NO_CDROM=	No commercial use without prior arrangement with the author
 
-USES=		zip
+USES=		zip xorg
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 USE_XORG=	x11
@@ -35,7 +35,7 @@ do-install:
 	cd ${STAGEDIR}${PREFIX}/lib && ${LN} -s lib${PORTNAME}.so.${PORTVERSION} lib${PORTNAME}.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lib${PORTNAME}.so.${PORTVERSION}
 
-do-test: build
+do-test:
 	@cd ${INSTALL_WRKSRC} && ./${PORTNAME} -p A.poly && ./showme A.1.poly
 
 .include <bsd.port.mk>

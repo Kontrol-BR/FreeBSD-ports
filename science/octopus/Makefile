@@ -1,13 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	octopus
-DISTVERSION=	8.3
-PORTREVISION=	1
+DISTVERSION=	8.4
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://www.tddft.org/programs/${PORTNAME}/download/${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scientific program aimed at the ab initio virtual experimentation
+
+BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 
@@ -21,7 +23,7 @@ LIB_DEPENDS=	libarpack.so:math/arpack-ng \
 		libgsl.so:math/gsl \
 		liblapack.so:math/lapack \
 		libnlopt.so:math/nlopt \
-		libpng16.so:graphics/png \
+		libpng.so:graphics/png \
 		libsymspg.so:science/spglib \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp \

@@ -3,13 +3,15 @@
 
 PORTNAME=	ohugs
 PORTVERSION=	0.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://www.math.chalmers.se/~nordland/ohugs/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Interpreter for Haskell with object-oriented features
+
+BROKEN=		unfetchable
 
 OPTIONS_DEFINE=		X11
 

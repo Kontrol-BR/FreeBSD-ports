@@ -26,6 +26,7 @@
     SUBDIR += agrum
     SUBDIR += aircraft-datcom
     SUBDIR += antioch
+    SUBDIR += apbs
     SUBDIR += atom
     SUBDIR += atompaw
     SUBDIR += avogadro2
@@ -54,6 +55,7 @@
     SUBDIR += coordgenlibs
     SUBDIR += coot
     SUBDIR += cp2k
+    SUBDIR += cp2k-data
     SUBDIR += crf++
     SUBDIR += dalton
     SUBDIR += datawarrior
@@ -101,6 +103,7 @@
     SUBDIR += hdf5
     SUBDIR += hdf5-18
     SUBDIR += healpix
+    SUBDIR += highfive
     SUBDIR += hypre
     SUBDIR += iboview
     SUBDIR += isaac-cfd
@@ -108,6 +111,7 @@
     SUBDIR += jmol
     SUBDIR += jstrack
     SUBDIR += kalzium
+    SUBDIR += kim-api
     SUBDIR += kst2
     SUBDIR += lammps
     SUBDIR += lamprop
@@ -130,6 +134,7 @@
     SUBDIR += libssm
     SUBDIR += libsvm
     SUBDIR += libsvm-python
+    SUBDIR += libvdwxc
     SUBDIR += libxc
     SUBDIR += liggghts
     SUBDIR += lm
@@ -145,7 +150,6 @@
     SUBDIR += mdynamix
     SUBDIR += medit
     SUBDIR += meep
-    SUBDIR += metaf2xml
     SUBDIR += metaphysicl
     SUBDIR += minc2
     SUBDIR += mmdb2
@@ -159,6 +163,8 @@
     SUBDIR += msms
     SUBDIR += multiwfn
     SUBDIR += namd
+    SUBDIR += ncnn
+    SUBDIR += nest
     SUBDIR += netcdf
     SUBDIR += netcdf-cxx
     SUBDIR += netcdf-fortran
@@ -168,8 +174,10 @@
     SUBDIR += octopus
     SUBDIR += openbabel
     SUBDIR += openkim
+    SUBDIR += openkim-models
     SUBDIR += openmx
     SUBDIR += opensim-core
+    SUBDIR += opensph
     SUBDIR += opsin
     SUBDIR += p5-Algorithm-SVMLight
     SUBDIR += p5-Chemistry-3DBuilder
@@ -202,6 +210,8 @@
     SUBDIR += p5-Mcstas-Tools
     SUBDIR += p5-PerlMol
     SUBDIR += p5-Physics-Unit
+    SUBDIR += packmol
+    SUBDIR += pagmo2
     SUBDIR += paje
     SUBDIR += paraview
     SUBDIR += pcmsolver
@@ -223,9 +233,12 @@
     SUBDIR += py-ase
     SUBDIR += py-avogadrolibs
     SUBDIR += py-cdo
+    SUBDIR += py-chainer
+    SUBDIR += py-chainer-chemistry
     SUBDIR += py-chempy
     SUBDIR += py-coards
     SUBDIR += py-dlib
+    SUBDIR += py-eccodes-python
     SUBDIR += py-geometer
     SUBDIR += py-gpaw
     SUBDIR += py-gsd
@@ -255,10 +268,13 @@
     SUBDIR += py-pysal
     SUBDIR += py-pyteomics
     SUBDIR += py-pyteomics.biolccc
+    SUBDIR += py-qcelemental
+    SUBDIR += py-qcengine
     SUBDIR += py-qspin
     SUBDIR += py-quantities
     SUBDIR += py-rmf
     SUBDIR += py-rmsd
+    SUBDIR += py-ruffus
     SUBDIR += py-scikit-fuzzy
     SUBDIR += py-scikit-learn
     SUBDIR += py-scikit-sparse
@@ -266,6 +282,8 @@
     SUBDIR += py-scipy
     SUBDIR += py-scoria
     SUBDIR += py-spglib
+    SUBDIR += py-tensorflow
+    SUBDIR += py-tensorflow-estimator
     SUBDIR += py-veusz
     SUBDIR += py-ws2300
     SUBDIR += pybrain
@@ -295,9 +313,11 @@
     SUBDIR += sigrok-firmware-utils
     SUBDIR += silo
     SUBDIR += simbody
+    SUBDIR += simgrid
     SUBDIR += simint
     SUBDIR += simlib
     SUBDIR += simsmith
+    SUBDIR += smoldyn
     SUBDIR += sparta
     SUBDIR += spglib
     SUBDIR += step
@@ -312,11 +332,11 @@
     SUBDIR += vmd
     SUBDIR += voro++
     SUBDIR += wannier90
+    SUBDIR += wwplot
     SUBDIR += wxmacmolplt
     SUBDIR += xcrysden
     SUBDIR += xdrawchem
     SUBDIR += xfce4-equake-plugin
-    SUBDIR += xmakemol
     SUBDIR += yoda
 
 .include <bsd.port.subdir.mk>

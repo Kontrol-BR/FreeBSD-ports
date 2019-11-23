@@ -3,6 +3,7 @@
 
 PORTNAME=	remotebox
 DISTVERSION=	2.5
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://remotebox.knobgoblin.org.uk/downloads/
 DISTNAME=	RemoteBox-${DISTVERSION}
@@ -17,25 +18,29 @@ RUN_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-SOAP-Lite>=0:net/p5-SOAP-Lite
 
 USES=		shebangfix tar:bzip2
+
 SHEBANG_FILES=	remotebox
-NO_BUILD=	yes
 NO_ARCH=	yes
+NO_BUILD=	yes
+
+DESKTOP_ENTRIES=	"RemoteBox" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
+			"System;" false
 
 OPTIONS_DEFINE=		DOCS KRDC
 OPTIONS_DEFAULT=	FREERDP TIGERVNC
 OPTIONS_MULTI=		VIEWER
 OPTIONS_MULTI_VIEWER=	FREERDP RDESKTOP TIGERVNC VINAGRE
 
-FREERDP_DESC=		RDP client (fork of rdesktop with more features)
-KRDC_DESC=		RDP/VNC client for KDE5
-RDESKTOP_DESC=		RDP client (less features than freerdp)
-TIGERVNC_DESC=		VNC client (desktop neutral)
-VINAGRE_DESC=		VNC client for GNOME
+FREERDP_DESC=	RDP client (fork of rdesktop with more features)
+KRDC_DESC=	RDP/VNC client for KDE5
+RDESKTOP_DESC=	RDP client (less features than FreeRDP)
+TIGERVNC_DESC=	VNC client (desktop neutral)
+VINAGRE_DESC=	VNC client for GNOME
 
 FREERDP_RUN_DEPENDS=	xfreerdp:net/freerdp
 KRDC_RUN_DEPENDS=	krdc:net/krdc
 RDESKTOP_RUN_DEPENDS=	rdesktop:net/rdesktop
-TIGERVNC_RUN_DEPENDS=	vncviewer:net/tigervnc
+TIGERVNC_RUN_DEPENDS=	vncviewer:net/tigervnc-viewer
 VINAGRE_RUN_DEPENDS=	vinagre:net/vinagre
 
 post-patch:
@@ -61,8 +66,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/share/remotebox/icons/remotebox.png \
 	       ${STAGEDIR}${PREFIX}/share/pixmaps
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
-	${INSTALL_DATA} ${FILESDIR}/${PORTNAME}.desktop \
-		${STAGEDIR}${PREFIX}/share/applications
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

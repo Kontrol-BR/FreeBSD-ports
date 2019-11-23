@@ -3,6 +3,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.13.0
+PORTREVISION=	2
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -10,7 +11,8 @@ DISTNAME=	pidgin-${PORTVERSION}
 MAINTAINER?=	marcus@FreeBSD.org
 COMMENT?=	Backend library for the Pidgin multi-protocol messaging client
 
-USES+=		cpe gettext gmake libtool localbase pathfix pkgconfig tar:bzip2
+USES+=		cpe gettext gmake gnome libtool localbase pathfix pkgconfig \
+		tar:bzip2
 USE_GNOME?=	gnomeprefix intltool glib20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-gtkui \
@@ -23,7 +25,7 @@ INSTALL_TARGET=	install-strip
 .if !defined(PIDGIN_SLAVE)
 # Pidgin slave ports that require the following functionality, must explicitly
 # set these macros themselves.
-USES+=		iconv python:2.7 shebangfix
+USES+=		iconv shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	libpurple/purple-remote \
 		libpurple/purple-url-handler
@@ -205,11 +207,12 @@ CONFIGURE_ARGS+=	--disable-gtkspell
 .endif
 
 .if ${PORT_OPTIONS:MDBUS}
+USES+=			python
 LIB_DEPENDS+=		libdbus-glib-1.so:devel/dbus-glib
 .if !defined(PIDGIN_SLAVE)
 RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR}
 .endif
-CONFIGURE_ARGS+=	--enable-dbus
+CONFIGURE_ARGS+=	--enable-dbus --with-python=${PYTHON_CMD}
 PLIST_SUB+=		DBUS=""
 .else
 CONFIGURE_ARGS+=	--disable-dbus

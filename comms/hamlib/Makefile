@@ -3,6 +3,7 @@
 
 PORTNAME=	hamlib
 PORTVERSION=	3.3
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF
 
@@ -14,7 +15,8 @@ LICENSE=	LGPL20
 BUILD_DEPENDS=	swig3.0:devel/swig30
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		autoreconf libtool:keepla pathfix perl5 pathfix pkgconfig python readline shebangfix tcl
+USES=		autoreconf gnome libtool:keepla pathfix perl5 pkgconfig python \
+		readline shebangfix tcl
 USE_PYTHON=	py3kplist
 USE_PERL5=	build run
 USE_GNOME=	libxml2

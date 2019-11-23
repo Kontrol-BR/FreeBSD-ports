@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	stegosaurus
-DISTVERSION=	g20180904
+DISTVERSION=	0.0.3
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
-USES=		gnome waf localbase:ldflags pkgconfig
+USES=		gnome waf localbase:ldflags pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	mxmilkb
 GH_TAGNAME=	543a95d

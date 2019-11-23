@@ -6,6 +6,7 @@ include/cupsfilters/colord.h
 include/cupsfilters/colormanager.h
 include/cupsfilters/driver.h
 include/cupsfilters/image.h
+include/cupsfilters/pdftoippprinter.h
 include/cupsfilters/ppdgenerator.h
 include/cupsfilters/raster.h
 include/fontembed/bitset.h
@@ -128,6 +129,7 @@ share/cups/ppdc/escp.h
 %%BRAILLE%%share/cups/ppdc/liblouis4.defs
 %%BRAILLE%%share/cups/ppdc/media-braille.defs
 share/cups/ppdc/pcl.h
+%%PORTDOCS%%%%DOCSDIR%%/ABOUT-NLS
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL

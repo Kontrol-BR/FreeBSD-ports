@@ -22,9 +22,9 @@
     SUBDIR += R-cran-vars
     SUBDIR += alkimia
     SUBDIR += aqbanking
-    SUBDIR += aqmoney
     SUBDIR += beancount
     SUBDIR += beanie
+    SUBDIR += bitcoinnodestats
     SUBDIR += cbb
     SUBDIR += cointop
     SUBDIR += electrum
@@ -40,14 +40,12 @@
     SUBDIR += kmymoney
     SUBDIR += ktoblzcheck
     SUBDIR += ledger
-    SUBDIR += ledgersmb
     SUBDIR += ledgersmb12
     SUBDIR += libofx
     SUBDIR += libstocks
     SUBDIR += moneymanagerex
     SUBDIR += mybudget
     SUBDIR += myphpmoney
-    SUBDIR += openhbci
     SUBDIR += p5-Business-CreditCard
     SUBDIR += p5-Business-MaxMind-CreditCardFraudDetection
     SUBDIR += p5-Business-OCV
@@ -93,6 +91,7 @@
     SUBDIR += p5-PayflowPro
     SUBDIR += pear_Payment_DTA
     SUBDIR += prestashop
+    SUBDIR += py-backtrader
     SUBDIR += py-bitcoin
     SUBDIR += py-pycoin
     SUBDIR += py-python-bitcoinlib

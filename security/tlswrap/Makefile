@@ -3,12 +3,12 @@
 
 PORTNAME=	tlswrap
 PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	http://www.tlswrap.com/
+MASTER_SITES=	https://www.tlswrap.com/
 DISTNAME=	${PORTNAME}-1.04
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FTP proxy that wraps data and control with TLS/SSL
 
 USES=		ssl
@@ -17,6 +17,8 @@ CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 CFLAGS+=	-I${OPENSSLINC}
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,^(CC|CFLAGS|LDFLAGS).*=,\1?=,g' \
@@ -29,4 +31,4 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

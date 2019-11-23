@@ -2,8 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	doublecmd
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.6
 CATEGORIES=	x11-fm
 MASTER_SITES=	SF/${PORTNAME}/Double%20Commander%20Source
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -17,7 +16,7 @@ LICENSE=	GPLv2
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		dos2unix desktop-file-utils fpc gnome lazarus:flavors
+USES=		dos2unix desktop-file-utils fpc gnome lazarus:flavors xorg
 
 PORTDOCS=	*
 
@@ -41,15 +40,13 @@ LAZARUS_PROJECT_FILES+=	components/synunihighlighter/synuni.lpk
 
 LAZBUILD_ARGS=	-d --pcp=${WRKSRC}/tmppcp
 MAKE_ENV+=	LDVER=ld.bfd # for DragonFly
-LLD_UNSAFE=	yes
 
 HELPVERSION=	0.6.0
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 DOCSRC=		${WRKDIR}/${PORTNAME}-help-${HELPVERSION}
 
-gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt4 ${PORTNAME}-qt5
-qt4_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt5
-qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2 ${PORTNAME}-qt4
+gtk2_CONFLICTS_INSTALL=	${PORTNAME}-qt5
+qt5_CONFLICTS_INSTALL=	${PORTNAME}-gtk2
 
 OPTIONS_DEFINE=		DOCS DEBUG
 OPTIONS_GROUP=		WCX WDX WFX WLX DSX

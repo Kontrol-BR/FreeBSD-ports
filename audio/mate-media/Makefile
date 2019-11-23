@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	mate-media
-PORTVERSION=	1.20.1
+PORTVERSION=	1.22.1
 CATEGORIES=	audio mate
 MASTER_SITES=	MATE
 DIST_SUBDIR=	mate
@@ -23,8 +23,8 @@ LIB_DEPENDS=	libcanberra-gtk.so:audio/libcanberra \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gmake libtool localbase pathfix \
-		pkgconfig tar:xz
+USES=		gettext gmake gnome libtool localbase mate pathfix \
+		pkgconfig tar:xz xorg
 USE_MATE=	desktop mixer panel
 USE_GNOME=	cairo glib20 gtk30 intlhack libxml2
 USE_XORG=	x11

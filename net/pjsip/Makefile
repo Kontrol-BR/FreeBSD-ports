@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	pjsip
-PORTVERSION=	2.8
+PORTVERSION=	2.9
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://www.pjsip.org/release/${PORTVERSION}/
 DISTNAME=	pjproject-${DISTVERSION}
@@ -76,6 +77,7 @@ RESAMPLEDLL_CONFIGURE_ENABLE=	resample-dll
 SAMPLERATE_CONFIGURE_ENABLE=	libsamplerate
 SAMPLERATE_LIB_DEPENDS=		libsamplerate.so:audio/libsamplerate
 SDL_CONFIGURE_ENABLE=		sdl
+SDL_USES=			sdl
 SDL_USE=			SDL=sdl
 SHARED_CONFIGURE_ENABLE=	shared
 SOUND_CONFIGURE_ENABLE=		sound
@@ -96,8 +98,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/$$(APP_LDFLAGS) \{0,1\}//' \
 		-e 's/$$(OS_LDFLAGS)/$$(APP_LDFLAGS) &/' \
 		${WRKSRC}/*/build/Makefile
-	@${ECHO} "#include <sys/select.h>" > ${WRKSRC}/pjlib/include/pj/config_site.h
-	@${ECHO} "#define PJ_IOQUEUE_MAX_HANDLES (FD_SETSIZE)" >> ${WRKSRC}/pjlib/include/pj/config_site.h
+	@${CP} ${FILESDIR}/config_site.h \
+		${WRKSRC}/pjlib/include/pj/config_site.h
 
 post-install-SHARED-on:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so

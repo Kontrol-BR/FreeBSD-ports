@@ -13,12 +13,13 @@ DISTFILES=	crafty-${PORTVERSION}.zip:src \
 DIST_SUBDIR=	crafty
 EXTRACT_ONLY=	crafty-${PORTVERSION}.zip
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chess program for playing and analyzing games
 
-BROKEN_aarch64=		fails to compile: invokes x86 assembler
-BROKEN_armv6=		fails to compile: invokes x86 assembler
-BROKEN_armv7=		fails to compile: invokes x86 assembler
+BROKEN_aarch64=		fails to compile: invokes amd64 assembler
+BROKEN_armv6=		fails to compile: invokes amd64 assembler
+BROKEN_armv7=		fails to compile: invokes amd64 assembler
+BROKEN_i386=		fails to compile: invokes amd64 assembler
 BROKEN_mips=		fails to compile: unrecognized command line option "-mpopcnt"
 BROKEN_mips64=		fails to compile: unrecognized command line option "-mpopcnt"
 

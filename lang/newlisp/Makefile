@@ -3,12 +3,14 @@
 
 PORTNAME=	newlisp
 PORTVERSION=	10.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.newlisp.org/downloads/
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	LISP like scripting language
+
+BROKEN=		unfetchable
 
 LICENSE=	GPLv3
 
@@ -52,7 +54,7 @@ MODULES+=	gsl
 .endif
 
 .if ${PORT_OPTIONS:MMYSQL}
-USE_MYSQL=	yes
+USES+=		mysql
 MODULES+=	mysql
 .endif
 

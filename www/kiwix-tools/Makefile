@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	kiwix-tools
-DISTVERSION=	0.8.0
+DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	me@int19h.org
@@ -15,10 +16,13 @@ LIB_DEPENDS=	libkiwix.so:devel/kiwix-lib \
 		libctpp2.so:textproc/ctpp2 \
 		libzim.so:devel/libzim
 
-USES=		meson pkgconfig
+USES=		compiler:c++11-lang meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	kiwix
 USE_RC_SUBR=	kiwix_serve
+
+CXXFLAGS_gcc=	-Wno-error=maybe-uninitialized
+CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/kiwix

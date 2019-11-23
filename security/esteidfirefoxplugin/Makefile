@@ -14,7 +14,7 @@ RUN_DEPENDS=	opensc-tool:security/opensc \
 		pcscd:devel/pcsc-lite
 
 USE_GNOME=	gtk20
-USES=		webplugin:gecko pkgconfig ssl
+USES=		gnome pkgconfig ssl webplugin:gecko
 WEBPLUGIN_DIR=	${PREFIX}/lib
 WEBPLUGIN_FILES=	npesteid-firefox-plugin.so
 
@@ -24,7 +24,14 @@ EXTRACT_AFTER_ARGS=	--exclude 'include/openssl'
 
 PLIST_FILES=	lib/npesteid-firefox-plugin.so
 
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	incomplete definition of type 'struct X509_name_entry_st'
+BROKEN_FreeBSD_13=	incomplete definition of type 'struct X509_name_entry_st'
+.endif
+
 post-install:
 	${INSTALL_LIB} ${WRKSRC}/npesteid-firefox-plugin.so ${STAGEDIR}${PREFIX}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

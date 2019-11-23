@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	krita
-DISTVERSION=	4.1.8
-PORTREVISION=	1
+DISTVERSION=	4.2.7.1
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -26,6 +25,7 @@ LIB_DEPENDS=	libImath.so:graphics/ilmbase \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
 		libpoppler-qt5.so:graphics/poppler-qt5 \
+		libquazip5.so:archivers/quazip \
 		libraw.so:graphics/libraw \
 		libtiff.so:graphics/tiff \
 		libxcb.so:x11/libxcb \
@@ -34,13 +34,15 @@ LIB_DEPENDS=	libImath.so:graphics/ilmbase \
 # Disable ninja generator for now (with gmake), until the duplicate test targets are resolved upstream.
 USES=		cmake:noninja gmake compiler:c++11-lib desktop-file-utils \
 		eigen:3 gettext jpeg kde:5 pkgconfig python:3.4+ qt:5 \
-		shared-mime-info
+		shared-mime-info tar:xz xorg
 USE_KDE=	archive completion config coreaddons crash guiaddons i18n \
 		itemmodels itemviews kio service widgetsaddons windowsystem
 USE_QT=		concurrent core dbus declarative gui multimedia network printsupport \
 		svg testlib widgets x11extras xml \
 		buildtools_build qmake_build
 USE_XORG=	ice sm xcb xext xi
+
+CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_PyQt5:BOOL=true
 
 OPTIONS_DEFINE=		GMIC OPENEXR
 OPTIONS_DEFAULT=	OPENEXR
@@ -56,5 +58,7 @@ CONFLICTS_INSTALL=	calligra-2*
 
 PLIST_SUB=	SHLIB_VER=18.0.0 \
 		SHLIB_SHVER=18
+
+LDFLAGS=	-lpthread
 
 .include <bsd.port.mk>

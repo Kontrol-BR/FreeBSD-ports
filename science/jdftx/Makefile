@@ -2,9 +2,8 @@
 
 PORTNAME=	jdftx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.2-74
-PORTREVISION=	4
-DISTVERSIONSUFFIX=	-gba743849
+DISTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -55,6 +54,6 @@ SCALAPACK_CMAKE_BOOL=	EnableScaLAPACK
 SCALAPACK_LIB_DEPENDS=	libscalapack.so:math/scalapack
 
 OCTAVE_DESC=		With Octave support (only for one script: dryRunToPDB)
-OCTAVE_USES=		octave
+OCTAVE_RUN_DEPENDS=	octave:math/octave
 
 .include <bsd.port.mk>

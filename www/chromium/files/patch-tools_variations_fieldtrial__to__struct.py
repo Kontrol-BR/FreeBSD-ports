@@ -1,6 +1,6 @@
---- tools/variations/fieldtrial_to_struct.py.orig	2019-02-06 23:07:02.000000000 +0100
-+++ tools/variations/fieldtrial_to_struct.py	2019-02-08 19:20:20.308979000 +0100
-@@ -24,6 +24,7 @@
+--- tools/variations/fieldtrial_to_struct.py.orig	2019-07-24 18:59:17 UTC
++++ tools/variations/fieldtrial_to_struct.py
+@@ -33,6 +33,7 @@ finally:
  _platforms = [
    'android',
    'android_webview',

@@ -1,6 +1,6 @@
---- third_party/swiftshader/src/OpenGL/libEGL/Surface.cpp.orig	2019-01-12 22:56:53.902120000 +0100
-+++ third_party/swiftshader/src/OpenGL/libEGL/Surface.cpp	2019-01-12 22:57:13.884671000 +0100
-@@ -352,7 +352,7 @@
+--- third_party/swiftshader/src/OpenGL/libEGL/Surface.cpp.orig	2019-10-21 19:09:15 UTC
++++ third_party/swiftshader/src/OpenGL/libEGL/Surface.cpp
+@@ -362,7 +362,7 @@ bool WindowSurface::checkForResize()
  
  		int windowWidth = windowAttributes.width;
  		int windowHeight = windowAttributes.height;

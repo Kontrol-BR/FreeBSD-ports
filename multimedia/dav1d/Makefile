@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	dav1d
-DISTVERSION=	0.2.1
+DISTVERSION=	0.5.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,10 +11,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
-BUILD_DEPENDS_aarch64=	as:devel/binutils
 BUILD_DEPENDS_amd64=	nasm:devel/nasm
-BUILD_DEPENDS_armv6=	${LOCALBASE}/bin/as:devel/binutils
-BUILD_DEPENDS_armv7=	${LOCALBASE}/bin/as:devel/binutils
 BUILD_DEPENDS_i386=	nasm:devel/nasm
 
 USES=		compiler:c11 meson
@@ -22,20 +19,30 @@ USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GL_SITE=	https://code.videolan.org
 GL_ACCOUNT=	videolan
-GL_COMMIT=	408d0486889f4f6d92f73abdeaef250659a10bc7
-CONFIGURE_ENV=	UNAME_m=${ARCH} # XXX cpu_family()
-CFLAGS_aarch64=	-no-integrated-as
-CFLAGS_armv6=	-no-integrated-as -B${LOCALBASE}/bin
-CFLAGS_armv7=	-no-integrated-as -B${LOCALBASE}/bin
-LDFLAGS_i386=	-Wl,-z,notext
+GL_COMMIT=	bb160f09fa7ad132f4b6a014ac8e168b913ee3ab
 
-OPTIONS_DEFINE=	TEST
+OPTIONS_DEFINE=	SDL TEST
+OPTIONS_SUB=	yes
 
-TEST_GL_TUPLE=	videolan:dav1d-test-data:3ccdd3df4fb8583d58bcc0101e315b00ec3ae130:testdata/tests/dav1d-test-data
-TEST_MESON_TRUE=build_tests testdata_tests
+SDL_USES=	pkgconfig sdl
+SDL_USE=	SDL=sdl2
+SDL_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:devel/vulkan-headers
+SDL_LIB_DEPENDS=	libplacebo.so:graphics/libplacebo \
+			libvulkan.so:graphics/vulkan-loader
+SDL_MESON_TRUE=	enable_examples
+
+TEST_GL_TUPLE=	videolan:dav1d-test-data:738ce981eb579c72eeaa9a4b81c87af98356dde6:testdata/tests/dav1d-test-data
+TEST_MESON_TRUE=enable_tests testdata_tests
 
 .if make(makesum) # for optional distfiles
 .MAKEFLAGS:	WITH="${OPTIONS_DEFINE}"
+.endif
+
+# https://bugs.llvm.org/show_bug.cgi?id=40635
+.if !empty(CFLAGS:M-flto*)
+MESON_ARGS+=	${MESON_ARGS_${CHOSEN_COMPILER_TYPE}_${ARCH}}
+MESON_ARGS_clang_amd64=	-Dstack_alignment=16
+MESON_ARGS_clang_i386=	-Dstack_alignment=4
 .endif
 
 pre-install-TEST-on: do-test

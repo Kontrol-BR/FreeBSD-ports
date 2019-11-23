@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	plasma-desktop
-DISTVERSION=	${KDE_PLASMA_VERSION}.2
-PORTREVISION=	1
+DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	x11 kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,6 +14,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libxcb-image.so:x11/xcb-util-image \
 		libxcb-keysyms.so:x11/xcb-util-keysyms \
+		libxcb-util.so:x11/xcb-util \
 		libxkbfile.so:x11/libxkbfile
 RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		xf86-input-evdev>0:x11-drivers/xf86-input-evdev \
@@ -23,7 +23,7 @@ BUILD_DEPENDS=	xf86-input-evdev>0:x11-drivers/xf86-input-evdev \
 		xf86-input-libinput>0:x11-drivers/xf86-input-libinput
 
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils \
-		gettext kde:5 pkgconfig qt:5 tar:xz
+		gettext gnome kde:5 pkgconfig qt:5 tar:xz xorg
 USE_GNOME=	glib20
 USE_KDE=	activities activities-stats archive attica auth baloo \
 		bookmarks codecs completion config configwidgets coreaddons \

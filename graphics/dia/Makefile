@@ -17,14 +17,14 @@ OPTIONS_DEFINE=	DOCS
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		desktop-file-utils gettext gmake libtool pathfix \
+USES=		desktop-file-utils gettext gmake gnome libtool pathfix \
 		pkgconfig tar:xz
 USE_GNOME=	gtk20 gnomeprefix libxslt libartlgpl2 intlhack
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LOCALBASE="${LOCALBASE}"
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-L${LOCALBASE}/lib `pkg-config --libs gmodule-2.0`
 CONFIGURE_ARGS=	--disable-gnome
 INSTALL_TARGET=	install-strip
 

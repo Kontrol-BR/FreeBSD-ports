@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	splitter
-PORTVERSION=	r592
+PORTVERSION=	r595
 CATEGORIES=	astro converters java
 MASTER_SITES=	http://www.mkgmap.org.uk/download/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -12,7 +12,7 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tile splitter for mkgmap
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.6+
+JAVA_VERSION=	1.8+
 NO_BUILD=	yes
 NO_ARCH=	yes
 

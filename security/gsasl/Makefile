@@ -3,11 +3,11 @@
 
 PORTNAME=	gsasl
 PORTVERSION=	1.8.0
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU SASL Library
 
 LIB_DEPENDS=	libidn.so:dns/libidn \

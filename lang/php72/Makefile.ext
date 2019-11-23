@@ -145,6 +145,7 @@ USES+=	iconv:translit
 .endif
 
 .if ${PHP_MODNAME} == "imap"
+PHP_MOD_PRIO=	30
 OPTIONS_DEFINE=	PANDA
 PANDA_DESC=	Uses the forked panda-cclient instead of the original cclient
 
@@ -508,8 +509,6 @@ USES+=	mysql
 .	endif
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${PHP_MODNAME} == "gd"
 .	if ${PORT_OPTIONS:MTRUETYPE}
 CONFIGURE_ARGS+=--enable-gd-native-ttf
@@ -523,11 +522,14 @@ LIB_DEPENDS+=   libwebp.so:graphics/webp
 CONFIGURE_ARGS+=--with-webp-dir=${LOCALBASE}
 .   endif
 .	if ${PORT_OPTIONS:MX11}
-USE_XORG=	xpm
+USES+=		xorg
+USE_XORG=	x11 xpm
 
 CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
 .	endif
 .endif
+
+.include <bsd.port.pre.mk>
 
 .if ${PHP_MODNAME} == "imap"
 .	if ${PORT_OPTIONS:MPANDA}

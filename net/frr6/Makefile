@@ -3,8 +3,8 @@
 PORTNAME=	frr
 PORTVERSION=	6.0.2
 DISTVERSIONPREFIX=	frr-
-PORTREVISION=	1
-CATEGORIES=	net ipv6
+PORTREVISION=	3
+CATEGORIES=	net
 PKGNAMESUFFIX=	6
 
 MAINTAINER=	olivier@FreeBSD.org
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c
 USES=		autoreconf bison compiler:c++11-lang gmake pkgconfig libtool \
 		makeinfo python:2.7,build readline
 
-CONFLICTS=	openbgpd openospfd zebra quagga frr3 frr4 frr5
+CONFLICTS=	openbgpd openospfd zebra quagga frr5 frr7
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

@@ -12,7 +12,6 @@
     SUBDIR += engdic
     SUBDIR += fcitx-hangul
     SUBDIR += gimp-help
-    SUBDIR += gtkcomm
     SUBDIR += h2ps
     SUBDIR += hanyangfonts
     SUBDIR += hcode
@@ -39,6 +38,7 @@
     SUBDIR += scim-tables
     SUBDIR += sourcehansans-otf
     SUBDIR += sourcehanserif-otf
+    SUBDIR += spoqahansans-ttf
     SUBDIR += unfonts-core
     SUBDIR += unfonts-extra
     SUBDIR += uniksc

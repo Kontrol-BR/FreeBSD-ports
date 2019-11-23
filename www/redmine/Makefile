@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	redmine
-PORTVERSION=	3.4.9
-PORTREVISION=	1
+PORTVERSION=	3.4.11
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://www.redmine.org/releases/
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
 RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
-		rubygem-rails4>=4.2.11:www/rubygem-rails4 \
+		rubygem-rails4>=4.2.11.1:www/rubygem-rails4 \
 		rubygem-jquery-rails>=3.1.4:www/rubygem-jquery-rails \
 		rubygem-coderay>=1.1.1:textproc/rubygem-coderay \
 		rubygem-request_store>=1.0.5:devel/rubygem-request_store \
@@ -34,10 +34,13 @@ RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 		rubygem-rack-openid>=0:www/rubygem-rack-openid \
 		rubygem-rake>=0:devel/rubygem-rake
 
+USES=		cpe
+USE_RUBY=	yes
+
+CONFLICTS_INSTALL=	redmine4
+
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_RUBY=	yes
-USES=		cpe
 
 USERS=		${WWWOWN}
 GROUPS=		${WWWGRP}
@@ -54,7 +57,7 @@ THIN_DESC=	Use Thin WEB server
 MYSQL_DESC=	MySQL database support (via mysql2 rubygem)
 NO_OPTIONS_SORT=	yes
 
-MYSQL_RUN_DEPENDS=	rubygem-mysql2>=0.4.6:databases/rubygem-mysql2
+MYSQL_RUN_DEPENDS=	rubygem-mysql204>=0.4.6<0.5.0:databases/rubygem-mysql204
 POSTGRESQL_RUN_DEPENDS=	rubygem-pg018>=0.18.1:databases/rubygem-pg018
 MARKDOWN_RUN_DEPENDS=	rubygem-redcarpet>=3.4.0:textproc/rubygem-redcarpet
 RMAGIC_RUN_DEPENDS=	rubygem-rmagick>=2.16.0:graphics/rubygem-rmagick
@@ -103,5 +106,8 @@ do-install-RMAGIC-on:
 
 do-install-THIN-on:
 	${CP} ${FILESDIR}/thin.rb ${STAGEDIR}${WWWDIR}/bundler.d
+
+post-install:
+	(cd ${STAGEDIR}${WWWDIR} && ${RM} Gemfile.lock && bundle install --local)
 
 .include <bsd.port.mk>

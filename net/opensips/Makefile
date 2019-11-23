@@ -3,7 +3,7 @@
 
 PORTNAME=		opensips
 DISTVERSION=		2.2.6
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=		net
 MASTER_SITES=		http://opensips.org/pub/opensips/${PORTVERSION}/
 
@@ -25,7 +25,7 @@ LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
 BUILD_DEPENDS=		ginstall:sysutils/coreutils \
 			gtar:archivers/gtar \
 			gm4:devel/m4 \
-			redis-server:databases/redis-devel
+			redis-server:databases/redis
 RUN_DEPENDS=		${LOCALBASE}/bin/bash:shells/bash \
 			${LOCALBASE}/bin/grep:textproc/gnugrep
 
@@ -144,6 +144,11 @@ SHEBANG_FILES=		ccopts.sh \
 python_CMD=	${LOCALBASE}/bin/python2.7
 
 .include <bsd.port.options.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	storage size of 'ctx' isn't known
+BROKEN_FreeBSD_13=	storage size of 'ctx' isn't known
+.endif
 
 .if ${PORT_OPTIONS:MHTTP}
 EXTRA_MODULES+=		httpd

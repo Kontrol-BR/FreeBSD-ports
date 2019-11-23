@@ -3,6 +3,7 @@
 PORTNAME=	goxel
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	greg@unrelenting.technology
@@ -28,8 +29,8 @@ DESKTOP_ENTRIES="Goxel" "${COMMENT}" "${PORTNAME}" \
 
 .include <bsd.port.pre.mk>
 
-post-patch:
 .if ${ARCH} != amd64 && ${ARCH} != i386
+post-patch:
 	${REINPLACE_CMD} -e 's/-msse2 //g' ${WRKSRC}/SConstruct
 .endif
 

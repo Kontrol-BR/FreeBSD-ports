@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME?=	lighttpd
-PORTVERSION=	1.4.53
+PORTVERSION=	1.4.54
 CATEGORIES?=	www
 MASTER_SITES?=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -16,13 +16,14 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS+=	libpcre.so:devel/pcre
 
-GNU_CONFIGURE=	yes
 USES=		autoreconf gmake libtool localbase pkgconfig tar:xz
 USE_CSTD=	gnu99
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
 USES+=	cpe
 .endif
+
+GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/lighttpd
 INSTALL_TARGET=	install-strip
@@ -87,6 +88,7 @@ SPAWNFCGI_RUN_DEPENDS=	spawn-fcgi:www/spawn-fcgi
 VALGRIND_BUILD_DEPENDS=	valgrind:devel/valgrind
 VALGRIND_RUN_DEPENDS=	valgrind:devel/valgrind
 VALGRIND_CONFIGURE_WITH=valgrind
+WEBDAV_USES=		gnome
 WEBDAV_USE=		GNOME=libxml2
 WEBDAV_LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 			libsqlite3.so:databases/sqlite3

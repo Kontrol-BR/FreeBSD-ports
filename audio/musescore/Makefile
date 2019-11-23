@@ -2,17 +2,16 @@
 # $FreeBSD$
 
 PORTNAME=	musescore
-DISTVERSION=	3.0.2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.3.2
 CATEGORIES=	audio
-MASTER_SITES=	http://ftp.osuosl.org/pub/musescore/releases/MuseScore-${DISTVERSION}/
-DISTNAME=	MuseScore-${DISTVERSION}
-NO_WRKSUBDIR=	yes
+# DISTNAME=	MuseScore-${DISTVERSION}
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	Free music composition & notation software
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE.GPL
+# LICENSE_FILE=	LICENSE.GPL
 
 LIB_DEPENDS=	libmp3lame.so:audio/lame \
 		libsndfile.so:audio/libsndfile \
@@ -21,18 +20,26 @@ LIB_DEPENDS=	libmp3lame.so:audio/lame \
 		libfreetype.so:print/freetype2
 
 USES=		cmake compiler:c++11-lib desktop-file-utils \
-		pkgconfig qt:5 shared-mime-info zip
-USE_QT=		core declarative gui widgets opengl concurrent designer help network \
+		pkgconfig qt:5 shared-mime-info
+USE_QT=		core declarative gui widgets opengl concurrent designer help \
+		location network \
 		scripttools svg sql printsupport testlib \
-		xml xmlpatterns \
+		webchannel xml xmlpatterns \
 		buildtools_build linguisttools_build qmake_build uitools_build
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	musescore
+GH_PROJECT=	MuseScore
+
+# Each release gets a subdir containing the distfiles for that release,
+# so hope that scanning the parent dir finds new ones.
+DATADIR=	${PREFIX}/share/mscore-${PORTVERSION:R}
+
 ALL_TARGET=	lrelease manpages all
-INSTALLS_ICONS=	yes
 CMAKE_ARGS+=	-DUSE_SYSTEM_FREETYPE="ON" \
 		-DBUILD_PORTMIDI=OFF \
-		-DBUILD_PCH=OFF
-
-DATADIR=	${PREFIX}/share/mscore-${PORTVERSION:R}
+		-DBUILD_PCH=OFF \
+		-DDOWNLOAD_SOUNDFONT=OFF
 
 # WebEngine is only available on i386/amd64; defaults to ON there.
 # If enabled on arches that don't have WebEngine, the build breaks.

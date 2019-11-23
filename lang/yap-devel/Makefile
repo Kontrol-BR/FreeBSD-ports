@@ -3,13 +3,15 @@
 
 PORTNAME=	yap
 PORTVERSION=	6.3.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	lang
 MASTER_SITES=	http://www.dcc.fc.up.pt/~vsc/Yap/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High-performance Prolog compiler
+
+BROKEN=		unfetchable
 
 LICENSE=	ART20 LGPL3
 LICENSE_COMB=	dual

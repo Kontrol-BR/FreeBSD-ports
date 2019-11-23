@@ -3,7 +3,7 @@
 
 PORTNAME=	vtk
 PORTVERSION=	6.2.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	6
@@ -24,10 +24,10 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 # * VTK Groups
 
 CONFLICTS=	vtk5 vtk8
+USES=		alias cmake jpeg localbase xorg
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
 USE_XORG=	xt sm ice x11 xext
-USES=		alias cmake jpeg
-CXXFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS_powerpc64=	-mminimal-toc
 
 VTK_SHORT_VER=	${PORTVERSION:R}
 PLIST_SUB+=	VER2=${VTK_SHORT_VER}
@@ -103,6 +103,7 @@ CMAKE_ARGS+=	-DVTK_OPENGL_HAS_OSMESA:BOOL=ON \
 PLIST_SUB+=	X11="@comment " \
 		OSMESA=""
 .else
+USES+=		gl
 USE_GL=		gl glu
 PLIST_SUB+=	X11="" \
 		OSMESA="@comment "

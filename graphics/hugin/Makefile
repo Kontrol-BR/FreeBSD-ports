@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	hugin
-PORTVERSION=	2018.0.0
-PORTREVISION=	9
+PORTVERSION=	2019.0.0
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}
 
@@ -26,8 +26,10 @@ RUN_DEPENDS=	enblend>=4.1.4:graphics/enblend \
 		exiftool:graphics/p5-Image-ExifTool \
 		gmake:devel/gmake
 
-USES=		cmake compiler:c++11-lib desktop-file-utils \
-		gettext jpeg pkgconfig shared-mime-info shebangfix tar:bzip2
+BROKEN_i386=	Fails to build: ld: error: src/hugin_base/libhuginbase.so.0.0: undefined reference to __atomic_load
+
+USES=		cmake compiler:c++11-lib desktop-file-utils gettext gl gnome \
+		jpeg pkgconfig shared-mime-info shebangfix tar:bzip2
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}
 USE_WX=		3.0+
 USE_GL=		glew glut

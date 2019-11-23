@@ -1,3 +1,3 @@
-TIMESTAMP = 1540338423
-SHA256 (ansible-runner-1.1.2.tar.gz) = 2376b39c7b4749e17e15a21844e37164d6df964c9f35f27aa679c0707b1f7b19
-SIZE (ansible-runner-1.1.2.tar.gz) = 675734
+TIMESTAMP = 1573029333
+SHA256 (ansible-runner-1.4.2.tar.gz) = 9db56a69ad5d43fe7656ad8efb4083cb1800ea400f7828af6b20f44c0882404f
+SIZE (ansible-runner-1.4.2.tar.gz) = 46146

@@ -1,20 +1,19 @@
---- components/policy/tools/generate_policy_source.py.orig	2019-02-06 23:06:41.000000000 +0100
-+++ components/policy/tools/generate_policy_source.py	2019-02-08 20:44:33.267121000 +0100
-@@ -85,7 +85,7 @@
-       if platform not in [
-           'chrome_frame', 'chrome_os', 'android', 'webview_android',
-           'chrome.win', 'chrome.linux', 'chrome.mac', 'chrome.fuchsia',
--          'chrome.*'
-+          'chrome.freebsd', 'chrome.*'
+--- components/policy/tools/generate_policy_source.py.orig	2019-10-21 19:06:30 UTC
++++ components/policy/tools/generate_policy_source.py
+@@ -92,6 +92,7 @@ class PolicyDetails:
+           'chrome.linux',
+           'chrome.mac',
+           'chrome.fuchsia',
++          'chrome.freebsd',
+           'chrome.*',
+           'chrome.win7',
        ]:
-         raise RuntimeError('Platform "%s" is not supported' % platform)
- 
-@@ -104,7 +104,7 @@
+@@ -114,7 +115,7 @@ class PolicyDetails:
        if platform.startswith('chrome.'):
          platform_sub = platform[7:]
          if platform_sub == '*':
 -          self.platforms.extend(['win', 'mac', 'linux', 'fuchsia'])
 +          self.platforms.extend(['win', 'mac', 'linux', 'fuchsia', 'freebsd'])
+         elif platform_sub == 'win7':
+           self.platforms.append('win')
          else:
-           self.platforms.append(platform_sub)
-       else:

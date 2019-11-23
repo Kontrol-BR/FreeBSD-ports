@@ -2,8 +2,7 @@
 
 PORTNAME=	mkl-dnn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.1
-PORTREVISION=	1
+DISTVERSION=	1.1.20191027
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,21 +17,18 @@ BROKEN_i386=	error: shift count >= width of type (and other errors), see https:/
 
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		cmake
+USES=		cmake compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
+GH_TAGNAME=	f32e21b
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		OPENMP
+OPTIONS_DEFAULT=	OPENMP
 
 OPENMP_CMAKE_BOOL=	USE_OPENMP
 OPENMP_LIB_DEPENDS=	libomp.so:devel/openmp
-
-# use clang from ports because cmake can't find OpenMP with base clang, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=223678
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-CPP=		clang-cpp${LLVM_DEFAULT}
-CC=		clang${LLVM_DEFAULT}
-CXX=		clang++${LLVM_DEFAULT}
+OPENMP_BROKEN_OFF=	still requires omp.h, see https://github.com/intel/mkl-dnn/issues/581
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc

@@ -3,7 +3,7 @@
 
 PORTNAME=	scm
 PORTVERSION=	5f2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. OLD
@@ -14,6 +14,8 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Scheme interpreter
 
 LICENSE=	LGPL21
+
+BROKEN_aarch64=	ld: error: undefined symbol: sbrk
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -37,6 +39,7 @@ INFO=		scm
 OPTIONS_DEFINE=		X11
 OPTIONS_SUB=		yes
 
+X11_USES=		xorg
 X11_USE=		xorg=ice,sm,x11,xext
 
 SCM_DATA=	COPYING COPYING.LESSER Iedline.scm Idiffer.scm \

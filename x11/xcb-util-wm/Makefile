@@ -9,12 +9,11 @@ MASTER_SITES=	http://xcb.freedesktop.org/dist/
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Framework for window manager implementation
 
-LICNESE=	MIT
+LICENSE=	MIT
 
 LIB_DEPENDS=	libxcb-util.so:x11/xcb-util
 
-XORG_CAT=	lib
-USES=		gmake
+USES=		gmake xorg xorg-cat:lib
 USE_XORG=	xcb
 
 post-patch:

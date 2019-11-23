@@ -4,7 +4,7 @@
 PORTNAME=	eiskaltdcpp
 PORTVERSION=	2.2.10
 DISTVERSIONPREFIX=	v
-PORTREVISION=	15
+PORTREVISION=	19
 CATEGORIES=	net-p2p
 PKGNAMESUFFIX?=	-lib
 
@@ -13,6 +13,13 @@ COMMENT=	Direct Connect client shared library
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+GENTOO_PATCHES_PREFIX=	${FILESDIR}/gentoo/${PORTNAME}-${PORTVERSION}
+EXTRA_PATCHES=	${GENTOO_PATCHES_PREFIX}-ipv6_upnp.patch:-p1 \
+		${GENTOO_PATCHES_PREFIX}-miniupnpc1.patch:-p1 \
+		${GENTOO_PATCHES_PREFIX}-miniupnpc2.patch:-p1 \
+		${GENTOO_PATCHES_PREFIX}-openssl-1.1.patch:-p1 \
+		${GENTOO_PATCHES_PREFIX}-tray-close.patch:-p1
 
 USE_GITHUB=	yes
 

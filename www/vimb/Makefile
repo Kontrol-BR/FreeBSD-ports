@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	vimb
-DISTVERSION=	3.3.0
+DISTVERSION=	3.5.0
 CATEGORIES=	www
 
 MAINTAINER=	tobik@FreeBSD.org
@@ -19,13 +19,19 @@ GH_ACCOUNT=	fanglingsu
 GH_PROJECT=	vimb
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 
-LDFLAGS+=	-Wl,--as-needed
 MAKE_ARGS=	MANPREFIX=${STAGEDIR}${PREFIX}/man \
-		V=1
+		V=1 \
+		version="${DISTVERSION}"
+LDFLAGS+=	-Wl,--as-needed
+
 PLIST_FILES=	bin/vimb \
 		lib/vimb/webext_main.so \
 		man/man1/vimb.1.gz \
 		share/applications/vimb.desktop
+
+post-patch:
+# .git/index needs to exist to generate version.h...
+	${MKDIR} ${WRKSRC}/.git/index
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vimb \

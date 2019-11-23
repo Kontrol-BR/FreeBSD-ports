@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	php72
-DISTVERSION=	7.2.16
+DISTVERSION=	7.2.25
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -29,7 +29,7 @@ CONFIGURE_ARGS+=--with-layout=GNU \
 		--with-pcre-regex=${LOCALBASE} \
 		--with-password-argon2=${LOCALBASE} \
 		--program-prefix=""
-USES+=		autoreconf:build
+USES+=		autoreconf:build gnome
 USE_GNOME=	libxml2
 
 # PR230207 Allow relocations against read-only segments (override lld default)
@@ -58,7 +58,7 @@ MYSQLND_DESC=	Build with MySQL Native Driver
 LINKTHR_DESC=	Link thread lib (for threaded extensions)
 ZTS_DESC=	Force Zend Thread Safety (ZTS) build
 
-CONFLICTS=	php56-* php70-* php71-* php73-*
+#CONFLICTS=	php56-* php70-* php71-* php73-*
 
 DESTDIRNAME=	INSTALL_ROOT
 

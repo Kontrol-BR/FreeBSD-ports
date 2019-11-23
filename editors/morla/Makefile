@@ -25,7 +25,7 @@ GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gconf=auto
-USES=		gettext pkgconfig libtool
+USES=		gettext gnome libtool pkgconfig
 USE_GNOME=	gconf2 libgtkhtml libxslt
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
@@ -36,8 +36,7 @@ DESKTOP_ENTRIES="morla" \
 		"WebDevelopment;" \
 		true
 
-XULRUNNER_BROKEN=No gecko type specified (firefox, seamonkey, thunderbird)
-XULRUNNER_USES=	gecko
+XULRUNNER_BROKEN=	www/libxul is gone, consider using lang/spidermonkey*
 XULRUNNER_CONFIGURE_ON=	--with-javascript=xulrunner
 XULRUNNER_CONFIGURE_OFF=	--with-javascript=none
 

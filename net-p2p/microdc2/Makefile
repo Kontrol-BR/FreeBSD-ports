@@ -3,7 +3,7 @@
 
 PORTNAME=	microdc2
 PORTVERSION=	0.15.6
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://corsair626.no-ip.org/microdc/
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 CONFLICTS=	tthsum-[0-9]*
 
-USES=		iconv readline
+USES=		gnome iconv readline
 GNU_CONFIGURE=	yes
 USE_GNOME=	libxml2
 

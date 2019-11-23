@@ -15,7 +15,7 @@
 # was removed.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.488 2019/01/22 16:16:28 jclarke Exp $
+# $MCom: portlint/portlint.pl,v 1.498 2019/09/04 15:03:38 jclarke Exp $
 #
 
 use strict;
@@ -50,7 +50,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 18;
-my $micro = 8;
+my $micro = 10;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -1631,6 +1631,12 @@ sub checkmakefile {
 		}
 	}
 
+	my @aropt = ();
+
+	while ($whole =~ /^OPTIONS_DEFINE_[\d\w]+(.)=\s*(.+)$/mg) {
+		push @aropt, split(/\s+/, $2);
+	}
+
 	@opt = split(/\s+/, $makevar{OPTIONS_DEFINE});
 	pos($whole) = 0;
 	while ($whole =~ /PORT_OPTIONS:M(\w+)/mg) {
@@ -1675,6 +1681,8 @@ sub checkmakefile {
 		PLIST_DIRS
 		PLIST_DIRSTRY
 		PLIST_FILES
+		QMAKE_OFF
+		QMAKE_ON
 		USE
 		USES
 		VARS
@@ -1730,7 +1738,7 @@ sub checkmakefile {
 		}
 	}
 
-	foreach my $i ((@opt, @aopt)) {
+	foreach my $i ((@opt, @aopt, @aropt)) {
 		# skip global options
 		next if ($i eq 'DOCS' or $i eq 'NLS' or $i eq 'EXAMPLES' or $i eq 'IPV6' or $i eq 'X11' or $i eq 'DEBUG');
 		if (!grep(/^$i$/, (@mopt, @popt))) {
@@ -1749,7 +1757,7 @@ sub checkmakefile {
 	}
 
 	foreach my $i (@mopt) {
-		if (!grep(/^$i$/, @opt, @aopt)) {
+		if (!grep(/^$i$/, @opt, @aopt, @aropt)) {
 			# skip global options
 			next if ($i eq 'DOCS' or $i eq 'NLS' or $i eq 'EXAMPLES' or $i eq 'IPV6' or $i eq 'X11');
 			&perror("WARN", $file, -1, "$i appears in PORT_OPTIONS:M, ".
@@ -1790,7 +1798,7 @@ sub checkmakefile {
 	}
 
 	#
-	# while file: check that CMAKE_BOOL just has words
+	# whole file: check that CMAKE_BOOL just has words
 	#
 	print "OK: checking that *_CMAKE_BOOL only contains words.\n" if ($verbose);
 	if ($whole =~ /\n([\w\d]+)_CMAKE_BOOL[?+:]?=([^\n]+)\n/) {
@@ -1799,6 +1807,17 @@ sub checkmakefile {
 		if ($2 =~ /-D/) {
 			&perror("FATAL", $file, $lineno, "Only bare words can be used for ".
 				"${o}_CMAKE_BOOL.  The -D flag will be added automatically.");
+		}
+	}
+
+	print "OK: checking that *CMAKE* co-occurs with *USES+=cmake.\n" if ($verbose);
+	while ($whole =~ /\n([\w\d]+_)?CMAKE_(ARGS|BOOL|BOOL_ON|BOOL_OFF|OFF|ON)\b/g) {
+		my $lineno = &linenumber($`);
+		my $o = $1;
+		my $found_cmake = 0;
+		unless ($makevar{USES} =~ /\b(cmake\b|cmake:)/) {
+			$o = "" unless ($o);
+			&perror("FATAL", $file, $lineno, "${o}CMAKE_$2 is set without USES+=cmake");
 		}
 	}
 
@@ -2114,6 +2133,7 @@ xargs xmkmf
 				&& $curline !~ /^ONLY_FOR_ARCHS_REASON(_[\w\d]+)?(.)?=[^\n]+$i/m
 				&& $curline !~ /^NOT_FOR_ARCHS_REASON(_[\w\d]+)?(.)?=[^\n]+$i/m
 				&& $curline !~ /^SHEBANG_FILES(.)?=[^\n]+$i/m
+				&& $curline !~ /^[\w\d]+_OLD_CMD(.)?=[^\n]+$i/m
 				&& $curline !~ /^[A-Z0-9_]+_DESC=[^\n]+$i/m
 				&& $curline !~ /#.*?$i/m
 				&& $curline !~ /^\s*#.+$/m
@@ -3147,12 +3167,12 @@ MAINTAINER COMMENT
 		}
 
 		# Check for proper license file usage
-		if ($tmp =~ /\nLICENSE_FILE_([^\s=]+)([\s=])/) {
+		while ($tmp =~ /\nLICENSE_FILE_([^\s=]+)([\s=])/g) {
 			my $lfn = $1;
 			my $nchar = $2;
 			if (!grep(/\b$lfn\b/, $makevar{LICENSE})) {
 				&perror("FATAL", $file, -1, "license specified is $makevar{LICENSE}, ".
-					"but LICENSE_FILE specified is for $lfn.");
+					"but found LICENSE_FILE for $lfn.");
 			}
 
 			if ($lfn =~ /\+$/ && $nchar eq '=') {
@@ -3296,7 +3316,10 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 
 		}
 
-		&checkextra($tmp, 'USES/USE_x', $file);
+		# XXX: We should check this.  But, one is allowed to add _related_ items to
+		# a USE_ or USES item in this same section.  Since this would be an ever-
+		# moving target, remove the check.
+		#&checkextra($tmp, 'USES/USE_x', $file);
 
 		$idx++;
 	}
@@ -3377,8 +3400,8 @@ TEST_DEPENDS FETCH_DEPENDS DEPENDS_TARGET
 	my $lps = $makevar{LICENSE_PERMS} // '';
 	if ($committer && ($tmp =~ /\n(RESTRICTED|NO_CDROM|NO_PACKAGE)[+?]?=/ ||
 		$lps =~ /\bno-\b/)) {
-		&perror("WARN", $file, -1, "Restrictive licensing found.  ".
-			"Do not forget to update ports/LEGAL.");
+		&perror("WARN", $file, -1, "Possible restrictive licensing found.  ".
+			"If there are, in fact, limitations to use or distribution, please update ports/LEGAL.");
 	}
 
 	if ($tmp =~ /\nNO_PACKAGE[+?]?=/) {

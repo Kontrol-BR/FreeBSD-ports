@@ -2,13 +2,15 @@
 # $FreeBSD$
 
 PORTNAME=	sqwebmail
-PORTVERSION=	6.0.0
-PORTREVISION=	2
+PORTVERSION=	6.0.1
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	CGI Webmail client for Maildirs
+
+BROKEN=		unfetchable
 
 BUILD_DEPENDS=	courierauthconfig:security/courier-authlib-base \
 		gpg:security/gnupg

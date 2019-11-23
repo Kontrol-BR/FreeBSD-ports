@@ -1,6 +1,6 @@
---- base/system/sys_info_freebsd.cc.orig	2017-12-15 02:04:05.000000000 +0100
-+++ base/system/sys_info_freebsd.cc	2017-12-23 21:51:22.626194000 +0100
-@@ -13,26 +13,58 @@
+--- base/system/sys_info_freebsd.cc.orig	2019-09-09 21:55:05 UTC
++++ base/system/sys_info_freebsd.cc
+@@ -13,26 +13,46 @@
  namespace base {
  
  int64_t SysInfo::AmountOfPhysicalMemoryImpl() {
@@ -45,27 +45,15 @@
    }
 -  return static_cast<uint64_t>(limit);
 +  return static_cast<int64_t>((pgfree + pginact + pgcache) * page_size);
-+}
-+
+ }
+ 
 +// static
 +std::string SysInfo::CPUModelName() {
 +  int mib[] = { CTL_HW, HW_MODEL };
 +  char name[256];
-+  size_t size = arraysize(name);
-+  if (sysctl(mib, arraysize(mib), &name, &size, NULL, 0) == 0)
++  size_t size = base::size(name);
++  if (sysctl(mib, base::size(mib), &name, &size, NULL, 0) == 0)
 +    return name;
 +  return std::string();
 +}
-+
-+int SysInfo::NumberOfProcessors() {
-+  int mib[] = { CTL_HW, HW_NCPU };
-+  int ncpu;
-+  size_t size = sizeof(ncpu);
-+  if (sysctl(mib, arraysize(mib), &ncpu, &size, NULL, 0) == -1) {
-+    NOTREACHED();
-+    return 1;
-+  }
-+  return ncpu;
- }
- 
  }  // namespace base

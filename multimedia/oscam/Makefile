@@ -12,7 +12,7 @@ COMMENT=	Softcam software to decrypt digital tv channels
 
 LICENSE=	GPLv3
 
-USES=		gmake ssl tar:bzip2
+USES=		compiler gmake ssl tar:bzip2
 USE_RC_SUBR=	oscam
 
 .if target(gen-dist)
@@ -25,7 +25,12 @@ OPTIONS_DEFINE=	EXAMPLES
 
 .include <bsd.port.pre.mk>
 
-.if ! ${ARCH:Mmips*} && ! ${ARCH:Mpowerpc*} && ! ${ARCH} == sparc64
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	field has incomplete type 'BIGNUM' (aka 'struct bignum_st')
+BROKEN_FreeBSD_13=	field has incomplete type 'BIGNUM' (aka 'struct bignum_st')
+.endif
+
+.if ${CHOSEN_COMPILER_TYPE} == clang
 MAKE_ARGS+=	HOSTCC=clang CC=clang
 .endif
 

@@ -8,7 +8,7 @@ CATEGORIES=	lang
 MASTER_SITES=	GNU/gnucobol
 DISTNAME=	gnucobol-${PORTVERSION}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source COBOL compiler
 
 LICENSE=	GPLv3 LGPL3
@@ -24,6 +24,7 @@ INFO=		gnucobol
 DATADIR=	${PREFIX}/share/gnucobol
 
 INSTALL_TARGET=	install-strip
+SSP_CFLAGS?=	-fstack-protector # XXX -strong fails to build
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 

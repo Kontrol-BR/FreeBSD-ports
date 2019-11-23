@@ -3,17 +3,18 @@
 
 PORTNAME=	gforth
 PORTVERSION=	0.7.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	lang
 MASTER_SITES=	http://www.complang.tuwien.ac.at/forth/gforth/ \
 		GNU
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Fast and portable Forth system
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_i386=	Assertion failed: (pi->restlength >=0), function check_prims, file ./main.c, line 1049.
 BROKEN_powerpc64=	fails to package: Unable to access file usr/local/share/gforth/0.7.3/kernl64l.fi:No such file or directory
 
 LIB_DEPENDS=	libavcall.so:devel/libffcall \

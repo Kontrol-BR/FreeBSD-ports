@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	pari
-DISTVERSION=	2.11.1
+DISTVERSION=	2.11.2
 PORTEPOCH=	2
 CATEGORIES=	math
 MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unix/ \
@@ -42,6 +42,7 @@ OPTIMIZED_CFLAGS_CFLAGS=	-O3 -fno-strict-aliasing -fomit-frame-pointer
 .endif
 X11_CONFIGURE_ON=	--graphic=X11
 X11_CONFIGURE_OFF=	--graphic=none
+X11_USES=		xorg
 X11_USE=		xorg=x11
 MPI_RUN_DEPENDS=	${LOCALBASE}/bin/mpirun:net/mpich
 MPI_BUILD_DEPENDS=	${LOCALBASE}/bin/mpicc:net/mpich

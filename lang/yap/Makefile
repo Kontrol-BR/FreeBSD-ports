@@ -3,12 +3,14 @@
 
 PORTNAME=	yap
 PORTVERSION=	6.2.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	lang
 MASTER_SITES=	http://www.dcc.fc.up.pt/~vsc/Yap/
 
 MAINTAINER=	danilo@FreeBSD.org
 COMMENT=	High-performance Prolog compiler
+
+BROKEN=		unfetchable
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 

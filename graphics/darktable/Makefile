@@ -2,8 +2,8 @@
 # $FreeBSD$
 
 PORTNAME=	darktable
-PORTVERSION=	2.6.1
-PORTREVISION=	1
+PORTVERSION=	2.6.2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -29,7 +29,7 @@ ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	uses SSE instructions and 64-bit address space
 
 USES=		cmake compiler:c++11-lib desktop-file-utils	\
-		gl gnome jpeg pkgconfig sqlite tar:xz
+		gl gnome jpeg pkgconfig sqlite tar:xz xorg
 USE_GL=		glu
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
 USE_XORG=	ice sm x11 xext xrandr
@@ -107,9 +107,7 @@ CPP=		clang-cpp${LLVM_VER}
 CC=		clang${LLVM_VER}
 CXX=		clang++${LLVM_VER}
 
-# Depend on devel/openmp instead of the full LLVM at runtime. Required
-# for a consistent libomp experience.
-LIB_DEPENDS+=	libomp.so.0:devel/openmp
+LIB_DEPENDS+=	libomp.so:devel/llvm${LLVM_VER}
 .endif
 
 .if defined(WITH_DEBUG)

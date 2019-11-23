@@ -1,9 +1,11 @@
 osl_thread_priority_init_Impl() tries to assign values to variables
 declared as const on platforms not excluded by NO_PTHREAD_PRIORITY.
-This includes FreeBSD.  Patch locally until fixed upstream.
+This includes FreeBSD.  This is https://gerrit.libreoffice.org/69603
+upstream, and this comment and the relevant parts of this patch can
+be removed if/when that is merged.
 
---- sal/osl/unx/thread.cxx.orig	2019-02-12 22:11:36.000000000 +0000
-+++ sal/osl/unx/thread.cxx	2019-02-18 23:03:57.933036000 +0000
+--- sal/osl/unx/thread.cxx.orig	2019-08-08 19:56:46.260832000 +0800
++++ sal/osl/unx/thread.cxx	2019-08-08 19:56:45.711297000 +0800
 @@ -46,6 +46,10 @@
  #include <sys/syscall.h>
  #endif
@@ -15,32 +17,6 @@ This includes FreeBSD.  Patch locally until fixed upstream.
  /****************************************************************************
   * @@@ TODO @@@
   *
-@@ -88,11 +92,11 @@
- 
- struct osl_thread_priority_st
- {
--    int const m_Highest;
--    int const m_Above_Normal;
--    int const m_Normal;
--    int const m_Below_Normal;
--    int const m_Lowest;
-+    int m_Highest;
-+    int m_Above_Normal;
-+    int m_Normal;
-+    int m_Below_Normal;
-+    int m_Lowest;
- };
- 
- #define OSL_THREAD_PRIORITY_INITIALIZER { 127, 96, 64, 32, 0 }
-@@ -110,7 +114,7 @@
- struct osl_thread_global_st
- {
-     pthread_once_t                    m_once;
--    struct osl_thread_priority_st const m_priority;
-+    struct osl_thread_priority_st     m_priority;
-     struct osl_thread_textencoding_st m_textencoding;
- };
- 
 @@ -545,7 +549,7 @@
      if ( 0 != err )
          SAL_WARN("sal.osl", "pthread_setname_np failed with errno " << err);

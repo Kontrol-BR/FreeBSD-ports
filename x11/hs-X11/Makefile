@@ -3,7 +3,7 @@
 
 PORTNAME=	X11
 PORTVERSION=	1.8
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	x11 haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -11,6 +11,7 @@ COMMENT=	Binding to the X11 graphics library
 
 LICENSE=	BSD3CLAUSE
 
+USES=		xorg
 USE_CABAL=	data-default
 USE_XORG=	x11 xrandr xext
 

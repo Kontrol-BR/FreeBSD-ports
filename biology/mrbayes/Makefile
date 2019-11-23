@@ -3,12 +3,14 @@
 
 PORTNAME=	mrbayes
 PORTVERSION=	3.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology
 MASTER_SITES=	SF
 
 MAINTAINER=	mzaki@m.u-tokyo.ac.jp
 COMMENT=	Bayesian inference of phylogeny
+
+BROKEN=		unfetchable
 
 OPTIONS_DEFINE=	EXAMPLES
 

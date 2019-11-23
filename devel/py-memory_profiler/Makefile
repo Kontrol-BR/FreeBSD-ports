@@ -3,6 +3,7 @@
 
 PORTNAME=	memory_profiler
 PORTVERSION=	0.55.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,6 +20,8 @@ USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+PORTSCOUT=	skipv:0.56.0
 
 OPTIONS_DEFINE=	MATPLOTLIB
 MATPLOTLIB_DESC=Plot support via matplotlib

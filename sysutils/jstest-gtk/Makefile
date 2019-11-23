@@ -2,6 +2,7 @@
 
 PORTNAME=	jstest-gtk
 PORTVERSION=	20180710
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	rozhuk.im@gmail.com
@@ -10,7 +11,8 @@ COMMENT=	Simple joystick tester based on Gtk+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake pkgconfig libtool localbase:ldflags
+USES=		cmake compiler:c++11-lang gnome libtool localbase:ldflags \
+		pkgconfig
 USE_GNOME=	gtkmm30 libsigc++20
 
 INSTALLS_ICONS=	yes

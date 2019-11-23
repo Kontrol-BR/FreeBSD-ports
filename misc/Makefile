@@ -8,6 +8,7 @@
     SUBDIR += achievo
     SUBDIR += aclgen
     SUBDIR += actiona
+    SUBDIR += adios2
     SUBDIR += amanda-client
     SUBDIR += amanda-perl-wrapper
     SUBDIR += amanda-server
@@ -16,7 +17,6 @@
     SUBDIR += artikulate
     SUBDIR += asbutton
     SUBDIR += asr-manpages
-    SUBDIR += astrolog
     SUBDIR += auto-multiple-choice
     SUBDIR += bb
     SUBDIR += bbjd
@@ -36,9 +36,9 @@
     SUBDIR += buffer
     SUBDIR += cave
     SUBDIR += cdcollect
+    SUBDIR += cheat
     SUBDIR += chef
     SUBDIR += chmlib
-    SUBDIR += chord2html
     SUBDIR += cinnamon-translations
     SUBDIR += cldr-emoji-annotation
     SUBDIR += clex
@@ -58,7 +58,6 @@
     SUBDIR += console-bridge
     SUBDIR += countrycodes
     SUBDIR += cpuid
-    SUBDIR += crosspad
     SUBDIR += crosti
     SUBDIR += cryptoballot
     SUBDIR += cs
@@ -72,15 +71,13 @@
     SUBDIR += deco
     SUBDIR += dejagnu
     SUBDIR += delay
-    SUBDIR += detachtty
     SUBDIR += diction
     SUBDIR += digitemp
     SUBDIR += display
+    SUBDIR += dive
     SUBDIR += dnetc
-    SUBDIR += dphys-config
     SUBDIR += dtach
     SUBDIR += dvorak7min
-    SUBDIR += dvorakng
     SUBDIR += e2fsprogs-libblkid
     SUBDIR += e2fsprogs-libuuid
     SUBDIR += elixir-mime
@@ -137,7 +134,6 @@
     SUBDIR += ftdi-eeprom
     SUBDIR += fxload
     SUBDIR += gcstar
-    SUBDIR += gctpc
     SUBDIR += geekcode
     SUBDIR += getopt
     SUBDIR += gimp-help-ca
@@ -152,12 +148,10 @@
     SUBDIR += gimp-help-sl
     SUBDIR += gimp-help-sv
     SUBDIR += gkrellm-gamma
-    SUBDIR += gkrellm-helium
     SUBDIR += gkrellm-xkb
     SUBDIR += gkrellmbgchg2
     SUBDIR += gkrellmlaunch2
     SUBDIR += gkrellshoot2
-    SUBDIR += gkrellweather2
     SUBDIR += gkx86info2
     SUBDIR += gnome-devel-docs
     SUBDIR += gnome-getting-started-docs
@@ -167,15 +161,16 @@
     SUBDIR += gnome-osd
     SUBDIR += gnome-user-docs
     SUBDIR += gnu-watch
-    SUBDIR += gnuit
     SUBDIR += gnuls
-    SUBDIR += gnustep-examples
+    SUBDIR += gobuster
     SUBDIR += gone
     SUBDIR += gonvert
     SUBDIR += gplink
+    SUBDIR += gpsim
     SUBDIR += granulate
     SUBDIR += grc
     SUBDIR += gwhich
+    SUBDIR += hashdb
     SUBDIR += hb
     SUBDIR += hello
     SUBDIR += help2man
@@ -185,6 +180,7 @@
     SUBDIR += hotkeys
     SUBDIR += hulgalugha
     SUBDIR += ignition-fuel-tools
+    SUBDIR += iio-oscilloscope
     SUBDIR += imerge
     SUBDIR += img2xterm
     SUBDIR += ini_file_manager
@@ -216,6 +212,8 @@
     SUBDIR += lazyread
     SUBDIR += lc
     SUBDIR += lesspipe
+    SUBDIR += lf
+    SUBDIR += libad9361-iio
     SUBDIR += libeatmydata
     SUBDIR += libemos
     SUBDIR += libiio
@@ -231,7 +229,7 @@
     SUBDIR += libutf
     SUBDIR += lifelines
     SUBDIR += lingoteach
-    SUBDIR += linm
+    SUBDIR += locale-en_DK
     SUBDIR += localedata
     SUBDIR += logsurfer
     SUBDIR += loop
@@ -240,9 +238,10 @@
     SUBDIR += lxi-tools
     SUBDIR += magicpoint
     SUBDIR += man.el
+    SUBDIR += mate-user-guide
     SUBDIR += mbuffer
     SUBDIR += mc
-    SUBDIR += mc-light
+    SUBDIR += mc-nox11
     SUBDIR += mdp
     SUBDIR += metalink-checker
     SUBDIR += metalink-editor
@@ -256,7 +255,7 @@
     SUBDIR += mtail
     SUBDIR += mtx
     SUBDIR += najitool
-    SUBDIR += newer
+    SUBDIR += netron
     SUBDIR += nms
     SUBDIR += nnn
     SUBDIR += nsf
@@ -267,10 +266,13 @@
     SUBDIR += opencyc
     SUBDIR += openhab2
     SUBDIR += openhab2-addons
+    SUBDIR += openhantek
     SUBDIR += openhmd
     SUBDIR += openmvg
     SUBDIR += openr2
+    SUBDIR += openvdb
     SUBDIR += orange3
+    SUBDIR += orion
     SUBDIR += orville-write
     SUBDIR += osinfo-db
     SUBDIR += ossp-uuid
@@ -284,6 +286,7 @@
     SUBDIR += p5-Array-LineReader
     SUBDIR += p5-Array-PrintCols
     SUBDIR += p5-Array-RefElem
+    SUBDIR += p5-Array-Utils
     SUBDIR += p5-Asterisk-FastAGI
     SUBDIR += p5-Bot-Training
     SUBDIR += p5-Bot-Training-MegaHAL
@@ -300,6 +303,7 @@
     SUBDIR += p5-Data-Buffer
     SUBDIR += p5-File-CounterFile
     SUBDIR += p5-File-Sort
+    SUBDIR += p5-Geo-Address-Formatter
     SUBDIR += p5-Geo-Cache
     SUBDIR += p5-Geo-Coder-Bing
     SUBDIR += p5-Geo-Coder-Google
@@ -353,6 +357,7 @@
     SUBDIR += php71-calendar
     SUBDIR += php72-calendar
     SUBDIR += php73-calendar
+    SUBDIR += php74-calendar
     SUBDIR += phraze
     SUBDIR += pinfo
     SUBDIR += pipe
@@ -372,6 +377,7 @@
     SUBDIR += py-colorbrewer
     SUBDIR += py-colored
     SUBDIR += py-crudini
+    SUBDIR += py-eemeter
     SUBDIR += py-emoji
     SUBDIR += py-fast-histogram
     SUBDIR += py-fuzzy
@@ -404,6 +410,7 @@
     SUBDIR += py-spdx
     SUBDIR += py-spdx-lookup
     SUBDIR += py-spdx-tools
+    SUBDIR += py-tflearn
     SUBDIR += py-toil
     SUBDIR += py-tqdm
     SUBDIR += py-yolk
@@ -434,7 +441,6 @@
     SUBDIR += rubygem-mime-types
     SUBDIR += rubygem-mime-types-data
     SUBDIR += rubygem-mime-types1
-    SUBDIR += rubygem-mime-types29
     SUBDIR += rubygem-mimemagic
     SUBDIR += rubygem-rabbit
     SUBDIR += rubygem-vpim
@@ -459,17 +465,14 @@
     SUBDIR += spamcalc
     SUBDIR += sshbuddy
     SUBDIR += sssnips
-    SUBDIR += survex
     SUBDIR += susv2
     SUBDIR += susv3
     SUBDIR += susv4
     SUBDIR += sword
     SUBDIR += table.el
     SUBDIR += talkfilters
-    SUBDIR += tcb
     SUBDIR += tdfiglet
     SUBDIR += team
-    SUBDIR += telbook
     SUBDIR += tellico
     SUBDIR += tempcontrol
     SUBDIR += termatrix
@@ -501,9 +504,10 @@
     SUBDIR += usbids
     SUBDIR += usbrh-libusb
     SUBDIR += utftools
+    SUBDIR += utouch-kmod
     SUBDIR += valentina
-    SUBDIR += valspeak
     SUBDIR += vdmfec
+    SUBDIR += veles
     SUBDIR += vera
     SUBDIR += vifm
     SUBDIR += visp
@@ -519,7 +523,6 @@
     SUBDIR += wmweather+
     SUBDIR += wmwork
     SUBDIR += wotsap
-    SUBDIR += xd
     SUBDIR += xdelta
     SUBDIR += xdelta3
     SUBDIR += xdg-menu
@@ -535,7 +538,5 @@
     SUBDIR += yaunc
     SUBDIR += ytree
     SUBDIR += zoneinfo
-    SUBDIR += zygrib
-    SUBDIR += zygrib-maps
 
 .include <bsd.port.subdir.mk>

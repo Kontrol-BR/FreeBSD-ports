@@ -1,7 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	bareos
-PORTVERSION=	17.2.5
+PORTVERSION=	18.2.6
 CATEGORIES=	sysutils
 MASTER_SITES=	http://doc.bareos.org/master/
 PKGNAMESUFFIX=	-docs
@@ -9,6 +9,8 @@ DISTFILES=	${PORTNAME}-manual-main-reference.pdf
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Bareos document set (PDF)
+
+BROKEN=		unfetchable
 
 NO_BUILD=	yes
 

@@ -3,13 +3,15 @@
 
 PORTNAME=	mma
 PORTVERSION=	16.06
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mellowood.ca/${PORTNAME}/
 DISTFILES=	${PORTNAME}-bin-${PORTVERSION}.tar.gz
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Musical MIDI Accompaniment generator
+
+BROKEN=		unfetchable
 
 LICENSE=	GPLv2
 

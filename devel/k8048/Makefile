@@ -9,15 +9,15 @@ MASTER_SITES=	http://dev.kewl.org/k8048/
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Programs Microchip PICs using Velleman K8048 board
 
+BROKEN=		unfetchable
+
 LICENSE=	BSD3CLAUSE
 
-BROKEN_aarch64=		invokes x86 assembler
 BROKEN_armv6=		invokes x86 assembler
 BROKEN_armv7=		invokes x86 assembler
 BROKEN_mips=		invokes x86 assembler
 BROKEN_mips64=		invokes x86 assembler
 BROKEN_sparc64=		invokes x86 assembler
-BROKEN_powerpc64=	invokes x86 assembler
 
 USES=		gmake
 

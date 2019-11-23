@@ -2,6 +2,7 @@
 
 PORTNAME=	libpwquality
 PORTVERSION=	1.4.0
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTNAME}-${PORTVERSION}/
 
@@ -10,7 +11,7 @@ COMMENT=	Library for generating random passwords and quality checking
 
 LIB_DEPENDS=	libcrack.so:security/cracklib
 
-USES=		gettext gmake localbase libtool pathfix tar:bz2
+USES=		gettext gmake gnome libtool localbase pathfix tar:bz2
 USE_GNOME=	intltool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

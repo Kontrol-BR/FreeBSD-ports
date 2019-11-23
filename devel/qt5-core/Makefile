@@ -36,6 +36,14 @@ QT_CONFIG=	glib icu
 MORE_WRKSRCS=	src/tools/bootstrap src/tools/qfloat16-tables src/corelib src/tools/qlalr
 
 .include <bsd.port.pre.mk>
+# FreeBSD base gained /etc/os-release in r354922, which
+# corresponds to __FreeBSD_version 1300060
+.if ${OSVERSION} < 1300060
+RUN_DEPENDS+=	etc_os-release>0:sysutils/etc_os-release
+post-patch:
+	${REINPLACE_CMD}  -e '/readEtcFile/s|/etc/os-release|${LOCALBASE}/etc/os-release|g' \
+		${WRKSRC}/src/corelib/global/qglobal.cpp
+.endif
 
 post-configure:
 .for d in ${MORE_WRKSRCS}

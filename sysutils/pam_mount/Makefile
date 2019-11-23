@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 
 LIB_DEPENDS=	libHX.so:lang/libhx
 
-USES=		pkgconfig libtool perl5 ssl tar:xz
+USES=		gnome libtool perl5 pkgconfig ssl tar:xz
 USE_GNOME=	libxml2
 
 INSTALL_TARGET=	install-strip
@@ -26,6 +26,13 @@ CONFIGURE_ENV+=	libcrypto_LIBS="-L/usr/lib -lcrypto" \
 CONFIGURE_ARGS+=--localstatedir=/var \
 		--without-cryptsetup \
 		--with-ssbindir=${PREFIX}/sbin
+
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+BROKEN_FreeBSD_12=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'struct evp_cipher_ctx_st')
+BROKEN_FreeBSD_13=	variable has incomplete type 'EVP_CIPHER_CTX' (aka 'struct evp_cipher_ctx_st')
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/src/pam_mount.c
@@ -38,4 +45,4 @@ post-install:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/xml/pam_mount/dtd
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/xml/pam_mount/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

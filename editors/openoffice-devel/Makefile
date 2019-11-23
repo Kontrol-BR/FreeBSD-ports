@@ -2,11 +2,11 @@
 # $FreeBSD$
 
 PORTNAME=	apache-openoffice
-PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${SVNREVISION}
-#PORTREVISION=	1
+PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}
+PORTREVISION=	0
 PORTEPOCH=	4
 CATEGORIES=	editors java
-MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-r${SVNREVISION}/source/ \
+MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-${TIMESTAMP}/source/ \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unoreg \
 		LOCAL/truckman/openoffice:snap,extsrc
 .if defined(LANG_PKGNAME)
@@ -50,6 +50,7 @@ LICENSE_PERMS_TWAIN=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64
+BROKEN_powerpc64=	fails to compile: aoo-4.2.0/main/solver/420/unxfbsdppc64.pro/inc/stl/vector:31:11: fatal error: boost/tr1/tr1/vector: No such file or directory
 
 BUILD_DEPENDS=								\
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip		\
@@ -64,7 +65,7 @@ BUILD_DEPENDS=								\
 		gpatch:devel/patch					\
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends	\
 		${LOCALBASE}/bin/vigra-config:graphics/vigra		\
-		${JAVALIBDIR}/commons-lang3.jar:java/jakarta-commons-lang3 \
+		${JAVALIBDIR}/commons-lang3.jar:java/apache-commons-lang3 \
 		${JAVALIBDIR}/junit.jar:java/junit			\
 		${JAVALIBDIR}/bsh.jar:lang/bsh				\
 		bash:shells/bash					\
@@ -92,7 +93,7 @@ LIB_DEPENDS=								\
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=								\
 		${LOCALBASE}/share/icons/hicolor/index.theme:misc/hicolor-icon-theme \
-		${JAVALIBDIR}/commons-lang3.jar:java/jakarta-commons-lang3 \
+		${JAVALIBDIR}/commons-lang3.jar:java/apache-commons-lang3 \
 		${JAVALIBDIR}/bsh.jar:lang/bsh				\
 		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
 		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
@@ -100,7 +101,7 @@ RUN_DEPENDS=								\
 
 USES=		autoreconf bison compiler:c++11-lib cpe desktop-file-utils \
 		gettext-runtime gl gmake gnome iconv jpeg perl5 pkgconfig \
-		python:2.7 shared-mime-info ssl tar:${TARTYPE}
+		python:2.7 shared-mime-info ssl tar:${TARTYPE} xorg
 USE_GL=		gl glu
 USE_GNOME=	gtk20 libxslt libidl glib20
 USE_JAVA=	yes
@@ -118,8 +119,9 @@ AOOVERSION1=	4
 AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
-AOOTAG=		AOO420m1\(Build:9820\)
-SVNREVISION=	1853744
+AOOTAG=		AOO420m1\(Build:9821\)
+GITREVISION=	1742cb93dc
+TIMESTAMP=	1573127763
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
@@ -127,12 +129,12 @@ AOOVERSION=	${AOOVERSION1}.${AOOVERSION2}.${AOOVERSION3}
 AOOXXX=		${AOOVERSION1}${AOOVERSION2}${AOOVERSION3}
 .if defined(AOORC)
 AOOSUFFIX=	${AOOVERSION}-${AOORC}
-AOOSRC=		apache-openoffice-${AOOVERSION}-r${SVNREVISION}-src${EXTRACT_SUFX}
+AOOSRC=		apache-openoffice-${AOOVERSION}-${GITREVISION}-src${EXTRACT_SUFX}
 AOODISTTAG=
 TARTYPE=	bzip2
 .else
 AOOSUFFIX=	${PORTVERSION}
-AOOSRC=		apache-openoffice-r${SVNREVISION}-src${EXTRACT_SUFX}
+AOOSRC=		apache-openoffice-${TIMESTAMP}-${GITREVISION}-src${EXTRACT_SUFX}
 AOODISTTAG=	:snap
 TARTYPE=	xz
 .endif
@@ -159,7 +161,7 @@ DEBUG_DESC=		Compile with -O0, sets WITH_DEBUG
 GNOME_DESC=		GConf + screensaver presentation control via DBUS
 GNOMEVFS_DESC=		Use GNOME Virtual File System instead of gio
 MMEDIA_DESC=		Multimedia backend for impress
-MYSQL_DESCR=		Build MySQL Connector extension
+MYSQL_DESC=		Build MySQL Connector extension
 PDFIMPORT_DESC=		Build and install PDF import extension
 REPORT_BUILDER_DESC=	Build and install Report builder extension (Broken)
 SDK_DESC=		Build and install software development kit
@@ -231,8 +233,8 @@ CONFIGURE_ARGS+=	--enable-symbols
 .endif
 
 .if ${PORT_OPTIONS:MREPORT_BUILDER} || ${PORT_OPTIONS:MWIKI_PUBLISHER}
-BUILD_DEPENDS+=	${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging
-RUN_DEPENDS+=	${JAVALIBDIR}/commons-logging.jar:java/jakarta-commons-logging
+BUILD_DEPENDS+=	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging
+RUN_DEPENDS+=	${JAVALIBDIR}/commons-logging.jar:java/apache-commons-logging
 CONFIGURE_ARGS+=	--with-commons-logging-jar=${JAVALIBDIR}/commons-logging.jar
 .else
 CONFIGURE_ARGS+=	--without-commons-logging

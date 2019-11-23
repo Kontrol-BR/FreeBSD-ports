@@ -27,8 +27,10 @@
     SUBDIR += calcurse
     SUBDIR += calibre
     SUBDIR += cartotheque
+    SUBDIR += cfiles
     SUBDIR += charmtimetracker
     SUBDIR += chart
+    SUBDIR += cherrytree
     SUBDIR += clipit
     SUBDIR += conduit
     SUBDIR += conkyemail
@@ -39,7 +41,7 @@
     SUBDIR += dailystrips
     SUBDIR += deforaos-todo
     SUBDIR += devd-notifier
-    SUBDIR += dlume
+    SUBDIR += dfshow
     SUBDIR += docear
     SUBDIR += dosage
     SUBDIR += easystroke
@@ -48,7 +50,9 @@
     SUBDIR += fasd
     SUBDIR += fbreader
     SUBDIR += fet
+    SUBDIR += fff
     SUBDIR += flameshot
+    SUBDIR += foliate
     SUBDIR += freemind
     SUBDIR += freeplane
     SUBDIR += ganttproject
@@ -57,7 +61,6 @@
     SUBDIR += gcal
     SUBDIR += gcalcli
     SUBDIR += genius
-    SUBDIR += gkrellm-reminder2
     SUBDIR += glabels
     SUBDIR += gnome-calendar
     SUBDIR += gnome-characters
@@ -94,6 +97,7 @@
     SUBDIR += gnote
     SUBDIR += gnustep-wrapper
     SUBDIR += go-for-it
+    SUBDIR += goesimage
     SUBDIR += gourmet
     SUBDIR += gpicker
     SUBDIR += grantlee-editor
@@ -116,7 +120,6 @@
     SUBDIR += horde-nag
     SUBDIR += hot-babe
     SUBDIR += howm
-    SUBDIR += hs-fdo-notify
     SUBDIR += ical
     SUBDIR += jjclient
     SUBDIR += jlj
@@ -142,7 +145,6 @@
     SUBDIR += libopensync-plugin-vformat-devel
     SUBDIR += ljcharm
     SUBDIR += ljclive
-    SUBDIR += ljit
     SUBDIR += logjam
     SUBDIR += lookbook
     SUBDIR += lumina-archiver
@@ -150,19 +152,18 @@
     SUBDIR += lumina-fileinfo
     SUBDIR += lumina-fm
     SUBDIR += lumina-mediaplayer
-    SUBDIR += lumina-notify
     SUBDIR += lumina-pdf
+    SUBDIR += lumina-photo
     SUBDIR += lumina-screenshot
     SUBDIR += lumina-textedit
-    SUBDIR += lumina-xdg-entry
     SUBDIR += lxqt-notificationd
     SUBDIR += mat
     SUBDIR += mate-notification-daemon
     SUBDIR += mate-utils
     SUBDIR += mbox-importer
-    SUBDIR += mdh
     SUBDIR += mencal
     SUBDIR += menumaker
+    SUBDIR += meteo
     SUBDIR += moregroupware
     SUBDIR += mozo
     SUBDIR += myitcrm
@@ -183,6 +184,7 @@
     SUBDIR += p5-Goo
     SUBDIR += pal
     SUBDIR += parcellite
+    SUBDIR += pet
     SUBDIR += phpicalendar
     SUBDIR += pim-data-exporter
     SUBDIR += pim-sieve-editor
@@ -199,6 +201,7 @@
     SUBDIR += py-bugwarrior
     SUBDIR += py-khal
     SUBDIR += py-khard
+    SUBDIR += py-paperless
     SUBDIR += py-py3status
     SUBDIR += py-pystash
     SUBDIR += py-send2trash
@@ -226,6 +229,7 @@
     SUBDIR += sugarcrm
     SUBDIR += synapse
     SUBDIR += syncthing-gtk
+    SUBDIR += syncthingtray
     SUBDIR += sysctlview
     SUBDIR += systempreferences
     SUBDIR += taskcoach
@@ -234,6 +238,7 @@
     SUBDIR += taskwarrior
     SUBDIR += teapot
     SUBDIR += tel
+    SUBDIR += terminal-image-viewer
     SUBDIR += thinkingrock
     SUBDIR += timewarrior
     SUBDIR += tine20
@@ -264,7 +269,6 @@
     SUBDIR += xfce4-volumed
     SUBDIR += xfce4-volumed-pulse
     SUBDIR += xfce4-xkb-plugin
-    SUBDIR += xmaddressbook
     SUBDIR += xmdiary
     SUBDIR += xneur
     SUBDIR += xpad

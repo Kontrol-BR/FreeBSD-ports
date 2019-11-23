@@ -2,11 +2,11 @@
 
 PORTNAME=	shishi
 PORTVERSION=	1.0.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free implementation of the Kerberos 5 network security system
 
 LIB_DEPENDS=	libidn.so:dns/libidn \

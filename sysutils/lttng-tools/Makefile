@@ -3,7 +3,7 @@
 
 PORTNAME=	lttng-tools
 PORTVERSION=	2.9.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://lttng.org/files/${PORTNAME}/
 
@@ -18,8 +18,6 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/gpl-2.0.txt
 LIB_DEPENDS=	libpopt.so:devel/popt \
 	    liburcu.so:sysutils/liburcu \
 	    liblttng-ust-ctl.so:sysutils/lttng-ust
-
-BROKEN_powerpc64=	fails to compile: cc: Internal error: Segmentation fault (program ld)
 
 USES=		autoreconf bison compiler:c11 gnome libtool localbase pathfix \
 		pkgconfig shebangfix tar:bzip2

@@ -3,7 +3,7 @@
 
 PORTNAME=	openshot
 PORTVERSION=	1.4.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia
 MASTER_SITES=	http://launchpad.net/openshot/${PORTVERSION:C/\.[0-9]+$//}/${PORTVERSION}/+download/
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
 		scrollkeeper-install:textproc/rarian \
 		sox:audio/sox
 
-USES=		desktop-file-utils gettext python:2.7 shared-mime-info
+USES=		desktop-file-utils gettext gnome python:2.7 shared-mime-info
 USE_GNOME=	pygtk2
 USE_PYTHON=	distutils
 INSTALLS_OMF=	yes

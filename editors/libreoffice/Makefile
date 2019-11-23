@@ -1,4 +1,5 @@
 # $FreeBSD$
+PORTREVISION=	1
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -17,16 +18,16 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		${LOCALBASE}/include/sqlext.h:databases/unixODBC \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
-		${LOCALBASE}/bin/gperf:devel/gperf \
+		gperf31>=3.1:devel/gperf31 \
 		mdds>=1.4:devel/mdds \
-		gpatch:devel/patch \
 		ucpp:devel/ucpp \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
 		vigra-config:graphics/vigra \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		bash:shells/bash \
 		gsed:textproc/gsed \
-		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
+		flex>=0.26:textproc/flex
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
 		libicutu.so:devel/icu \
@@ -92,7 +93,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:x11-fonts/linuxlibertine-g
 
 DISTFILES+=	4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2:src \
-		49a64f3bcf20a7909ba2751349231d6652ded9cd2840e961b5164d09de3ffa63-opens___.ttf:ext
+		884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf:ext
 
 NOT_FOR_ARCHS=		aarch64 armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
@@ -111,19 +112,22 @@ USE_GL=		gl glew glu
 USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xext xinerama xrandr xrender
-USES=		autoreconf:build bison compiler:c++14-lang cpe gmake jpeg \
-		mysql:client \
-		perl5 pkgconfig python shebangfix shared-mime-info ssl tar:xz
+USES=		autoreconf:build bison compiler:c++14-lang cpe gl gmake gnome \
+		jpeg mysql:client \
+		perl5 pkgconfig python shebangfix shared-mime-info ssl tar:xz \
+		xorg
 
-OPTIONS_DEFINE=	CUPS DOCS GNOME GTK2 GTK3 JAVA MMEDIA PGSQL SDK SYSTRAY \
-		TEST WEBDAV
+OPTIONS_DEFINE=	CUPS DOCS GNOME GTK2 GTK3 JAVA KDE5 MMEDIA PGSQL QT5 SDK \
+		SYSTRAY TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS GTK2 MMEDIA
 
 GTK2_DESC=	GTK+ 2 GUI toolkit support
 GTK3_DESC=	GTK+ 3 GUI toolkit support (experimental)
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
+KDE5_DESC=	KF5/Qt5 GUI toolkit support (require QT5)
 MMEDIA_DESC=	Enable multimedia backend for Impress
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
+QT5_DESC=	Qt5 GUI toolkit support
 SDK_DESC=	Build with SDK
 SYSTRAY_DESC=	Enable systemtray quickstarter
 TEST_DESC=	Run all regression tests
@@ -156,8 +160,8 @@ GTK3_VARS=	${GTK_VARS}
 JAVA_BUILD_DEPENDS=	ant:devel/apache-ant \
 			${JAVAJARDIR}/commons-codec.jar:java/jakarta-commons-codec \
 			${JAVAJARDIR}/commons-httpclient.jar:java/jakarta-commons-httpclient \
-			${JAVAJARDIR}/commons-lang.jar:java/jakarta-commons-lang \
-			${JAVAJARDIR}/commons-logging.jar:java/jakarta-commons-logging \
+			${JAVAJARDIR}/commons-lang.jar:java/apache-commons-lang \
+			${JAVAJARDIR}/commons-logging.jar:java/apache-commons-logging \
 			${JAVAJARDIR}/junit.jar:java/junit \
 			${JAVAJARDIR}/bsh.jar:lang/bsh
 JAVA_CATEGORIES=	java
@@ -193,12 +197,21 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 JAVA_USE=	JAVA=yes
 JAVA_VARS=	JAVA_BUILD=yes
 
+KDE5_CONFIGURE_ENABLE=	kde5
+KDE5_USE=	kde=config,coreaddons,i18n,kio,windowsystem
+KDE5_USES=	kde:5
+KDE5_IMPLIES=	QT5
+
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 MMEDIA_USE=	GSTREAMER1=yes
 
 PGSQL_CONFIGURE_ENABLE=	postgresql-sdbc
 PGSQL_CONFIGURE_WITH=	gssapi krb5
 PGSQL_USES=	pgsql
+
+QT5_CONFIGURE_ENABLE=	qt5
+QT5_USE=	qt=buildtools_build,core,gui,network,qmake_build,widgets,x11extras
+QT5_USES=	qt:5
 
 SDK_BUILD_DEPENDS=	doxygen:devel/doxygen
 SDK_CONFIGURE_ENABLE=	odk
@@ -241,7 +254,6 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-external-hyph-dir=${LOCALBASE}/share/hyphen \
 		--with-external-tar=${DISTDIR}/${DIST_SUBDIR} \
 		--with-external-thes-dir=${LOCALBASE}/share/mythes \
-		--with-gnu-patch=${LOCALBASE}/bin/gpatch \
 		--with-os-version=${OSVERSION} \
 		--with-parallelism=${MAKE_JOBS_NUMBER} \
 		--with-system-cppunit \
@@ -257,14 +269,16 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--without-myspell-dicts
 
 CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
+		FLEX=${LOCALBASE}/bin/flex \
 		GNUTAR="${TAR}" \
-		GPERF=${LOCALBASE}/bin/gperf \
+		GPERF=${LOCALBASE}/bin/gperf31 \
 		ICU_CFLAGS="`icu-config --cflags`" \
 		ICU_LIBS="`icu-config --ldflags`" \
 		OPENCOLLADA_CFLAGS="${COLLADA_CFLAGS}" \
 		OPENCOLLADA_LIBS="${COLLADA_LIBS}" \
 		PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
-		PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`"
+		PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`" \
+		ac_cv_path_SED=${LOCALBASE}/bin/gsed
 
 MAKE_ARGS+=	TMPDIR=${WRKDIR}
 MAKE_ENV+=	CXXFLAGS_WARN="${CXXFLAGS_WARN}"
@@ -311,6 +325,9 @@ post-install-SDK-on:
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s ${subdir}/libreoffice -not -type d >> ${TMPPLIST}
 .endfor
+
+post-install-GTK3-on:
+	@${ECHO_CMD} "share/gir-1.0/LOKDocView-0.1.gir" >> ${TMPPLIST}
 
 add-plist-gnome:
 .for subdir in gnome hicolor locolor

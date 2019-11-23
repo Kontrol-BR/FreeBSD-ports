@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	memcache
-PORTVERSION=	4.0.3
+PORTVERSION=	4.0.4
 CATEGORIES=	databases
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -28,5 +28,11 @@ USE_GITHUB=	yes
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/example.php ${STAGEDIR}${EXAMPLESDIR}/
+
+.include <bsd.port.options.mk>
+
+.if ${FLAVOR} == php74
+USES+=		compiler:c11
+.endif
 
 .include <bsd.port.mk>

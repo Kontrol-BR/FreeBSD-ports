@@ -1,6 +1,6 @@
---- content/renderer/render_thread_impl.cc.orig	2018-12-03 21:16:57.000000000 +0100
-+++ content/renderer/render_thread_impl.cc	2018-12-13 21:23:23.111245000 +0100
-@@ -192,12 +192,21 @@
+--- content/renderer/render_thread_impl.cc.orig	2019-10-21 19:06:33 UTC
++++ content/renderer/render_thread_impl.cc
+@@ -185,12 +185,21 @@
  #include "mojo/public/cpp/bindings/message_dumper.h"
  #endif
  
@@ -22,7 +22,7 @@
  using base::ThreadRestrictions;
  using blink::WebDocument;
  using blink::WebFrame;
-@@ -932,7 +941,7 @@
+@@ -901,7 +910,7 @@ void RenderThreadImpl::Init() {
    DCHECK(parsed_num_raster_threads) << string_value;
    DCHECK_GT(num_raster_threads, 0);
  
@@ -31,21 +31,16 @@
    categorized_worker_pool_->SetBackgroundingCallback(
        main_thread_scheduler_->DefaultTaskRunner(),
        base::BindOnce(
-@@ -973,7 +982,7 @@
-   GetConnector()->BindInterface(mojom::kBrowserServiceName,
-                                 mojo::MakeRequest(&storage_partition_service_));
+@@ -930,7 +939,7 @@ void RenderThreadImpl::Init() {
+   base::DiscardableMemoryAllocator::SetInstance(
+       discardable_shared_memory_manager_.get());
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_BSD)
-   render_message_filter()->SetThreadPriority(
-       ChildProcess::current()->io_thread_id(), base::ThreadPriority::DISPLAY);
- #endif
-@@ -1331,11 +1340,11 @@
-        gpu::kGpuFeatureStatusEnabled);
-   const bool enable_gpu_memory_buffers =
-       !is_gpu_compositing_disabled_ &&
--#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_WIN)
-+#if defined(OS_MACOSX) || defined(OS_LINUX) || defined(OS_WIN) || defined(OS_BSD)
+   if (base::FeatureList::IsEnabled(
+           blink::features::kBlinkCompositorUseDisplayThreadPriority)) {
+     render_message_filter()->SetThreadPriority(
+@@ -1309,7 +1318,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
        !cmd_line->HasSwitch(switches::kDisableGpuMemoryBufferVideoFrames);
  #else
        cmd_line->HasSwitch(switches::kEnableGpuMemoryBufferVideoFrames);

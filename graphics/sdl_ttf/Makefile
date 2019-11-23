@@ -5,7 +5,7 @@ PORTNAME=	sdl_ttf
 PORTVERSION=	2.0.11
 PORTREVISION=	7
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
+MASTER_SITES=	https://www.libsdl.org/projects/SDL_ttf/release/
 DISTNAME=	SDL_ttf-${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -15,7 +15,7 @@ LICENSE=	ZLIB
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
-USES=		gmake iconv libtool pathfix pkgconfig
+USES=		gmake iconv libtool pathfix pkgconfig sdl xorg
 USE_SDL=	sdl
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
@@ -26,7 +26,8 @@ USE_LDCONFIG=	yes
 OPTIONS_DEFINE=		OPENGL
 OPTIONS_DEFAULT=	OPENGL
 
-OPENGL_USE=	GL=yes
+OPENGL_USES=	gl
+OPENGL_USE=	GL=glu
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/.libs/glfont ${STAGEDIR}${PREFIX}/bin

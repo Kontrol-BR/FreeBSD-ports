@@ -3,7 +3,7 @@
 
 PORTNAME=	gtranslator
 PORTVERSION=	2.91.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 
@@ -23,7 +23,7 @@ RUN_DEPENDS=	iso-codes>=0:misc/iso-codes \
 
 USE_GNOME=	intlhack gnomeprefix gtk30 libgda5 gtksourceview3 libxml2 \
 		introspection:build
-USES=		desktop-file-utils gettext gmake libtool pathfix \
+USES=		desktop-file-utils gettext gmake gnome libtool pathfix \
 		pkgconfig python tar:xz
 USE_PYTHON=	py3kplist
 GNU_CONFIGURE=	yes

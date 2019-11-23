@@ -3,6 +3,7 @@
 
 PORTNAME=	mcabber
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/
 
@@ -17,7 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libloudmouth-1.so:net-im/loudmouth \
 		libcharset.so:converters/libiconv
 
-USES=		gettext iconv:wchar_t libtool localbase ncurses pathfix pkgconfig tar:bzip2
+USES=		gettext gnome iconv:wchar_t libtool localbase ncurses pathfix \
+		pkgconfig tar:bzip2
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-hgcset

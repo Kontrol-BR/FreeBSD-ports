@@ -2,13 +2,17 @@
 # $FreeBSD$
 
 PORTNAME=	texinfo
-PORTVERSION=	6.6
+PORTVERSION=	6.7
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	print
 MASTER_SITES=	GNU \
-		LOCAL/sunpoet/${DIST_SUBDIR}:DEFAULT,local
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} htmlxref.cnf:local texi2dvi:local texinfo.tex:local
-DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
+		LOCAL/sunpoet/texinfo:DEFAULT,local
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		htmlxref.cnf-${HTMLXREF_CNF_RELDATE}:local \
+		texi2dvi-${TEXI2DVI_RELDATE}:local \
+		texinfo.tex-${TEXINFO_TEX_RELDATE}:local
+DIST_SUBDIR=	texinfo
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -39,6 +43,10 @@ USE_TEX=	yes
 
 INFO=		info-stnd texinfo
 
+HTMLXREF_CNF_RELDATE=	20190611
+TEXI2DVI_RELDATE=	20191018
+TEXINFO_TEX_RELDATE=	20190924
+
 CPE_VENDOR=	gnu
 CPE_VERSION=	${PORTVERSION:R}
 
@@ -46,12 +54,12 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
 post-patch:
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/texinfo.tex ${WRKSRC}/doc/
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/htmlxref.cnf ${WRKSRC}/util/
-	@${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/texi2dvi ${WRKSRC}/util/
-	@${REINPLACE_CMD} -e '/rm -f $$(DESTDIR)/ s|$$| $$(DESTDIR)$$(xsdir)/XSParagraph.*|' \
-		${WRKSRC}/tp/Texinfo/XS/Makefile.in
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/texinfo.tex-${TEXINFO_TEX_RELDATE} ${WRKSRC}/doc/texinfo.tex
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/htmlxref.cnf-${HTMLXREF_CNF_RELDATE} ${WRKSRC}/util/htmlxref.cnf
+	@${INSTALL_SCRIPT} ${DISTDIR}/${DIST_SUBDIR}/texi2dvi-${TEXI2DVI_RELDATE} ${WRKSRC}/util/texi2dvi
+	@${REINPLACE_CMD} -e '/rm -f $$(DESTDIR)/ s|$$| $$(DESTDIR)$$(xsdir)/XSParagraph.*|' ${WRKSRC}/tp/Texinfo/XS/Makefile.in
 	@${REINPLACE_CMD} -e 's|free (.*)|Safe&|' ${WRKSRC}/tp/Texinfo/XS/misc.c
+	@${REINPLACE_CMD} -e 's/tinfo/tinfow/g' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/util/htmlxref.cnf ${STAGEDIR}${DATADIR}

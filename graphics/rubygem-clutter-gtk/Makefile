@@ -1,14 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	clutter-gtk
-PORTVERSION=	3.3.5
+PORTVERSION=	3.4.1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby/ClutterGTK is a Ruby binding of Clutter-GTK
 
 LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
 LIB_DEPENDS=	libclutter-gtk-1.0.so:graphics/clutter-gtk3

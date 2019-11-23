@@ -3,7 +3,7 @@
 
 PORTNAME=	xrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.9
+DISTVERSION=	0.9.11
 PORTEPOCH=	1
 CATEGORIES=	net
 DIST_SUBDIR?=	${PORTNAME}
@@ -19,9 +19,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${LOCALBASE}/bin/nasm:devel/nasm
 RUN_DEPENDS=	xterm:x11/xterm \
 		${LOCALBASE}/lib/xorg/modules/libxorgxrdp.so:x11-drivers/xorgxrdp \
-		${LOCALBASE}/lib/pulse-12.2/modules/module-xrdp-sink.so:audio/pulseaudio-module-xrdp
+		${LOCALBASE}/lib/pulse-13.0/modules/module-xrdp-sink.so:audio/pulseaudio-module-xrdp
 
-USES=		autoreconf:build jpeg localbase libtool pkgconfig ssl
+USES=		autoreconf:build jpeg localbase libtool pkgconfig ssl xorg
 USE_XORG=	ice pixman sm x11 xfixes xrandr
 USE_LDCONFIG=	${PREFIX}/lib/xrdp
 USE_GITHUB=	yes
@@ -29,7 +29,7 @@ USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 GH_ACCOUNT=	neutrinolabs
 GH_PROJECT=	xrdp librfxcodec:librfxcodec libpainter:libpainter
-GH_TAGNAME=	v0.1.4:librfxcodec v0.1.1:libpainter
+GH_TAGNAME=	v0.1.5:librfxcodec v0.1.1:libpainter
 
 CONFIGURE_ARGS=	--localstatedir=/var --enable-strict-locations \
 		--with-pkgconfigdir=${LOCALBASE}/libdata/pkgconfig \
@@ -41,7 +41,7 @@ SUB_FILES=	pkg-deinstall pkg-install pkg-message
 SUB_LIST=	OPENSSLBASE=${OPENSSLBASE}
 
 OPTIONS_DEFINE=	DEBUG FUSE IPV6
-OPTIONS_DEFAULT=	FDKAAC MP3LAME OPUS
+OPTIONS_DEFAULT=	FDKAAC OPUS
 OPTIONS_GROUP=	AUDIO_CODEC
 OPTIONS_GROUP_AUDIO_CODEC=	FDKAAC MP3LAME OPUS
 FDKAAC_DESC=	Enable Fraunhofer FDK AAC for audio redirection
@@ -59,6 +59,16 @@ MP3LAME_CONFIGURE_ENABLE=	mp3lame
 MP3LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 OPUS_CONFIGURE_ENABLE=	opus
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
+
+.include <bsd.port.pre.mk>
+
+.if ${SSL_DEFAULT} == base
+# As base OpenSSL doesn't install a .pc file, some flags such as -lcrypto
+# cannot be obtained automatically via pkgconfig. When compiled with base
+# OpenSSL, it needs to be specified explicitly.
+CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
+.endif
 
 post-extract:
 	# librfxcodec is provided as git submodule
@@ -79,4 +89,4 @@ post-stage:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/xrdp/$f ${STAGEDIR}${PREFIX}/etc/xrdp/$f.sample
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

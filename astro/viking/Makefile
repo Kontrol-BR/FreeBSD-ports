@@ -3,6 +3,7 @@
 
 PORTNAME=	viking
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -24,7 +25,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		liboauth.so:net/liboauth
 RUN_DEPENDS=	gpsbabel:astro/gpsbabel
 
-USES=		compiler:c++11-lib gmake iconv desktop-file-utils perl5 pkgconfig tar:bzip2
+USES=		compiler:c++11-lib gmake gnome iconv desktop-file-utils perl5 \
+		pkgconfig tar:bzip2 xorg
 USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext \
 		xfixes xi xinerama xrandr xrender
 USE_GNOME=	cairo gnomedocutils gtk20 intlhack
@@ -40,9 +42,10 @@ PORTDOCS=	AUTHORS ChangeLog NEWS README
 OPTIONS_DEFINE=		DOCS GEOCACHES NLS GEOTAG GPSD MAPNIK MBTILES
 OPTIONS_DEFAULT=	GEOTAG GPSD JOSM MAPNIK MBTILES
 
-OPTIONS_MULTI=		OpenStreetMap-Editor
-OPTIONS_MULTI_OpenStreetMap-Editor=	JOSM MERKAATOR
+OPTIONS_MULTI=		EDITOR
+OPTIONS_MULTI_EDITOR=	JOSM MERKAATOR
 
+EDITOR_DESC=	OpenStreetMap editor
 GEOCACHES_DESC=	GeoCaches Acquire support
 GEOTAG_DESC=	Geotag support
 GPSD_DESC=	Realtime GPS tracking

@@ -11,7 +11,7 @@ COMMENT=	Game engine for Return to Castle Wolfenstein
 
 LICENSE=	GPLv3
 
-NOT_FOR_ARCHS=		aarch64 armv6 armv7 powerpc64
+NOT_FOR_ARCHS=		aarch64 armv6 armv7
 NOT_FOR_ARCHS_REASON=	fails to configure: Architecture not supported
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libopus.so:audio/opus \
 		libopusfile.so:audio/opusfile
 
-USES=		gl gmake jpeg openal pkgconfig sdl
+USES=		gl gmake jpeg openal pkgconfig sdl xorg
 USE_GITHUB=	yes
 USE_GL=		gl
 USE_SDL=	sdl2

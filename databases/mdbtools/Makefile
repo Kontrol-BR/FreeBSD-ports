@@ -3,7 +3,7 @@
 
 PORTNAME=	mdbtools
 PORTVERSION=	0.7.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	databases
 
 MAINTAINER=	rhurlin@gwdg.de
@@ -19,7 +19,8 @@ LIB_DEPENDS=	libodbc.so:databases/unixODBC
 OPTIONS_DEFINE=	GNOME DOCS
 OPTIONS_SUB=	yes
 
-USES=		autoreconf bison gettext-runtime iconv libtool pathfix pkgconfig readline
+USES=		autoreconf bison gettext-runtime gnome iconv libtool pathfix \
+		pkgconfig readline
 USE_GITHUB=	yes
 GH_ACCOUNT=	brianb
 USE_LDCONFIG=	yes

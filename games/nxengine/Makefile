@@ -1,15 +1,19 @@
 # $FreeBSD$
 
 PORTNAME=	nxengine
-PORTVERSION=	2.6.3
-DISTVERSIONPREFIX=	v
+PORTVERSION=	2.6.4
 PORTREVISION=	2
+DISTVERSIONPREFIX=	v
 CATEGORIES=	games
 MASTER_SITES+=	https://www.cavestory.org/downloads/:data \
 		SF/lifanov-ports-distfiles/games/${PORTNAME}/:icons
 DISTFILES+=	${PORTNAME}.png:icons \
 		cavestoryen.zip:data
 EXTRACT_ONLY=	${DISTFILES:[2..3]:S/:data//}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	d38fcaf80ac5c4b1a2da51b5d1a605ed408a192f.patch:-p1 \
+		f6bbeb2555e7c10dfdc04be57f20fedfc9f401af.patch:-p1
 
 MAINTAINER=	lifanov@FreeBSD.org
 COMMENT=	Engine-rewrite of the classic platformer Cave Story
@@ -23,13 +27,14 @@ LICENSE_PERMS_FREEWARE=	dist-mirror pkg-mirror auto-accept
 LICENSE_DISTFILES_GPLv3=	${DISTFILES:[3]}
 LICENSE_DISTFILES_FREEWARE=	${DISTFILES:[2]:S/:data//}
 
+BROKEN=		checksum and size mismatch
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake compiler:c++11-lang sdl
 
 USE_SDL=	mixer2 sdl2
 SUB_FILES=	${PORTNAME}
-CXXFLAGS+=	-Wno-error-narrowing
 
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}-evo

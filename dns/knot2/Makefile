@@ -2,9 +2,9 @@
 # $FreeBSD$
 
 PORTNAME=	knot
-DISTVERSION=	2.7.6
+DISTVERSION=	2.8.3
 PORTREVISION=	1
-CATEGORIES=	dns ipv6
+CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-dns/ \
 		https://dns.company/downloads/knot-dns/
 PKGNAMESUFFIX?=	2
@@ -15,7 +15,7 @@ COMMENT?=	High performance authoritative-only DNS server
 LICENSE=	GPLv3
 
 NOT_FOR_ARCHS=	i386
-NOT_FOR_ARCHS_REASON_i386=Uses 64 bit atomics that clang cannot generate on i386 on FreeBSD >= 11.2
+NOT_FOR_ARCHS_REASON_i386=Uses 64 bit atomics that clang cannot generate on i386
 
 LIB_DEPENDS=	libgnutls.so:security/gnutls \
 		liblmdb.so:databases/lmdb \
@@ -32,17 +32,17 @@ CONFIGURE_ARGS=	--enable-recvmmsg=no \
 .if !defined(UTILS_ONLY) && !defined(LIB_ONLY)
 CONFIGURE_ARGS+=	--with-rundir=/var/run/knot \
 			--with-storage=/var/db/knot
-USE_RC_SUBR=   ${PORTNAME}
-SUB_FILES=     pkg-message
+USE_RC_SUBR=	${PORTNAME}
+SUB_FILES=	pkg-message
 .endif
 
 .if defined(UTILS_ONLY) || defined(LIB_ONLY)
-CONFIGURE_ARGS+=       --disable-daemon \
-                       --disable-modules
+CONFIGURE_ARGS+=	--disable-daemon \
+			--disable-modules
 .endif
 
 .if defined(LIB_ONLY)
-CONFIGURE_ARGS+=       --disable-utilities
+CONFIGURE_ARGS+=	--disable-utilities
 .endif
 
 USE_LDCONFIG=	yes

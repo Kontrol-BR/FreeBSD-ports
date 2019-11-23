@@ -1,7 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=	prometheus-collectd-exporter
-PORTVERSION=	0.3.1
+PORTVERSION=	0.4.0
+DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	dsp@php.net
@@ -16,5 +18,7 @@ GH_ACCOUNT=	prometheus
 GH_PROJECT=	collectd_exporter
 
 PLIST_FILES=	bin/prometheus-collectd-exporter
+
+USE_RC_SUBR=	collectd_exporter
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	0.99.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ui/${PORTVERSION}
 DISTNAME=	${PORTNAME}-ui-${PORTVERSION}
@@ -15,8 +15,8 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libxine.so:multimedia/libxine
 
-USES=		desktop-file-utils gmake iconv jpeg pkgconfig readline \
-		shared-mime-info tar:xz
+USES=		desktop-file-utils gmake gnome iconv jpeg pkgconfig readline \
+		shared-mime-info tar:xz xorg
 USE_XORG=	x11 xext xinerama xscrnsaver xt xtst xv xxf86vm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-vdr-keys \

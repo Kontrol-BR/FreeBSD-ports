@@ -1,12 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	django-extensions
-PORTVERSION=	2.1.6
+PORTVERSION=	2.1.7
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj21-
 
-MAINTAINER=	grembo@FreeBSD.org
+MAINTAINER=	ports@caomhin.org
 COMMENT=	Global custom management extensions for the Django Framework
 
 LICENSE=	MIT

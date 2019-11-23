@@ -15,6 +15,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
+		libssh.so:security/libssh \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libcurl.so:ftp/curl \
 		libjson-c.so:devel/json-c

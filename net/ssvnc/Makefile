@@ -3,7 +3,7 @@
 
 PORTNAME=	ssvnc
 PORTVERSION=	1.0.29
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net security
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.src.tar.gz
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	stunnel:security/stunnel \
 		xterm:x11/xterm
 
-USES=		gmake imake:env jpeg perl5 ssl tk:wrapper
+USES=		gmake imake:env jpeg perl5 ssl tk:wrapper xorg
 USE_PERL5=	run
 USE_XORG=	ice sm x11 xaw xext xi xmu xpm xt
 
@@ -34,6 +34,8 @@ ULTRAFTP_DESC=		UltraVNC File Transfer support (Java required)
 ULTRAFTP_USE=		JAVA=yes
 ULTRAFTP_MAKE_ARGS_OFF=	JSRC=""
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|netstat -ant|netstat -an|' \
 		${WRKSRC}/scripts/util/ss_vncviewer
@@ -44,4 +46,4 @@ do-configure:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_ARGS} config)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	Unicode-EastAsianWidth
-PORTVERSION=	1.40
+PORTVERSION=	12.0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,5 +14,7 @@ LICENSE=	CC0-1.0
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

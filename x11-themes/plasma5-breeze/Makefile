@@ -2,7 +2,6 @@
 
 PORTNAME=	breeze
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-themes kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfftw3_threads.so:math/fftw3
 
 USES=		cmake compiler:c++11-lib cpe \
-		gettext kde:5 pkgconfig qt:5 tar:xz
+		gettext kde:5 pkgconfig qt:5 tar:xz xorg
 USE_KDE=	auth breeze-icons codecs config configwidgets coreaddons \
 		decoration ecm frameworkintegration guiaddons i18n kcmutils \
 		plasma-framework service wayland widgetsaddons windowsystem

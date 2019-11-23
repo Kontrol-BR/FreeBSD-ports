@@ -3,8 +3,7 @@
 
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION=	2
-CATEGORIES=	mail ipv6
+CATEGORIES=	mail
 MASTER_SITES=	EXIM:exim
 MASTER_SITE_SUBDIR=	/exim4/:exim \
 			/exim4/old/:exim
@@ -47,12 +46,13 @@ AUTH_SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 BDB_USES=	bdb
 DMARC_LIB_DEPENDS=	libopendmarc.so:mail/opendmarc
 EMBEDDED_PERL_USE=	perl5=run,build
+EXIMON_USES=	xorg
 EXIMON_USE=	xorg=x11,xaw,xt
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 ICONV_USES=	iconv:lib,build
 INTERNATIONAL_LIB_DEPENDS=	libidn.so:dns/libidn
 LMDB_LIB_DEPENDS=	liblmdb.so:databases/lmdb
-MYSQL_USE=	mysql=yes
+MYSQL_USES=	mysql
 OPENLDAP_USE=	openldap=yes
 PGSQL_USES=	pgsql
 REDIS_LIB_DEPENDS=	libhiredis.so:databases/hiredis
@@ -98,7 +98,7 @@ MASTER_SITES+=	http://marc.merlins.org/linux/exim/files/:sa_exim \
 DISTFILES+=	sa-exim-${SA_EXIM_VERSION}.tar.gz:sa_exim
 .endif
 
-EXIM_VERSION=	4.92
+EXIM_VERSION=	4.92.3
 SA_EXIM_VERSION=4.2
 EXIM_INSTALL_ARG+=	"-no_chown" "-no_symlink"
 
@@ -150,7 +150,7 @@ LOG_FILE_PATH?=		${LOGDIR}/%slog
 CONFIG_FILE_PATH?=	${PREFIX}/etc/exim/configure
 ALT_CONFIG_PREFIX?=	${PREFIX}/etc/exim/
 
-EXIM_DYNAMIC_LDFLAGS=	-fPIC -rdynamic -export-dynamic
+EXIM_DYNAMIC_LDFLAGS=	-fPIC -rdynamic -Wl,--export-dynamic
 
 SED_SCRIPT=	-e 's,%%PREFIX%%,${PREFIX},g' \
 		-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
@@ -324,15 +324,15 @@ SEDLIST+=	-e 's,XX_DB_LIBS_XX,${DB_LIBS:S/,/\\,/g},' \
 		-e 's,XX_DB_INCLUDES_XX,${DB_INCLUDES:S/,/\\,/g},'
 
 .if ${PORT_OPTIONS:MLMDB}
-LMDB_LIBS=	-L${LOCALBASE}/lib -llmdb
-LMDB_INCLUDES=	-I${LOCALBASE}/include
+_LMDB_LIBS=	-L${LOCALBASE}/lib -llmdb
+_LMDB_INCLUDES=	-I${LOCALBASE}/include
 SEDLIST+=	-e 's,^\# (EXPERIMENTAL_LMDB=),\1,'
 .else
-LMDB_LIBS=
-LMDB_INCLUDES=
+_LMDB_LIBS=
+_LMDB_INCLUDES=
 .endif
-SEDLIST+=	-e 's,XX_LMDB_LIBS_XX,${LMDB_LIBS:S/,/\\,/g},' \
-		-e 's,XX_LMDB_INCLUDES_XX,${LMDB_INCLUDES:S/,/\\,/g},'
+SEDLIST+=	-e 's,XX_LMDB_LIBS_XX,${_LMDB_LIBS:S/,/\\,/g},' \
+		-e 's,XX_LMDB_INCLUDES_XX,${_LMDB_INCLUDES:S/,/\\,/g},'
 
 .if ${PORT_OPTIONS:MMYSQL}
 SEDLIST+=	-e 's,XX_MYSQL_LIBS_XX,-L${LOCALBASE:S/,/\\,/g}/lib/mysql -l${_MYSQL_SHLIB:S/lib//},' \

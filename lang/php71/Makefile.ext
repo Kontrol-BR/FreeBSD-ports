@@ -505,8 +505,6 @@ USES+=	mysql
 .	endif
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${PHP_MODNAME} == "gd"
 .	if ${PORT_OPTIONS:MTRUETYPE}
 CONFIGURE_ARGS+=--enable-gd-native-ttf
@@ -520,13 +518,17 @@ LIB_DEPENDS+=   libwebp.so:graphics/webp
 CONFIGURE_ARGS+=--with-webp-dir=${LOCALBASE}
 .   endif
 .	if ${PORT_OPTIONS:MX11}
-USE_XORG=	xpm
+USES+=		xorg
+USE_XORG=	x11 xpm
 
 CONFIGURE_ARGS+=--with-xpm-dir=${LOCALBASE}
 .	endif
 .endif
 
+.include <bsd.port.pre.mk>
+
 .if ${PHP_MODNAME} == "imap"
+PHP_MOD_PRIO=	30
 .	if ${PORT_OPTIONS:MPANDA}
 LIB_DEPENDS+=	libc-client4.so.10:mail/panda-cclient
 .	else

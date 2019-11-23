@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	lxqt-about
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.0
 PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	LXQT
@@ -18,8 +18,5 @@ USE_QT=	buildtools_build qmake_build core dbus gui svg widgets \
 	x11extras xml
 USE_KDE=	windowsystem
 USE_LXQT=	buildtools lxqt
-
-PLIST_FILES=	bin/lxqt-about \
-		share/applications/lxqt-about.desktop
 
 .include <bsd.port.mk>

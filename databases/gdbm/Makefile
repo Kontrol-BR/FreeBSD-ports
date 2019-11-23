@@ -3,10 +3,11 @@
 
 PORTNAME=	gdbm
 PORTVERSION=	1.18.1
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	GNU
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	GNU database manager
 
 LICENSE=	GPLv3+

@@ -1,7 +1,6 @@
 # $FreeBSD$
 
 PORTNAME=	opengl
-PORTREVISION=	1
 CATEGORIES=	x11 devel python
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +12,7 @@ RUN_DEPENDS=	${PY_ENUM34}
 CONFIGURE_ARGS=	--enable QtOpenGL
 PYQT_DIST=	yes
 
-USES=		python pyqt:5 qt:5
+USES=		gl python pyqt:5 qt:5
 USE_GL=		gl
 USE_PYQT=	sip_build core_run gui_run widgets_run
 USE_PYTHON=	concurrent flavors py3kplist

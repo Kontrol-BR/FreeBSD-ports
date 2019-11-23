@@ -47,6 +47,7 @@ SNMP_BUILD_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 SNMP_RUN_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
 PERL_RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Net-DNS>=0:dns/p5-Net-DNS \
+		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
 		p5-XML-Parser>=0:textproc/p5-XML-Parser \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML
 PYTHON_USES=	python
@@ -75,7 +76,6 @@ post-patch:
 	@${FIND} ${WRKSRC}/node/sbin -type f -name "*.orig" -delete
 
 post-install:
-	${REINPLACE_CMD} -i '' -e '1s,${PERL5},${PERL},' ${STAGEDIR}${PREFIX}/bin/munindoc
 	${MKDIR} ${STAGEDIR}${DBDIR}/plugin-state ${STAGEDIR}${SPOOLDIR}/async
 	${INSTALL_SCRIPT} ${.CURDIR}/plugins/* ${STAGEDIR}${DATADIR}/plugins/
 	${INSTALL_DATA} ${WRKSRC}/build/node/munin-node.conf \

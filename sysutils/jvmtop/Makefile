@@ -3,6 +3,7 @@
 
 PORTNAME=	jvmtop
 DISTVERSION=	0.8.0-27
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-g5693965
 CATEGORIES=	sysutils java
 MASTER_SITES=	SF/bsdsrc/jvmtop:source2
@@ -17,7 +18,8 @@ BUILD_DEPENDS=	mvn:devel/maven
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 USE_JAVA=	yes
-JAVA_VERSION=	1.7+
+
+NO_ARCH=	yes
 
 PLIST_FILES=	${JAVAJARDIR}/${PORTNAME}.jar \
 		bin/${PORTNAME}
@@ -28,7 +30,7 @@ BUILD=	0.9.0
 GH_ACCOUNT=	patric-r
 USE_GITHUB=	yes
 
-pre-build:
+post-extract:
 	@${TAR} -xf ${DISTDIR}/jvmtop-maven-repository-${BUILD}.tar.gz -C ${WRKSRC}
 
 do-build:

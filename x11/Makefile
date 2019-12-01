@@ -264,6 +264,7 @@
     SUBDIR += printscreen
     SUBDIR += props
     SUBDIR += py-caffeine-ng
+    SUBDIR += py-i3ipc
     SUBDIR += py-pyscreenshot
     SUBDIR += py-pyvirtualdisplay
     SUBDIR += py-qt5-opengl
@@ -305,6 +306,7 @@
     SUBDIR += slop
     SUBDIR += slurp
     SUBDIR += smproxy
+    SUBDIR += squeekboard
     SUBDIR += sselp
     SUBDIR += stalonetray
     SUBDIR += startup-notification

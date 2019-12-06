@@ -35,6 +35,7 @@
     SUBDIR += R-cran-SparseM
     SUBDIR += R-cran-VGAM
     SUBDIR += R-cran-Zelig
+    SUBDIR += R-cran-acepack
     SUBDIR += R-cran-assertthat
     SUBDIR += R-cran-backports
     SUBDIR += R-cran-bdsmatrix
@@ -868,6 +869,7 @@
     SUBDIR += taucs
     SUBDIR += tblis
     SUBDIR += tetgen
+    SUBDIR += teyjus
     SUBDIR += timbl
     SUBDIR += tmv
     SUBDIR += tomsfastmath

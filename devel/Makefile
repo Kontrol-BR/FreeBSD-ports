@@ -1412,21 +1412,6 @@
     SUBDIR += libzvbi
     SUBDIR += lightning
     SUBDIR += linenoise-ng
-    SUBDIR += linux-c6-dbus-glib
-    SUBDIR += linux-c6-dbus-libs
-    SUBDIR += linux-c6-devtools
-    SUBDIR += linux-c6-elfutils-libelf
-    SUBDIR += linux-c6-icu
-    SUBDIR += linux-c6-libgfortran
-    SUBDIR += linux-c6-libglade2
-    SUBDIR += linux-c6-libpciaccess
-    SUBDIR += linux-c6-libsigc++20
-    SUBDIR += linux-c6-libsoup
-    SUBDIR += linux-c6-libthai
-    SUBDIR += linux-c6-libunwind
-    SUBDIR += linux-c6-nspr
-    SUBDIR += linux-c6-qt47
-    SUBDIR += linux-c6-sdl12
     SUBDIR += linux-c7-dbus-glib
     SUBDIR += linux-c7-dbus-libs
     SUBDIR += linux-c7-devtools
@@ -4225,7 +4210,7 @@
     SUBDIR += py-backcall
     SUBDIR += py-backports
     SUBDIR += py-backports.csv
-    SUBDIR += py-backports.functools-lru-cache
+    SUBDIR += py-backports.functools_lru_cache
     SUBDIR += py-backports.os
     SUBDIR += py-backports.shutil_get_terminal_size
     SUBDIR += py-backports.tempfile
@@ -4502,6 +4487,7 @@
     SUBDIR += py-graphql-core
     SUBDIR += py-graphql-core2
     SUBDIR += py-graphql-relay
+    SUBDIR += py-graphql-relay2
     SUBDIR += py-greenlet
     SUBDIR += py-grizzled
     SUBDIR += py-grouch
@@ -5534,6 +5520,7 @@
     SUBDIR += rubygem-aws-sdk-datapipeline
     SUBDIR += rubygem-aws-sdk-datasync
     SUBDIR += rubygem-aws-sdk-dax
+    SUBDIR += rubygem-aws-sdk-detective
     SUBDIR += rubygem-aws-sdk-devicefarm
     SUBDIR += rubygem-aws-sdk-directconnect
     SUBDIR += rubygem-aws-sdk-directoryservice
@@ -5593,6 +5580,7 @@
     SUBDIR += rubygem-aws-sdk-kinesisvideo
     SUBDIR += rubygem-aws-sdk-kinesisvideoarchivedmedia
     SUBDIR += rubygem-aws-sdk-kinesisvideomedia
+    SUBDIR += rubygem-aws-sdk-kinesisvideosignalingchannels
     SUBDIR += rubygem-aws-sdk-kms
     SUBDIR += rubygem-aws-sdk-lakeformation
     SUBDIR += rubygem-aws-sdk-lambda

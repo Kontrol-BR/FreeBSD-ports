@@ -883,7 +883,6 @@
     SUBDIR += goswagger
     SUBDIR += govendor
     SUBDIR += gperf
-    SUBDIR += gperf31
     SUBDIR += gpm
     SUBDIR += gprbuild
     SUBDIR += gputils
@@ -1560,6 +1559,7 @@
     SUBDIR += msgpack
     SUBDIR += msgpack-d
     SUBDIR += msgpuck
+    SUBDIR += msitools
     SUBDIR += msp430-debug-stack
     SUBDIR += mspdebug
     SUBDIR += mstch
@@ -3582,6 +3582,7 @@
     SUBDIR += p5-XML-Pastor
     SUBDIR += p5-XS-Object-Magic
     SUBDIR += p5-XSLoader
+    SUBDIR += p5-XXX
     SUBDIR += p5-Xporter
     SUBDIR += p5-YAML-AppConfig
     SUBDIR += p5-Yada-Yada-Yada
@@ -4302,6 +4303,7 @@
     SUBDIR += py-colorful
     SUBDIR += py-colorlog
     SUBDIR += py-columnize
+    SUBDIR += py-commandlines
     SUBDIR += py-conditional
     SUBDIR += py-configargparse
     SUBDIR += py-configobj
@@ -4491,6 +4493,7 @@
     SUBDIR += py-greenlet
     SUBDIR += py-grizzled
     SUBDIR += py-grouch
+    SUBDIR += py-grpc-google-iam-v1
     SUBDIR += py-grpcio
     SUBDIR += py-grpcio-gcp
     SUBDIR += py-grpcio-tools
@@ -4603,6 +4606,7 @@
     SUBDIR += py-lazr.uri
     SUBDIR += py-lazy
     SUBDIR += py-lazy-object-proxy
+    SUBDIR += py-libcst
     SUBDIR += py-libioc
     SUBDIR += py-libiocage
     SUBDIR += py-liblarch
@@ -4736,6 +4740,7 @@
     SUBDIR += py-oslotest
     SUBDIR += py-osprofiler
     SUBDIR += py-ovs
+    SUBDIR += py-ovsdbapp
     SUBDIR += py-p4python
     SUBDIR += py-packaging
     SUBDIR += py-palm
@@ -4773,6 +4778,7 @@
     SUBDIR += py-pipdeptree
     SUBDIR += py-pipenv
     SUBDIR += py-pipreqs
+    SUBDIR += py-pipx
     SUBDIR += py-pkgconfig
     SUBDIR += py-plac
     SUBDIR += py-plan
@@ -4912,6 +4918,7 @@
     SUBDIR += py-pytest-xprocess
     SUBDIR += py-python-Levenshtein
     SUBDIR += py-python-bugzilla
+    SUBDIR += py-python-dbusmock
     SUBDIR += py-python-distutils-extra
     SUBDIR += py-python-dtrace
     SUBDIR += py-python-easyconfig
@@ -5126,6 +5133,7 @@
     SUBDIR += py-typed-ast
     SUBDIR += py-typing
     SUBDIR += py-typing-extensions
+    SUBDIR += py-typing-inspect
     SUBDIR += py-tzlocal
     SUBDIR += py-u-msgpack-python
     SUBDIR += py-ua_parser
@@ -5143,6 +5151,7 @@
     SUBDIR += py-urwidtrees
     SUBDIR += py-usb
     SUBDIR += py-user_agents
+    SUBDIR += py-userpath
     SUBDIR += py-utils
     SUBDIR += py-uvloop
     SUBDIR += py-validators
@@ -5501,6 +5510,7 @@
     SUBDIR += rubygem-aws-sdk-codegurureviewer
     SUBDIR += rubygem-aws-sdk-codepipeline
     SUBDIR += rubygem-aws-sdk-codestar
+    SUBDIR += rubygem-aws-sdk-codestarconnections
     SUBDIR += rubygem-aws-sdk-codestarnotifications
     SUBDIR += rubygem-aws-sdk-cognitoidentity
     SUBDIR += rubygem-aws-sdk-cognitoidentityprovider
@@ -6289,6 +6299,7 @@
     SUBDIR += rubygem-sumbur
     SUBDIR += rubygem-sundawg_country_codes
     SUBDIR += rubygem-svn2git
+    SUBDIR += rubygem-sync
     SUBDIR += rubygem-sysinfo
     SUBDIR += rubygem-systemu
     SUBDIR += rubygem-table_print
@@ -6631,7 +6642,6 @@
     SUBDIR += yaml2argdata
     SUBDIR += yasm
     SUBDIR += yasm-devel
-    SUBDIR += yosys
     SUBDIR += youcompleteme
     SUBDIR += z80-asm
     SUBDIR += z80asm

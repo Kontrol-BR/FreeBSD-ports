@@ -1307,6 +1307,7 @@
     SUBDIR += libpeas
     SUBDIR += libpff
     SUBDIR += libphk
+    SUBDIR += libphonenumber
     SUBDIR += libphutil
     SUBDIR += libplist
     SUBDIR += libpo6
@@ -2353,6 +2354,7 @@
     SUBDIR += p5-File-FcntlLock
     SUBDIR += p5-File-Find-Closures
     SUBDIR += p5-File-Find-Object
+    SUBDIR += p5-File-Find-Object-Rule
     SUBDIR += p5-File-Find-Rule
     SUBDIR += p5-File-Find-Rule-Filesys-Virtual
     SUBDIR += p5-File-Find-Rule-Perl
@@ -3427,6 +3429,7 @@
     SUBDIR += p5-Test-Time
     SUBDIR += p5-Test-Timer
     SUBDIR += p5-Test-TinyMocker
+    SUBDIR += p5-Test-TrailingSpace
     SUBDIR += p5-Test-Trap
     SUBDIR += p5-Test-UNIXSock
     SUBDIR += p5-Test-Unit
@@ -3844,11 +3847,13 @@
     SUBDIR += pear-pdepend-staticReflection
     SUBDIR += pear-phing
     SUBDIR += pecl-APCu
+    SUBDIR += pecl-ast
     SUBDIR += pecl-dio
     SUBDIR += pecl-ds
     SUBDIR += pecl-eio
     SUBDIR += pecl-ev
     SUBDIR += pecl-event
+    SUBDIR += pecl-expect
     SUBDIR += pecl-grpc
     SUBDIR += pecl-hrtime
     SUBDIR += pecl-inotify
@@ -4291,6 +4296,7 @@
     SUBDIR += py-cloudpickle
     SUBDIR += py-cluster
     SUBDIR += py-cmd2
+    SUBDIR += py-cmd208
     SUBDIR += py-cmdtest
     SUBDIR += py-codecov
     SUBDIR += py-codegen
@@ -4512,6 +4518,7 @@
     SUBDIR += py-identify
     SUBDIR += py-ijson
     SUBDIR += py-imgkit
+    SUBDIR += py-immutables
     SUBDIR += py-importlab
     SUBDIR += py-importlib-metadata
     SUBDIR += py-importlib-resources
@@ -4651,6 +4658,7 @@
     SUBDIR += py-molecule
     SUBDIR += py-mondrian
     SUBDIR += py-mongokit
+    SUBDIR += py-monkeytype
     SUBDIR += py-monotonic
     SUBDIR += py-monty
     SUBDIR += py-more-itertools
@@ -4819,6 +4827,7 @@
     SUBDIR += py-pyasn1
     SUBDIR += py-pyasn1-modules
     SUBDIR += py-pybind11
+    SUBDIR += py-pybix
     SUBDIR += py-pybloomfiltermmap
     SUBDIR += py-pycadf
     SUBDIR += py-pycalendar
@@ -4991,6 +5000,7 @@
     SUBDIR += py-resourcepackage
     SUBDIR += py-responses
     SUBDIR += py-retrying
+    SUBDIR += py-retype
     SUBDIR += py-riak_pb
     SUBDIR += py-rlcompleter2
     SUBDIR += py-robotframework
@@ -5067,6 +5077,7 @@
     SUBDIR += py-strategies
     SUBDIR += py-streamparse
     SUBDIR += py-strict-rfc3339
+    SUBDIR += py-stringcase
     SUBDIR += py-structlog
     SUBDIR += py-stsci.distutils
     SUBDIR += py-subprocess32
@@ -5127,6 +5138,7 @@
     SUBDIR += py-twiggy
     SUBDIR += py-twilio
     SUBDIR += py-twine
+    SUBDIR += py-twine1
     SUBDIR += py-twisted
     SUBDIR += py-txaio
     SUBDIR += py-typechecks
@@ -6028,6 +6040,7 @@
     SUBDIR += rubygem-method_source
     SUBDIR += rubygem-micromachine
     SUBDIR += rubygem-micromachine2
+    SUBDIR += rubygem-middleware
     SUBDIR += rubygem-mini_portile2
     SUBDIR += rubygem-minitest
     SUBDIR += rubygem-mixlib-archive

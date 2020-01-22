@@ -209,12 +209,14 @@
     SUBDIR += hashcat
     SUBDIR += hashcat-legacy
     SUBDIR += heimdal
+    SUBDIR += helib
     SUBDIR += highwayhash
     SUBDIR += hitch
     SUBDIR += hlfl
     SUBDIR += hmap
     SUBDIR += hockeypuck
     SUBDIR += honggfuzz
+    SUBDIR += horcrux
     SUBDIR += hotssh
     SUBDIR += hpenc
     SUBDIR += hydra
@@ -957,7 +959,7 @@
     SUBDIR += py-pydeep
     SUBDIR += py-pyelliptic
     SUBDIR += py-pylibacl
-    SUBDIR += py-pymacaroons-pynacl
+    SUBDIR += py-pymacaroons
     SUBDIR += py-pynacl
     SUBDIR += py-pyotp
     SUBDIR += py-pyptlib
@@ -1008,6 +1010,7 @@
     SUBDIR += py-txtorcon
     SUBDIR += py-virustotal-api
     SUBDIR += py-volatility
+    SUBDIR += py-volatility3
     SUBDIR += py-vulndb
     SUBDIR += py-xmlsec
     SUBDIR += py-yara

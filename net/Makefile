@@ -150,6 +150,7 @@
     SUBDIR += etrace
     SUBDIR += eventviews
     SUBDIR += exabgp
+    SUBDIR += exabgp4
     SUBDIR += exaddos
     SUBDIR += fb
     SUBDIR += fiche
@@ -373,6 +374,7 @@
     SUBDIR += libnatpmp
     SUBDIR += libnet
     SUBDIR += libnfs
+    SUBDIR += libngtcp2
     SUBDIR += libnids
     SUBDIR += libnss-cache
     SUBDIR += libnss-mysql

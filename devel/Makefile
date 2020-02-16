@@ -463,6 +463,7 @@
     SUBDIR += deforaos-libsystem
     SUBDIR += deheader
     SUBDIR += delta
+    SUBDIR += delve
     SUBDIR += dep
     SUBDIR += deployer
     SUBDIR += derelict-sdl2
@@ -773,6 +774,7 @@
     SUBDIR += gettext-runtime
     SUBDIR += gettext-tools
     SUBDIR += gflags
+    SUBDIR += gh
     SUBDIR += ghidra
     SUBDIR += ghq
     SUBDIR += ghub
@@ -839,7 +841,6 @@
     SUBDIR += go-bindata-assetfs
     SUBDIR += go-git
     SUBDIR += go-glide
-    SUBDIR += go-godef
     SUBDIR += go-protobuf
     SUBDIR += go-tools
     SUBDIR += gob2
@@ -897,9 +898,6 @@
     SUBDIR += gwenhywfar-gtk3
     SUBDIR += gwenhywfar-qt5
     SUBDIR += gzstream
-    SUBDIR += hachoir-core
-    SUBDIR += hachoir-parser
-    SUBDIR += hachoir-regex
     SUBDIR += hadoop
     SUBDIR += hadoop2
     SUBDIR += hapy
@@ -4078,6 +4076,7 @@
     SUBDIR += py-aws-sam-translator
     SUBDIR += py-aws-xray-sdk
     SUBDIR += py-azure-batch
+    SUBDIR += py-azure-core
     SUBDIR += py-azure-cosmos
     SUBDIR += py-azure-datalake-store
     SUBDIR += py-azure-functions-devops-build
@@ -4487,7 +4486,9 @@
     SUBDIR += py-jaraco
     SUBDIR += py-jaraco.classes
     SUBDIR += py-jaraco.context
+    SUBDIR += py-jaraco.context2
     SUBDIR += py-jaraco.functools
+    SUBDIR += py-jaraco.functools2
     SUBDIR += py-jaraco.itertools
     SUBDIR += py-jaraco.logging
     SUBDIR += py-jaraco.timing
@@ -4660,6 +4661,7 @@
     SUBDIR += py-os-service-types
     SUBDIR += py-os-vif
     SUBDIR += py-os-win
+    SUBDIR += py-os-win4
     SUBDIR += py-osc-lib
     SUBDIR += py-oslo.cache
     SUBDIR += py-oslo.concurrency
@@ -4674,6 +4676,7 @@
     SUBDIR += py-oslo.messaging10
     SUBDIR += py-oslo.middleware
     SUBDIR += py-oslo.policy
+    SUBDIR += py-oslo.policy2
     SUBDIR += py-oslo.privsep
     SUBDIR += py-oslo.reports
     SUBDIR += py-oslo.rootwrap
@@ -4947,9 +4950,9 @@
     SUBDIR += py-robotremoteserver
     SUBDIR += py-rope
     SUBDIR += py-rose
-    SUBDIR += py-roxlib
     SUBDIR += py-rply
     SUBDIR += py-rq
+    SUBDIR += py-rq-scheduler
     SUBDIR += py-rtree
     SUBDIR += py-rtslib-fb
     SUBDIR += py-ruamel.ordereddict
@@ -5299,7 +5302,6 @@
     SUBDIR += quilt
     SUBDIR += rabs
     SUBDIR += racer
-    SUBDIR += racerd
     SUBDIR += radare2
     SUBDIR += radian
     SUBDIR += ragel
@@ -6608,7 +6610,6 @@
     SUBDIR += tablist
     SUBDIR += tailor
     SUBDIR += talloc
-    SUBDIR += talloc1
     SUBDIR += tass64
     SUBDIR += tbb
     SUBDIR += tcl-memchan
@@ -6633,7 +6634,6 @@
     SUBDIR += termcolor
     SUBDIR += terminality
     SUBDIR += tevent
-    SUBDIR += tevent1
     SUBDIR += tex-kpathsea
     SUBDIR += tex-libtexlua
     SUBDIR += tex-libtexluajit

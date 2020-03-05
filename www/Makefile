@@ -959,6 +959,7 @@
     SUBDIR += p5-Interchange6
     SUBDIR += p5-JE
     SUBDIR += p5-JSON-API
+    SUBDIR += p5-JSON-WebToken
     SUBDIR += p5-Jemplate
     SUBDIR += p5-Jifty
     SUBDIR += p5-LWP-Authen-Negotiate
@@ -1411,6 +1412,7 @@
     SUBDIR += py-aiohttp
     SUBDIR += py-aiohttp-wsgi
     SUBDIR += py-aiohttp2
+    SUBDIR += py-aiohttp_cors
     SUBDIR += py-albatross
     SUBDIR += py-amf
     SUBDIR += py-apachelog
@@ -1433,6 +1435,7 @@
     SUBDIR += py-bottle-cork
     SUBDIR += py-branca
     SUBDIR += py-cachecontrol
+    SUBDIR += py-cachelib
     SUBDIR += py-caldav
     SUBDIR += py-cheroot
     SUBDIR += py-cherrypy
@@ -1936,7 +1939,6 @@
     SUBDIR += rubygem-gollum-rugged_adapter
     SUBDIR += rubygem-gon-rails5
     SUBDIR += rubygem-gon-rails50
-    SUBDIR += rubygem-gon-rails52
     SUBDIR += rubygem-gon-rails60
     SUBDIR += rubygem-hackpad-cli
     SUBDIR += rubygem-haml
@@ -2144,7 +2146,6 @@
     SUBDIR += rubygem-wasabi
     SUBDIR += rubygem-webdrivers
     SUBDIR += rubygem-webmock
-    SUBDIR += rubygem-webpack-rails-rails52
     SUBDIR += rubygem-webpack-rails-rails60
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-websocket

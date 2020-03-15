@@ -520,6 +520,7 @@
     SUBDIR += eiffelstudio
     SUBDIR += electron4
     SUBDIR += electron6
+    SUBDIR += electron7
     SUBDIR += elf
     SUBDIR += elfio
     SUBDIR += elfkickers
@@ -4068,6 +4069,7 @@
     SUBDIR += py-atomicwrites
     SUBDIR += py-atpublic
     SUBDIR += py-attrs
+    SUBDIR += py-autoflake
     SUBDIR += py-automaton
     SUBDIR += py-avro
     SUBDIR += py-aws-sam-translator
@@ -4884,6 +4886,7 @@
     SUBDIR += py-python-gist
     SUBDIR += py-python-gitlab
     SUBDIR += py-python-jenkins
+    SUBDIR += py-python-jsonrpc-server
     SUBDIR += py-python-magic
     SUBDIR += py-python-mimeparse
     SUBDIR += py-python-pcre
@@ -6442,6 +6445,7 @@
     SUBDIR += rubygem-virtus
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-warden
+    SUBDIR += rubygem-warden127
     SUBDIR += rubygem-wdm
     SUBDIR += rubygem-web-console-rails60
     SUBDIR += rubygem-web-console2
@@ -6549,6 +6553,7 @@
     SUBDIR += statcvs
     SUBDIR += statik
     SUBDIR += statsvn
+    SUBDIR += stb
     SUBDIR += stdx-allocator
     SUBDIR += stfl
     SUBDIR += stlfilt
@@ -6619,11 +6624,11 @@
     SUBDIR += tinycbor
     SUBDIR += tinygo
     SUBDIR += tinylaf
-    SUBDIR += tl-expected
     SUBDIR += tkcon
     SUBDIR += tkcvs
     SUBDIR += tkmerge
     SUBDIR += tkp4
+    SUBDIR += tl-expected
     SUBDIR += tla
     SUBDIR += tmake
     SUBDIR += tnt

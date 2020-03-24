@@ -39,6 +39,7 @@
     SUBDIR += gmsh
     SUBDIR += gnucap
     SUBDIR += gplcver
+    SUBDIR += graywolf
     SUBDIR += gspiceui
     SUBDIR += gtkwave
     SUBDIR += impact
@@ -71,12 +72,14 @@
     SUBDIR += magic
     SUBDIR += meshdev
     SUBDIR += netgen
+    SUBDIR += netgen-lvs
     SUBDIR += ngspice_rework
     SUBDIR += nvc
     SUBDIR += opencascade
     SUBDIR += openctm
     SUBDIR += openscad
     SUBDIR += openscad-devel
+    SUBDIR += opensta
     SUBDIR += openvsp
     SUBDIR += oregano
     SUBDIR += p5-GDS2
@@ -90,7 +93,9 @@
     SUBDIR += python-gdsii
     SUBDIR += qcad
     SUBDIR += qelectrotech
+    SUBDIR += qflow
     SUBDIR += qmls
+    SUBDIR += qrouter
     SUBDIR += repsnapper
     SUBDIR += rubygem-gdsii
     SUBDIR += scotch

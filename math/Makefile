@@ -202,6 +202,7 @@
     SUBDIR += cryptominisat
     SUBDIR += csdp
     SUBDIR += ctl-sat
+    SUBDIR += cudd
     SUBDIR += curv
     SUBDIR += cvc3
     SUBDIR += cvc4
@@ -808,6 +809,7 @@
     SUBDIR += py-symcxx
     SUBDIR += py-sympy
     SUBDIR += py-theano
+    SUBDIR += py-triangle
     SUBDIR += py-ufl
     SUBDIR += py-uncertainties
     SUBDIR += py-vincenty

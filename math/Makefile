@@ -95,6 +95,7 @@
     SUBDIR += R-cran-quadprog
     SUBDIR += R-cran-qualityTools
     SUBDIR += R-cran-quantreg
+    SUBDIR += R-cran-raster
     SUBDIR += R-cran-recipes
     SUBDIR += R-cran-rgenoud
     SUBDIR += R-cran-robustbase
@@ -157,6 +158,7 @@
     SUBDIR += blocksolve95
     SUBDIR += bonmin
     SUBDIR += boolector
+    SUBDIR += brial
     SUBDIR += bsdnt
     SUBDIR += btor2tools
     SUBDIR += cadabra2
@@ -297,6 +299,7 @@
     SUBDIR += gnuplot-lite
     SUBDIR += gnuplot-tex-extras
     SUBDIR += gotoblas
+    SUBDIR += gp2c
     SUBDIR += grace
     SUBDIR += graphthing
     SUBDIR += gretl
@@ -314,6 +317,7 @@
     SUBDIR += ideep
     SUBDIR += ignition-math
     SUBDIR += igraph
+    SUBDIR += iml
     SUBDIR += intervaltree
     SUBDIR += ipopt
     SUBDIR += ised
@@ -339,6 +343,7 @@
     SUBDIR += lapacke
     SUBDIR += laspack
     SUBDIR += latte-integrale
+    SUBDIR += lcalc
     SUBDIR += ldouble
     SUBDIR += lean
     SUBDIR += lemon
@@ -368,11 +373,13 @@
     SUBDIR += lis
     SUBDIR += lll_spect
     SUBDIR += lp_solve
+    SUBDIR += lrcalc
     SUBDIR += lrng
     SUBDIR += lrslib
     SUBDIR += ltl
     SUBDIR += ltl2ba
     SUBDIR += m4ri
+    SUBDIR += m4rie
     SUBDIR += mate-calc
     SUBDIR += math77
     SUBDIR += mathgl
@@ -388,12 +395,12 @@
     SUBDIR += mingw32-libgmp
     SUBDIR += minisat
     SUBDIR += miracl
-    SUBDIR += mkl-dnn
     SUBDIR += mlpack
     SUBDIR += moab
     SUBDIR += moo
     SUBDIR += mpc
     SUBDIR += mpexpr
+    SUBDIR += mpfi
     SUBDIR += mpfr
     SUBDIR += mpfrc++
     SUBDIR += mpir
@@ -504,6 +511,7 @@
     SUBDIR += octave-forge-zeromq
     SUBDIR += octomap
     SUBDIR += oleo
+    SUBDIR += onednn
     SUBDIR += openblas
     SUBDIR += openfst
     SUBDIR += openlibm
@@ -666,6 +674,11 @@
     SUBDIR += p5-bignum
     SUBDIR += pantheon-calculator
     SUBDIR += pari
+    SUBDIR += pari_elldata
+    SUBDIR += pari_galdata
+    SUBDIR += pari_galpol
+    SUBDIR += pari_nftables
+    SUBDIR += pari_seadata
     SUBDIR += parmetis
     SUBDIR += parmgridgen
     SUBDIR += pdal
@@ -683,6 +696,7 @@
     SUBDIR += physcalc
     SUBDIR += picosat
     SUBDIR += piranha
+    SUBDIR += planarity
     SUBDIR += plman
     SUBDIR += ploticus
     SUBDIR += ploticus-nox11
@@ -715,6 +729,7 @@
     SUBDIR += py-bitmath
     SUBDIR += py-bitvector
     SUBDIR += py-bottleneck
+    SUBDIR += py-brial
     SUBDIR += py-cdecimal
     SUBDIR += py-chaospy
     SUBDIR += py-claripy
@@ -830,6 +845,7 @@
     SUBDIR += qtiplot-doc
     SUBDIR += qwtplot3d
     SUBDIR += randlib
+    SUBDIR += rankwidth
     SUBDIR += rapid
     SUBDIR += reduce
     SUBDIR += reduce-psl

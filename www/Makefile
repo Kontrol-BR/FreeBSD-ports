@@ -111,6 +111,7 @@
     SUBDIR += dojo
     SUBDIR += dojo-shrinksafe
     SUBDIR += dokuwiki
+    SUBDIR += dolibarr
     SUBDIR += domoticz
     SUBDIR += drood
     SUBDIR += drraw
@@ -298,6 +299,7 @@
     SUBDIR += libnghttp2
     SUBDIR += libnghttp3
     SUBDIR += libresonic-standalone
+    SUBDIR += librtcdcpp
     SUBDIR += libwpe
     SUBDIR += libwww
     SUBDIR += lightsquid
@@ -317,6 +319,7 @@
     SUBDIR += lua-resty-core
     SUBDIR += lua-resty-lrucache
     SUBDIR += luakit
+    SUBDIR += luakit-devel
     SUBDIR += lynx
     SUBDIR += lynx-current
     SUBDIR += madsonic
@@ -1450,7 +1453,6 @@
     SUBDIR += py-cssmin
     SUBDIR += py-cssselect
     SUBDIR += py-cssutils
-    SUBDIR += py-ddgr
     SUBDIR += py-dj22-django-auth-ldap
     SUBDIR += py-dj22-django-cacheops
     SUBDIR += py-dj22-django-cors-headers
@@ -1494,7 +1496,6 @@
     SUBDIR += py-django-braces
     SUBDIR += py-django-bulk-update
     SUBDIR += py-django-cacheops
-    SUBDIR += py-django-caching-app-plugins
     SUBDIR += py-django-classy-tags
     SUBDIR += py-django-cms
     SUBDIR += py-django-common-helpers
@@ -1518,6 +1519,7 @@
     SUBDIR += py-django-formtools
     SUBDIR += py-django-guardian
     SUBDIR += py-django-happenings
+    SUBDIR += py-django-happenings-update
     SUBDIR += py-django-haystack
     SUBDIR += py-django-hierarkey
     SUBDIR += py-django-hijack
@@ -1546,6 +1548,7 @@
     SUBDIR += py-django-photologue
     SUBDIR += py-django-picklefield
     SUBDIR += py-django-pipeline
+    SUBDIR += py-django-polymorphic
     SUBDIR += py-django-post_office
     SUBDIR += py-django-profiles
     SUBDIR += py-django-prometheus
@@ -1586,7 +1589,6 @@
     SUBDIR += py-django30
     SUBDIR += py-django_compressor
     SUBDIR += py-django_openstack_auth
-    SUBDIR += py-django_polymorphic
     SUBDIR += py-djangocms-admin-style
     SUBDIR += py-djangorestframework
     SUBDIR += py-djangorestframework-csv
@@ -2226,6 +2228,7 @@
     SUBDIR += tivoka
     SUBDIR += tntnet
     SUBDIR += tokyopromenade
+    SUBDIR += tomcat-devel
     SUBDIR += tomcat-native
     SUBDIR += tomcat7
     SUBDIR += tomcat85
@@ -2327,6 +2330,7 @@
     SUBDIR += unit
     SUBDIR += unit-perl
     SUBDIR += unit-php
+    SUBDIR += uwebsockets
     SUBDIR += uwsgi
     SUBDIR += uwsgitop
     SUBDIR += validator

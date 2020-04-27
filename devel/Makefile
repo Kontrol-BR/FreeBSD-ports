@@ -231,6 +231,7 @@
     SUBDIR += bingrep
     SUBDIR += binutils
     SUBDIR += bison
+    SUBDIR += bitkeeper
     SUBDIR += blame
     SUBDIR += blitz
     SUBDIR += bloaty
@@ -469,6 +470,7 @@
     SUBDIR += deployer
     SUBDIR += derelict-sdl2
     SUBDIR += derelict-util
+    SUBDIR += desed
     SUBDIR += desktop-file-utils
     SUBDIR += dev86
     SUBDIR += devhelp
@@ -708,6 +710,7 @@
     SUBDIR += gauche-readline
     SUBDIR += gaul
     SUBDIR += gb
+    SUBDIR += gbump
     SUBDIR += gcc-arm-embedded
     SUBDIR += gcc-msp430-ti-toolchain
     SUBDIR += gccmakedep
@@ -2044,6 +2047,36 @@
     SUBDIR += p5-Data-Model
     SUBDIR += p5-Data-Munge
     SUBDIR += p5-Data-Object
+    SUBDIR += p5-Data-Object-Args
+    SUBDIR += p5-Data-Object-Attributes
+    SUBDIR += p5-Data-Object-Cast
+    SUBDIR += p5-Data-Object-Class
+    SUBDIR += p5-Data-Object-ClassHas
+    SUBDIR += p5-Data-Object-Data
+    SUBDIR += p5-Data-Object-Exception
+    SUBDIR += p5-Data-Object-Kind
+    SUBDIR += p5-Data-Object-Name
+    SUBDIR += p5-Data-Object-Opts
+    SUBDIR += p5-Data-Object-Plugin
+    SUBDIR += p5-Data-Object-Role
+    SUBDIR += p5-Data-Object-Role-Arguable
+    SUBDIR += p5-Data-Object-Role-Buildable
+    SUBDIR += p5-Data-Object-Role-Dumpable
+    SUBDIR += p5-Data-Object-Role-Errable
+    SUBDIR += p5-Data-Object-Role-Formulatable
+    SUBDIR += p5-Data-Object-Role-Immutable
+    SUBDIR += p5-Data-Object-Role-Pluggable
+    SUBDIR += p5-Data-Object-Role-Proxyable
+    SUBDIR += p5-Data-Object-Role-Stashable
+    SUBDIR += p5-Data-Object-Role-Throwable
+    SUBDIR += p5-Data-Object-Role-Tryable
+    SUBDIR += p5-Data-Object-RoleHas
+    SUBDIR += p5-Data-Object-Space
+    SUBDIR += p5-Data-Object-State
+    SUBDIR += p5-Data-Object-Struct
+    SUBDIR += p5-Data-Object-Try
+    SUBDIR += p5-Data-Object-Types
+    SUBDIR += p5-Data-Object-Vars
     SUBDIR += p5-Data-ObjectDriver
     SUBDIR += p5-Data-OptList
     SUBDIR += p5-Data-Page-NoTotalEntries
@@ -2576,7 +2609,9 @@
     SUBDIR += p5-JSON-Schema
     SUBDIR += p5-Java
     SUBDIR += p5-Jonk
+    SUBDIR += p5-Keyword-Declare
     SUBDIR += p5-Keyword-Pluggable
+    SUBDIR += p5-Keyword-Simple
     SUBDIR += p5-LV
     SUBDIR += p5-Lexical-Alias
     SUBDIR += p5-Lexical-Import
@@ -2937,6 +2972,7 @@
     SUBDIR += p5-POEx-Types
     SUBDIR += p5-POSIX-strftime-Compiler
     SUBDIR += p5-POSIX-strptime
+    SUBDIR += p5-PPR
     SUBDIR += p5-PPerl
     SUBDIR += p5-PV
     SUBDIR += p5-Package-Constants
@@ -3215,6 +3251,7 @@
     SUBDIR += p5-Symbol-Util
     SUBDIR += p5-Syntax-Keyword-Gather
     SUBDIR += p5-Syntax-Keyword-Junction
+    SUBDIR += p5-Syntax-Keyword-Try
     SUBDIR += p5-Sys-CPU
     SUBDIR += p5-Sys-Info
     SUBDIR += p5-Sys-Info-Base
@@ -3288,6 +3325,7 @@
     SUBDIR += p5-Test-Able-Runner
     SUBDIR += p5-Test-Aggregate
     SUBDIR += p5-Test-Assertions
+    SUBDIR += p5-Test-Auto
     SUBDIR += p5-Test-Base
     SUBDIR += p5-Test-Benchmark
     SUBDIR += p5-Test-BinaryData
@@ -3626,6 +3664,7 @@
     SUBDIR += p5-pip
     SUBDIR += p5-prefork
     SUBDIR += p5-relative
+    SUBDIR += p5-routines
     SUBDIR += p5-self
     SUBDIR += p5-self-init
     SUBDIR += p5-strictures
@@ -4101,6 +4140,7 @@
     SUBDIR += py-azure-mgmt-containerinstance
     SUBDIR += py-azure-mgmt-containerregistry
     SUBDIR += py-azure-mgmt-containerservice
+    SUBDIR += py-azure-mgmt-core
     SUBDIR += py-azure-mgmt-cosmosdb
     SUBDIR += py-azure-mgmt-datalake-analytics
     SUBDIR += py-azure-mgmt-datalake-store
@@ -4132,6 +4172,7 @@
     SUBDIR += py-azure-mgmt-rdbms
     SUBDIR += py-azure-mgmt-recoveryservices
     SUBDIR += py-azure-mgmt-recoveryservicesbackup
+    SUBDIR += py-azure-mgmt-redhatopenshift
     SUBDIR += py-azure-mgmt-redis
     SUBDIR += py-azure-mgmt-relay
     SUBDIR += py-azure-mgmt-reservations
@@ -4158,6 +4199,7 @@
     SUBDIR += py-backports.functools_lru_cache
     SUBDIR += py-backports.os
     SUBDIR += py-backports.shutil_get_terminal_size
+    SUBDIR += py-backports.shutil_which
     SUBDIR += py-backports.tempfile
     SUBDIR += py-backports.weakref
     SUBDIR += py-backports_abc
@@ -4269,6 +4311,7 @@
     SUBDIR += py-cov-core
     SUBDIR += py-coverage
     SUBDIR += py-crank
+    SUBDIR += py-crashtest
     SUBDIR += py-crc32c
     SUBDIR += py-crcmod
     SUBDIR += py-ctags
@@ -4559,6 +4602,7 @@
     SUBDIR += py-kjbuckets
     SUBDIR += py-knack
     SUBDIR += py-kqueue
+    SUBDIR += py-l18n
     SUBDIR += py-lark-parser
     SUBDIR += py-launchpadlib
     SUBDIR += py-lazr.config
@@ -4570,7 +4614,6 @@
     SUBDIR += py-libcst
     SUBDIR += py-libioc
     SUBDIR += py-libiocage
-    SUBDIR += py-liblarch
     SUBDIR += py-libpeas
     SUBDIR += py-libtaxii
     SUBDIR += py-libtmux
@@ -4685,7 +4728,9 @@
     SUBDIR += py-oslo.concurrency
     SUBDIR += py-oslo.concurrency3
     SUBDIR += py-oslo.config
+    SUBDIR += py-oslo.config7
     SUBDIR += py-oslo.context
+    SUBDIR += py-oslo.context2
     SUBDIR += py-oslo.db
     SUBDIR += py-oslo.db6
     SUBDIR += py-oslo.i18n
@@ -5616,6 +5661,7 @@
     SUBDIR += rubygem-aws-sdk-storagegateway
     SUBDIR += rubygem-aws-sdk-support
     SUBDIR += rubygem-aws-sdk-swf
+    SUBDIR += rubygem-aws-sdk-synthetics
     SUBDIR += rubygem-aws-sdk-textract
     SUBDIR += rubygem-aws-sdk-transcribeservice
     SUBDIR += rubygem-aws-sdk-transcribestreamingservice
@@ -5713,6 +5759,7 @@
     SUBDIR += rubygem-azure_mgmt_iot_central
     SUBDIR += rubygem-azure_mgmt_iot_hub
     SUBDIR += rubygem-azure_mgmt_key_vault
+    SUBDIR += rubygem-azure_mgmt_kubernetes_configuration
     SUBDIR += rubygem-azure_mgmt_kusto
     SUBDIR += rubygem-azure_mgmt_labservices
     SUBDIR += rubygem-azure_mgmt_links
@@ -5780,6 +5827,7 @@
     SUBDIR += rubygem-bacon
     SUBDIR += rubygem-baf
     SUBDIR += rubygem-batch-loader
+    SUBDIR += rubygem-batch-loader14
     SUBDIR += rubygem-benelux
     SUBDIR += rubygem-bin_utils
     SUBDIR += rubygem-bindata
@@ -6547,6 +6595,7 @@
     SUBDIR += silc-toolkit
     SUBDIR += silentbob
     SUBDIR += simavr
+    SUBDIR += simdjson
     SUBDIR += simgear
     SUBDIR += simian
     SUBDIR += simple_components

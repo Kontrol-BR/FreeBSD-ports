@@ -60,6 +60,7 @@
     SUBDIR += bruteforceblocker
     SUBDIR += bsdsfv
     SUBDIR += bsmtrace
+    SUBDIR += bsmtrace3
     SUBDIR += bugs
     SUBDIR += bzrtp
     SUBDIR += ca_root_nss
@@ -404,6 +405,7 @@
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable
     SUBDIR += openssl
+    SUBDIR += openssl-devel
     SUBDIR += openssl-unsafe
     SUBDIR += openssl_tpm_engine
     SUBDIR += openvas8
@@ -933,6 +935,7 @@
     SUBDIR += py-passlib
     SUBDIR += py-pbkdf2
     SUBDIR += py-pgpdump
+    SUBDIR += py-pgpy
     SUBDIR += py-plaso
     SUBDIR += py-potr
     SUBDIR += py-pyaes

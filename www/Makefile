@@ -199,6 +199,8 @@
     SUBDIR += googlebook_dl
     SUBDIR += googler
     SUBDIR += goose
+    SUBDIR += gophernicus
+    SUBDIR += gopherus
     SUBDIR += gotty
     SUBDIR += gpx2map
     SUBDIR += grafana
@@ -345,6 +347,7 @@
     SUBDIR += mod_auth_cookie_mysql2
     SUBDIR += mod_auth_gssapi
     SUBDIR += mod_auth_kerb2
+    SUBDIR += mod_auth_mellon
     SUBDIR += mod_auth_mysql2
     SUBDIR += mod_auth_mysql_another
     SUBDIR += mod_auth_openid
@@ -1404,6 +1407,7 @@
     SUBDIR += py-beaker
     SUBDIR += py-beautifulsoup
     SUBDIR += py-beautifulsoup32
+    SUBDIR += py-beautifulsoup448
     SUBDIR += py-beautifulsoup460
     SUBDIR += py-biscuits
     SUBDIR += py-bjoern
@@ -1491,7 +1495,6 @@
     SUBDIR += py-django-filter
     SUBDIR += py-django-formtools
     SUBDIR += py-django-guardian
-    SUBDIR += py-django-happenings
     SUBDIR += py-django-happenings-update
     SUBDIR += py-django-haystack
     SUBDIR += py-django-hierarkey

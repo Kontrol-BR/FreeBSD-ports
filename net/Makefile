@@ -182,7 +182,6 @@
     SUBDIR += geoclue
     SUBDIR += geocode-glib
     SUBDIR += geoipupdate
-    SUBDIR += get_iplayer
     SUBDIR += gfbgraph
     SUBDIR += glflow
     SUBDIR += glib-networking
@@ -214,6 +213,7 @@
     SUBDIR += grpcui
     SUBDIR += grpcurl
     SUBDIR += grsync
+    SUBDIR += gscloud
     SUBDIR += gsk
     SUBDIR += gspoof
     SUBDIR += gssdp

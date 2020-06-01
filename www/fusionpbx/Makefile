@@ -1,4 +1,4 @@
-# Created by: Richard Allen <richard2891@gmail.com>
+# Created by: Richard Neese <r.neese@gmail.com>
 # $FreeBSD$
 
 PORTNAME=	fusionpbx
@@ -22,15 +22,9 @@ USE_PHP=	phar pdo pdo_odbc pdo_sqlite json gd imap \
 		ldap openssl sockets simplexml xml session odbc
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	${PORTNAME}
-GH_PROJECT=	${PORTNAME}
-GH_TAGNAME=	${PORTVERSION}
-
-DEFAULT_VERSIONS+=php=7.2
 
 VARBASE=	var
 
-WRKSRC_SUBDIR=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	PDOPGSQL
@@ -46,7 +40,7 @@ PDOPGSQL_USE=	PHP=pgsql,pdo_pgsql
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	@(cd ${WRKSRC_SUBDIR} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
 	@${MKDIR} ${STAGEDIR}/${VARBASE}/db/fusionpbx
 
 	@${MKDIR} ${STAGEDIR}/${VARBASE}/cache/fusionpbx

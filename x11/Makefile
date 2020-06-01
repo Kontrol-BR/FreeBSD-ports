@@ -96,8 +96,6 @@
     SUBDIR += guake
     SUBDIR += gxkb
     SUBDIR += hhpc
-    SUBDIR += hs-X11
-    SUBDIR += hs-X11-xft
     SUBDIR += hs-xmobar
     SUBDIR += hsetroot
     SUBDIR += i3blocks
@@ -245,7 +243,7 @@
     SUBDIR += pipeglade
     SUBDIR += pixman
     SUBDIR += plank
-    SUBDIR += plasma-wayland-protocols 
+    SUBDIR += plasma-wayland-protocols
     SUBDIR += plasma5-kactivitymanagerd
     SUBDIR += plasma5-kgamma5
     SUBDIR += plasma5-kscreen

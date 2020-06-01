@@ -246,7 +246,6 @@
     SUBDIR += pbasic
     SUBDIR += pcc
     SUBDIR += perl5-devel
-    SUBDIR += perl5.26
     SUBDIR += perl5.28
     SUBDIR += perl5.30
     SUBDIR += petite-chez
@@ -315,6 +314,7 @@
     SUBDIR += scala-docs
     SUBDIR += scheme48
     SUBDIR += scm
+    SUBDIR += sdcc
     SUBDIR += see
     SUBDIR += seed7
     SUBDIR += siod

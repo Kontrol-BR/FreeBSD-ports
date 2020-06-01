@@ -315,7 +315,6 @@
     SUBDIR += hpipm
     SUBDIR += hs-Agda
     SUBDIR += hs-penrose
-    SUBDIR += hs-semigroups
     SUBDIR += ideep
     SUBDIR += ignition-math
     SUBDIR += igraph
@@ -674,6 +673,7 @@
     SUBDIR += p5-Task-Math-Symbolic
     SUBDIR += p5-Text-AsciiTeX
     SUBDIR += p5-bignum
+    SUBDIR += palp
     SUBDIR += pantheon-calculator
     SUBDIR += pari
     SUBDIR += pari_elldata
@@ -909,6 +909,7 @@
     SUBDIR += superlu
     SUBDIR += symmetrica
     SUBDIR += symphony
+    SUBDIR += sympow
     SUBDIR += tablix
     SUBDIR += taucs
     SUBDIR += tblis

@@ -51,7 +51,6 @@
     SUBDIR += dalmp
     SUBDIR += datamodeler
     SUBDIR += db
-    SUBDIR += db48
     SUBDIR += db5
     SUBDIR += db6
     SUBDIR += dbf
@@ -827,6 +826,7 @@
     SUBDIR += py-tableschema
     SUBDIR += py-tarantool
     SUBDIR += py-tiledb
+    SUBDIR += py-txredisapi
     SUBDIR += py-umemcache
     SUBDIR += py-unqlite
     SUBDIR += py-varstack

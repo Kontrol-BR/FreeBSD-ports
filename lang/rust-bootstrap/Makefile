@@ -1,7 +1,8 @@
 # $FreeBSD$
 
 PORTNAME=	rust
-PORTVERSION=	1.43.1
+PORTVERSION=	1.44.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:rust \
 		LOCAL/tobik:armbase \

@@ -272,7 +272,6 @@
     SUBDIR += capstone3
     SUBDIR += capstone4
     SUBDIR += cargo-c
-    SUBDIR += cargo-tree
     SUBDIR += cask
     SUBDIR += catch
     SUBDIR += cbrowser
@@ -658,7 +657,6 @@
     SUBDIR += fortytwo-encore
     SUBDIR += fossil
     SUBDIR += fossology-nomos-standalone
-    SUBDIR += frink
     SUBDIR += fp16
     SUBDIR += fpc-bfd
     SUBDIR += fpc-dbus
@@ -693,6 +691,7 @@
     SUBDIR += frama-c
     SUBDIR += freebsd-gcc6
     SUBDIR += freebsd-gcc9
+    SUBDIR += frink
     SUBDIR += fsmtrie
     SUBDIR += fstrcmp
     SUBDIR += fstrm
@@ -1189,6 +1188,7 @@
     SUBDIR += libglade2
     SUBDIR += libglade2-reference
     SUBDIR += libglademm24
+    SUBDIR += libgnt
     SUBDIR += libgpc
     SUBDIR += libgpkg
     SUBDIR += libgrading
@@ -1252,8 +1252,6 @@
     SUBDIR += liborcus
     SUBDIR += libosinfo
     SUBDIR += libosmo-abis
-    SUBDIR += libosmo-netif
-    SUBDIR += libosmo-sccp
     SUBDIR += libosmocore
     SUBDIR += libowfat
     SUBDIR += libpafe
@@ -5272,8 +5270,8 @@
     SUBDIR += py-zope.testing
     SUBDIR += py-zope.traversing
     SUBDIR += py-zsm-lib
-    SUBDIR += py_static_check
     SUBDIR += py3c
+    SUBDIR += py_static_check
     SUBDIR += pybind11
     SUBDIR += pybugz
     SUBDIR += pycanberra
@@ -5382,6 +5380,7 @@
     SUBDIR += ros-urdfdom_headers
     SUBDIR += ros-vcstools
     SUBDIR += ros-wstool
+    SUBDIR += roswell
     SUBDIR += rote
     SUBDIR += rpc2
     SUBDIR += rpclib
@@ -6239,12 +6238,10 @@
     SUBDIR += rubygem-pathutil
     SUBDIR += rubygem-pdk
     SUBDIR += rubygem-peek
-    SUBDIR += rubygem-peek-gc-rails5
     SUBDIR += rubygem-peek-gc-rails52
     SUBDIR += rubygem-peek-host
     SUBDIR += rubygem-peek-performance_bar
     SUBDIR += rubygem-peek-rails4
-    SUBDIR += rubygem-peek-rails5
     SUBDIR += rubygem-peek-rails52
     SUBDIR += rubygem-peek-rails60
     SUBDIR += rubygem-peek-rblineprof-rails52

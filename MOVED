@@ -14467,7 +14467,6 @@ devel/py-Products.LDAPUserFolder||2020-03-20|Has expired: Old, uses EOLed python
 devel/py-zLOG||2020-03-20|Has expired: Old, uses EOLed python27
 textproc/py-ltxml||2020-03-20|Has expired: Unmaintained, uses EOLed python27
 x11-toolkits/flowcanvas||2020-03-20|Has expired: Unmaintained, uses EOLed python27
-audio/raul||2020-03-20|Has expired: Unmaintained, uses EOLed python27
 audio/py-vorbis||2020-03-20|Has expired: Unmaintained, uses EOLed python27
 databases/py-cdb||2020-03-20|Has expired: Unmaintained, uses EOLed python27
 devel/py-libplist||2020-03-20|Has expired: Unmaintained, uses EOLed python27
@@ -15056,3 +15055,28 @@ lang/perl5.26|lang/perl5.28|2020-05-31|Has expired: Support ends three years aft
 www/py-beautifulsoup460|www/py-beautifulsoup448|2020-05-31|Has expired: Use www/py-beautifulsoup448 instead
 databases/db48|databases/db5|2020-06-02|Has expired. Use databases/db5 instead
 security/bro||2020-06-02|Has expired: Please migrate to security/zeek
+www/py-djangotoolbox||2020-06-03|Has expired: No longer maintained, not compatible with Django 1.11+
+www/py-dojango||2020-06-03|Has expired: No longer maintained, not compatible with Django 2.2+
+www/py-django-json-rpc||2020-06-03|Has expired: No longer maintained, not compatible with Django 2.0+
+www/mediawiki132|www/mediawiki133|2020-06-03|Has expired: EOLed upstream
+devel/cargo-tree|lang/rust|2020-06-04|Integrated into cargo
+databases/rubygem-peek-mysql2-rails5||2020-06-05|Removed: not required by gitlab-ce anymore
+audio/workman||2020-06-05|Has expired: Depends on expired x11-toolkits/xview
+x11-toolkits/xview||2020-06-05|Has expired: 64-bit unsupported
+math/p5-Algorithm-KMeans||2020-06-05|Has expired: Depends on expired math/p5-Math-GSL
+math/p5-Math-GSL||2020-06-05|Has expired: Broken for more than 6 months
+net/openbsc||2020-06-05|Has expired: Depends on expired devel/libosmo-netif
+devel/libosmo-netif||2020-06-05|Has expired: Broken for more than 6 months
+audio/xvmixer||2020-06-05|Has expired: Depends on expired x11-toolkits/xview
+devel/libosmo-sccp||2020-06-05|Has expired: Depends on expired devel/libosmo-netif
+audio/p5-Audio||2020-06-05|Has expired: Depends on expired math/p5-Math-GSL
+databases/rubygem-peek-pg-rails5||2020-06-05|Removed: not required by gitlab-ce anymore
+devel/rubygem-peek-gc-rails5|devel/rubygem-peek-gc-rails52|2020-06-05|Removed: please use devel/rubygem-peek-gc-rails52 instead
+devel/rubygem-peek-rails5|devel/rubygem-peek-rails60|2020-06-05|Removed: please use devel/rubygem-peek-rails60 instead
+net/freerdp1|net/freerdp|2020-06-06|Has expired: Superseded by the freerdp port/package
+irc/psybnc||2020-06-06|Has expired: Broken for more than 6 months
+www/py-dj22-djangoql|www/py-djangoql|2020-06-06|Renamed to match the naming of other Django ports since Django 2.2 became default
+sysutils/beats|sysutils/beats6|2020-06-07|Renamed to match the naming of other ELK ports
+security/pam_pseudo||2020-06-07|Has expired: Broken for more than 6 months
+multimedia/din|audio/din|2020-06-09|Moved to a better category
+www/py-dj22-django_csp|www/py-django-csp|2020-06-10|Renamed to match upstream naming and to be in sync with other Django ports since Django 2.2 became default

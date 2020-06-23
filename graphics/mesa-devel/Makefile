@@ -1,15 +1,15 @@
 # $FreeBSD$
 
 PORTNAME=	mesa
-DISTVERSION=	20.1-branchpoint-1896
-DISTVERSIONSUFFIX=	-g25a629558ca
+DISTVERSION=	20.1-branchpoint-2209
+DISTVERSIONSUFFIX=	-g6ac99b9f39d
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	ee5c7790fa93.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
 PATCHFILES+=	9f52b5177728.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
-PATCHFILES+=	cefdea8105bf.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
+PATCHFILES+=	2b9168cf579b.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
 PATCHFILES+=	55822330540d.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
 PATCHFILES+=	f6c7569ad9ea.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
 PATCHFILES+=	c7a2ab64144b.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
@@ -17,16 +17,12 @@ PATCHFILES+=	f3b7aba7ed39.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-
 PATCHFILES+=	23df7d9971dd.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
 PATCHFILES+=	ec60ac47860a.patch:-p1
 PATCHFILES+=	807ae077ab19.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/3568
-PATCHFILES+=	1b10b42fe65e.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1619
+PATCHFILES+=	fb7a3759f761.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1619
 PATCHFILES+=	9291544ca0bd.patch:-p1
 PATCHFILES+=	700efacda59c.patch:-p1
 PATCHFILES+=	e86eead1255e.patch:-p1
-PATCHFILES+=	ee6635dea86a.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/5463
-PATCHFILES+=	525b0ed4974f.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/5463
-PATCHFILES+=	7b643e935870.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/5462
 PATCHFILES+=	91c69ccd11e6.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/5461
-PATCHFILES+=	b0314147a92b.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/5460
-PATCHFILES+=	ba91764bc737.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/5464
+PATCHFILES+=	167fa293d7b7.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/5464
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Bleeding edge Mesa drivers (OpenGL, Vulkan)
@@ -66,7 +62,7 @@ PLIST_SUB=	ARCH=${ARCH:S/amd/x86_/}
 LDFLAGS+=	-fuse-ld=lld
 .endif
 
-OPTIONS_DEFINE=		${OPTIONS_MULTI} LIBUNWIND LLVM NLS VAAPI VDPAU WAYLAND X11 ZSTD
+OPTIONS_DEFINE=		${OPTIONS_MULTI} LIBUNWIND LLVM VAAPI VDPAU WAYLAND X11 ZSTD
 OPTIONS_DEFAULT=	${OPTIONS_MULTI} LIBUNWIND LLVM VAAPI VDPAU WAYLAND X11 ZSTD
 OPTIONS_MULTI=		DRI GALLIUM VULKAN
 OPTIONS_MULTI_DRI=	i965
@@ -121,8 +117,6 @@ LLVM_BINARY_ALIAS=	llvm-config=llvm-config${LLVM_DEFAULT}
 ${i}_IMPLIES+=		LLVM
 .endfor
 
-NLS_USES=		gettext-tools
-
 VAAPI_BUILD_DEPENDS=	libva>0:multimedia/libva
 VAAPI_MESON_ENABLED=	gallium-va
 
@@ -163,10 +157,6 @@ post-patch:
 post-patch-COINST-on:
 	@${MV} ${WRKSRC}/src/util/00-${PORTNAME}-defaults.conf \
 		${WRKSRC}/src/util/00-${PKGBASE}-defaults.conf
-
-pre-build-NLS-on:
-# Meson doesn't automatically generate translations
-	@${DO_MAKE_BUILD} -C ${BUILD_WRKSRC} xmlpool-gmo
 
 post-install-COINST-on:
 	@${INSTALL_DATA} ${WRKDIR}/libmap.conf \

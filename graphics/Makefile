@@ -173,6 +173,7 @@
     SUBDIR += exiftran
     SUBDIR += exiv2
     SUBDIR += exrtools
+    SUBDIR += f3d
     SUBDIR += facedetect
     SUBDIR += farbfeld
     SUBDIR += feh
@@ -380,6 +381,7 @@
     SUBDIR += jslice
     SUBDIR += kamera
     SUBDIR += kamerka
+    SUBDIR += katarakt
     SUBDIR += kcolorchooser
     SUBDIR += kcolorpicker
     SUBDIR += kdegraphics

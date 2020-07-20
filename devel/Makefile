@@ -116,6 +116,7 @@
     SUBDIR += alog
     SUBDIR += amd64-gcc
     SUBDIR += amd64-xtoolchain-gcc
+    SUBDIR += aml
     SUBDIR += amqp-cpp
     SUBDIR += android-tools-adb
     SUBDIR += android-tools-fastboot
@@ -3597,6 +3598,7 @@
     SUBDIR += p5-asa
     SUBDIR += p5-autobox
     SUBDIR += p5-autobox-Core
+    SUBDIR += p5-autobox-Transform
     SUBDIR += p5-autodie
     SUBDIR += p5-autovivification
     SUBDIR += p5-bareword-filehandles
@@ -3994,7 +3996,6 @@
     SUBDIR += py-Js2Py
     SUBDIR += py-PEAK-Rules
     SUBDIR += py-PeachPy
-    SUBDIR += py-Pint
     SUBDIR += py-Products.ExternalEditor
     SUBDIR += py-Products.PloneLanguageTool
     SUBDIR += py-PyExecJS
@@ -4405,7 +4406,6 @@
     SUBDIR += py-foolscap
     SUBDIR += py-freebsd
     SUBDIR += py-freebsd-sysctl
-    SUBDIR += py-freenas.dispatcher
     SUBDIR += py-freenas.utils
     SUBDIR += py-freezegun
     SUBDIR += py-frozendict
@@ -4748,6 +4748,7 @@
     SUBDIR += py-oslo.vmware2
     SUBDIR += py-oslotest
     SUBDIR += py-osprofiler
+    SUBDIR += py-outcome
     SUBDIR += py-ovs
     SUBDIR += py-ovsdbapp
     SUBDIR += py-p4python
@@ -4783,6 +4784,7 @@
     SUBDIR += py-pika
     SUBDIR += py-pika-pool
     SUBDIR += py-pinocchio
+    SUBDIR += py-pint
     SUBDIR += py-pip
     SUBDIR += py-pip-api
     SUBDIR += py-pip-licenses
@@ -4820,6 +4822,7 @@
     SUBDIR += py-promise
     SUBDIR += py-prompt_toolkit
     SUBDIR += py-prompt_toolkit1
+    SUBDIR += py-prompt_toolkit2
     SUBDIR += py-protobuf
     SUBDIR += py-protocols
     SUBDIR += py-ptable
@@ -5296,6 +5299,7 @@
     SUBDIR += pybugz
     SUBDIR += pycanberra
     SUBDIR += pycharm-ce
+    SUBDIR += pycharm-pro
     SUBDIR += pycos
     SUBDIR += pycount
     SUBDIR += pydbus-common
@@ -6841,6 +6845,7 @@
     SUBDIR += zpu-binutils
     SUBDIR += zpu-gcc
     SUBDIR += zthread
+    SUBDIR += zydis
     SUBDIR += zziplib
 
 .include <bsd.port.subdir.mk>

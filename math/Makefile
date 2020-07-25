@@ -526,6 +526,7 @@
     SUBDIR += opensolaris-libm
     SUBDIR += openturns
     SUBDIR += optpp
+    SUBDIR += or-tools
     SUBDIR += orpie
     SUBDIR += osi
     SUBDIR += osqp
@@ -784,6 +785,7 @@
     SUBDIR += py-nevergrad
     SUBDIR += py-numeric
     SUBDIR += py-numexpr
+    SUBDIR += py-numpoly
     SUBDIR += py-numpy
     SUBDIR += py-nzmath
     SUBDIR += py-opt-einsum

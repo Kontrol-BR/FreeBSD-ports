@@ -131,7 +131,6 @@
     SUBDIR += drive
     SUBDIR += dropbox-api-command
     SUBDIR += dropbox-uploader
-    SUBDIR += dshell
     SUBDIR += dtcp
     SUBDIR += dtcpclient
     SUBDIR += dual-dhclient
@@ -173,6 +172,7 @@
     SUBDIR += frr5
     SUBDIR += frr6
     SUBDIR += frr7
+    SUBDIR += frr7-pythontools
     SUBDIR += fspclient
     SUBDIR += fspd
     SUBDIR += fsplib
@@ -297,12 +297,12 @@
     SUBDIR += kamailio
     SUBDIR += kblog
     SUBDIR += kcalutils
-    SUBDIR += kdav
     SUBDIR += kdenetwork
     SUBDIR += kdenetwork-filesharing
     SUBDIR += kea
     SUBDIR += kf5-kcalendarcore
     SUBDIR += kf5-kcontacts
+    SUBDIR += kf5-kdav
     SUBDIR += kf5-kholidays
     SUBDIR += kf5-kxmlrpcclient
     SUBDIR += kf5-syndication
@@ -1104,6 +1104,7 @@
     SUBDIR += py-s3transfer
     SUBDIR += py-sbws
     SUBDIR += py-shodan
+    SUBDIR += py-siosocks
     SUBDIR += py-smart-open
     SUBDIR += py-smbpasswd
     SUBDIR += py-soap2py

@@ -234,6 +234,7 @@
     SUBDIR += haproxy17
     SUBDIR += haproxy18
     SUBDIR += haproxy19
+    SUBDIR += haproxy20
     SUBDIR += haproxy21
     SUBDIR += hblock
     SUBDIR += hexinject
@@ -1142,6 +1143,7 @@
     SUBDIR += qt5-networkauth
     SUBDIR += quagga
     SUBDIR += queso
+    SUBDIR += quiche
     SUBDIR += quiterss
     SUBDIR += quoted
     SUBDIR += rabbiteer
@@ -1160,6 +1162,7 @@
     SUBDIR += rdapper
     SUBDIR += rdesktop
     SUBDIR += rdist6
+    SUBDIR += read_bbrlog
     SUBDIR += realtek-re-kmod
     SUBDIR += reaver
     SUBDIR += recvnet
@@ -1334,6 +1337,9 @@
     SUBDIR += rubygem-stackdriver-core
     SUBDIR += rubygem-stompserver
     SUBDIR += rubygem-t
+    SUBDIR += rubygem-train
+    SUBDIR += rubygem-train-core
+    SUBDIR += rubygem-train-winrm
     SUBDIR += rubygem-tweetstream
     SUBDIR += rubygem-twitter
     SUBDIR += rubygem-twitter-stream
@@ -1428,6 +1434,7 @@
     SUBDIR += tcpillust
     SUBDIR += tcping
     SUBDIR += tcpkali
+    SUBDIR += tcplog_dumper
     SUBDIR += tcpmssd
     SUBDIR += tcpproxy
     SUBDIR += tcpreen

@@ -2,6 +2,7 @@
 
 PORTNAME=	icedtea-web
 PORTVERSION=	1.8.4
+PORTREVISION=	3
 CATEGORIES=	java www
 MASTER_SITES=	https://github.com/AdoptOpenJDK/IcedTea-Web/archive/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -13,6 +14,7 @@ COMMENT=	Free Java plug-in and Java Web Start for OpenJDK
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	zip:archivers/zip \
+		rustc:lang/rust \
 		bash:shells/bash \
 		gsed:textproc/gsed \
 		${HAMCREST_JAR}:java/hamcrest \
@@ -23,6 +25,7 @@ MAKE_JOBS_UNSAFE=yes
 
 GNU_CONFIGURE=	yes
 USE_JAVA=	yes
+JAVA_VERSION=	8
 JAVA_OS=	native
 JAVA_VENDOR=	openjdk
 USE_PERL5=	build
@@ -32,19 +35,22 @@ SHEBANG_FILES=	jrunscript.in shell-launcher/launchers.sh.in
 
 CONFIGURE_ARGS=		--with-hamcrest="${HAMCREST_JAR}"
 CONFIGURE_ARGS+=	--with-jdk-home="${JAVA_HOME}"
-CONFIGURE_ARGS+=	--with-jre-home="${JAVA_HOME}/jre"
 CONFIGURE_ARGS+=	--with-junit="${JUNIT_JAR}"
 CONFIGURE_ARGS+=	--with-rhino="${RHINO_JAR}"
 CONFIGURE_ARGS+=	--with-tagsoup="${TAGSOUP_JAR}"
-CONFIGURE_ARGS+=	--with-itw-libs="BUNDLED"
+CONFIGURE_ARGS+=	--with-itw-libs="DISTRIBUTION"
 CONFIGURE_ARGS+=	--enable-shell-launchers
 .for opt in asm chrome chromium ecj epiphany firefox jacoco midori opera
 CONFIGURE_ARGS+=	--without-${opt}
 .endfor
 CONFIGURE_ENV=		BIN_BASH=${bash_CMD}
+CONFIGURE_ENV+=		bashcompdir=${PREFIX}/etc/bash_completion.d
 CONFIGURE_SHELL=	${bash_CMD}
 
 TEST_TARGET=	check
+
+# Upstream archive contains files with UTF-8 names
+EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 
 OPTIONS_DEFINE=	DOCS PLUGIN RHINO TAGSOUP
 OPTIONS_DEFAULT=PLUGIN
@@ -67,7 +73,7 @@ TAGSOUP_RUN_DEPENDS=	${TAGSOUP_BUILD_DEPENDS}
 TAGSOUP_VARS=		TAGSOUP_JAR="${JAVALIBDIR}/tagsoup.jar"
 TAGSOUP_VARS_OFF=	TAGSOUP_JAR=no
 
-PLUGIN_CONFIGURE_ENABLE=native-plugin
+PLUGIN_CONFIGURE_ENABLE=native-plugin pluginjar
 PLUGIN_CONFIGURE_ENV=	MOZILLA_CFLAGS="-I${WRKDIR}/npapi-headers -DXP_UNIX" \
 			MOZILLA_LIBS=" " # needs to be set and non-empty!
 PLUGIN_DISTFILES=	libxul-npapi-headers-45.9.0${EXTRACT_SUFX}:npapi

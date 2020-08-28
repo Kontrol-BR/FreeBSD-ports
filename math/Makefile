@@ -150,7 +150,6 @@
     SUBDIR += aspcud
     SUBDIR += asymptote
     SUBDIR += atlas
-    SUBDIR += barvinok
     SUBDIR += bcal
     SUBDIR += bitwise
     SUBDIR += blacs
@@ -524,7 +523,6 @@
     SUBDIR += openblas
     SUBDIR += openfst
     SUBDIR += openlibm
-    SUBDIR += openmesh
     SUBDIR += opensolaris-libm
     SUBDIR += openturns
     SUBDIR += optpp
@@ -753,8 +751,6 @@
     SUBDIR += py-ecos
     SUBDIR += py-fastcluster
     SUBDIR += py-fastdtw
-    SUBDIR += py-ffc
-    SUBDIR += py-fiat
     SUBDIR += py-flax
     SUBDIR += py-fpconst
     SUBDIR += py-fpylll
@@ -790,7 +786,6 @@
     SUBDIR += py-numexpr
     SUBDIR += py-numpoly
     SUBDIR += py-numpy
-    SUBDIR += py-nzmath
     SUBDIR += py-opt-einsum
     SUBDIR += py-or-tools
     SUBDIR += py-osqp
@@ -813,7 +808,6 @@
     SUBDIR += py-pygslodeiv2
     SUBDIR += py-pyhull
     SUBDIR += py-pyipopt
-    SUBDIR += py-pymc
     SUBDIR += py-pymc3
     SUBDIR += py-pyneqsys
     SUBDIR += py-pynleq2
@@ -821,7 +815,6 @@
     SUBDIR += py-pyodeint
     SUBDIR += py-pyodesys
     SUBDIR += py-pysmt
-    SUBDIR += py-pysparse
     SUBDIR += py-pystan
     SUBDIR += py-pysym
     SUBDIR += py-python-fcl
@@ -851,7 +844,6 @@
     SUBDIR += py-sympy
     SUBDIR += py-theano
     SUBDIR += py-triangle
-    SUBDIR += py-ufl
     SUBDIR += py-uncertainties
     SUBDIR += py-vincenty
     SUBDIR += py-yt
@@ -871,7 +863,6 @@
     SUBDIR += reduce
     SUBDIR += reduce-psl
     SUBDIR += reed-solomon
-    SUBDIR += rehearse
     SUBDIR += rexx-regmath
     SUBDIR += rkward-kde
     SUBDIR += rngstreams
@@ -879,6 +870,7 @@
     SUBDIR += rpcalc
     SUBDIR += rubiks
     SUBDIR += rubygem-algebra
+    SUBDIR += rubygem-bigdecimal
     SUBDIR += rubygem-enumerable-statistics
     SUBDIR += rubygem-expression_parser
     SUBDIR += rubygem-fftw3

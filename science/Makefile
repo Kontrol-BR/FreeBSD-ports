@@ -79,7 +79,6 @@
     SUBDIR += fasthenry
     SUBDIR += fastjet
     SUBDIR += fisicalab
-    SUBDIR += fleur
     SUBDIR += fsom
     SUBDIR += fvcom
     SUBDIR += fvcom-mpi
@@ -139,7 +138,6 @@
     SUBDIR += libvdwxc
     SUBDIR += libxc
     SUBDIR += liggghts
-    SUBDIR += lm
     SUBDIR += luscus
     SUBDIR += madness
     SUBDIR += maeparser
@@ -223,7 +221,6 @@
     SUBDIR += py-MDAnalysisTests
     SUBDIR += py-OpenFermion
     SUBDIR += py-PyFR
-    SUBDIR += py-PyQuante
     SUBDIR += py-SimpleSpectral
     SUBDIR += py-abipy
     SUBDIR += py-asdf
@@ -249,7 +246,6 @@
     SUBDIR += py-liac-arff
     SUBDIR += py-lifelines
     SUBDIR += py-mdp
-    SUBDIR += py-mlpy
     SUBDIR += py-mmtf-python
     SUBDIR += py-molmod
     SUBDIR += py-moltemplate
@@ -290,7 +286,6 @@
     SUBDIR += py-spglib
     SUBDIR += py-tensorflow
     SUBDIR += py-veusz
-    SUBDIR += py-ws2300
     SUBDIR += pybrain
     SUBDIR += pynn
     SUBDIR += qbox

@@ -44,6 +44,7 @@
     SUBDIR += bareos16-webui
     SUBDIR += bareos17-webui
     SUBDIR += bareos18-webui
+    SUBDIR += beehive
     SUBDIR += bkmrkconv
     SUBDIR += blastbeat
     SUBDIR += bluefish
@@ -173,6 +174,7 @@
     SUBDIR += fusionpbx
     SUBDIR += g-cows
     SUBDIR += g-gcl
+    SUBDIR += gallery-dl
     SUBDIR += gallery2
     SUBDIR += gatling
     SUBDIR += gauche-makiki
@@ -1398,7 +1400,6 @@
     SUBDIR += pserv
     SUBDIR += publicfile
     SUBDIR += punbb
-    SUBDIR += py-MechanicalSoup
     SUBDIR += py-Tenjin
     SUBDIR += py-WebError
     SUBDIR += py-WebFlash
@@ -1592,6 +1593,7 @@
     SUBDIR += py-flexget
     SUBDIR += py-flup6
     SUBDIR += py-folium
+    SUBDIR += py-forcediphttpsadapter
     SUBDIR += py-formencode
     SUBDIR += py-freenit
     SUBDIR += py-frozen-flask
@@ -1642,6 +1644,7 @@
     SUBDIR += py-lesscpy
     SUBDIR += py-libsass
     SUBDIR += py-livereload
+    SUBDIR += py-mechanicalsoup
     SUBDIR += py-mechanize
     SUBDIR += py-meld3
     SUBDIR += py-multidict
@@ -1662,12 +1665,12 @@
     SUBDIR += py-priority
     SUBDIR += py-puppetboard
     SUBDIR += py-py-restclient
-    SUBDIR += py-pySmartDL
     SUBDIR += py-pyjwt
     SUBDIR += py-pylons
     SUBDIR += py-pyocclient
     SUBDIR += py-pyramid
     SUBDIR += py-pyramid_rpc
+    SUBDIR += py-pysmartdl
     SUBDIR += py-python-digitalocean
     SUBDIR += py-python-dotenv
     SUBDIR += py-python-multipart

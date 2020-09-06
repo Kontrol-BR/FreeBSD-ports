@@ -289,6 +289,7 @@
     SUBDIR += sakura
     SUBDIR += sbxkb
     SUBDIR += screen-message
+    SUBDIR += screenkey
     SUBDIR += scripts
     SUBDIR += sddm
     SUBDIR += sessreg
@@ -453,6 +454,7 @@
     SUBDIR += xman
     SUBDIR += xmangekyou
     SUBDIR += xmascot
+    SUBDIR += xmenu
     SUBDIR += xmessage
     SUBDIR += xmh
     SUBDIR += xmodmap
@@ -462,6 +464,7 @@
     SUBDIR += xmsg
     SUBDIR += xmx
     SUBDIR += xnee
+    SUBDIR += xob
     SUBDIR += xorg
     SUBDIR += xorg-apps
     SUBDIR += xorg-cf-files

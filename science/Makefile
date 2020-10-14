@@ -31,11 +31,11 @@
     SUBDIR += atompaw
     SUBDIR += avogadro2
     SUBDIR += avogadrolibs
+    SUBDIR += axom
     SUBDIR += bagel
     SUBDIR += bddsolve
     SUBDIR += berkeleygw
     SUBDIR += bodr
-    SUBDIR += brian
     SUBDIR += buddy
     SUBDIR += cdcl
     SUBDIR += cdf
@@ -53,6 +53,7 @@
     SUBDIR += clipper
     SUBDIR += code_saturne
     SUBDIR += colt
+    SUBDIR += conduit
     SUBDIR += coordgenlibs
     SUBDIR += cp2k
     SUBDIR += cp2k-data
@@ -209,7 +210,6 @@
     SUBDIR += packmol
     SUBDIR += pagmo2
     SUBDIR += paje
-    SUBDIR += paraview
     SUBDIR += pcmsolver
     SUBDIR += plumed
     SUBDIR += pnetcdf

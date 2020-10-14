@@ -13,8 +13,8 @@ LICENSE=	APACHE20
 USES=		compiler go:modules
 
 USE_GITHUB=	yes
-GHTAG=		RELEASE.2020-09-10T22-02-45Z
-COMMIT_ID=	eb2934f0c1a9c2e5f2dc23ebc729617ada578970
+GHTAG=		RELEASE.2020-10-09T22-55-05Z
+COMMIT_ID=	6484453fc6eb0ca37657198dfe46df11a76d1d4f
 
 GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		Azure:azure-pipeline-go:v0.2.2:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
@@ -38,6 +38,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		dchest:siphash:v1.2.1:dchest_siphash/vendor/github.com/dchest/siphash \
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		djherbis:atime:v1.0.0:djherbis_atime/vendor/github.com/djherbis/atime \
+		dswarbrick:smart:909a45200d6d:dswarbrick_smart/vendor/github.com/dswarbrick/smart \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		eapache:go-resiliency:v1.1.0:eapache_go_resiliency/vendor/github.com/eapache/go-resiliency \
 		eapache:go-xerial-snappy:776d5712da21:eapache_go_xerial_snappy/vendor/github.com/eapache/go-xerial-snappy \
@@ -55,18 +56,18 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.4.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:948cd5f35899:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:5c72a883971a:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:869f871628b6:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mod:v0.3.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:ab3426394381:golang_net/vendor/golang.org/x/net \
+		golang:net:62affa334b73:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:e64efc72b421:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.4.0:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:ddb9806d33ae:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:288bc346aa39:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:time:9d24e82272b4:golang_time/vendor/golang.org/x/time \
-		golang:tools:c4923e618c08:golang_tools/vendor/golang.org/x/tools \
-		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
+		golang:tools:bf155c11ec6f:golang_tools/vendor/golang.org/x/tools \
+		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		gomodule:redigo:v2.0.0:gomodule_redigo/vendor/github.com/gomodule/redigo \
 		google:go-genproto:24fa4b261c55:google_go_genproto/vendor/google.golang.org/genproto \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
@@ -100,7 +101,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		klauspost:pgzip:v1.2.1:klauspost_pgzip/vendor/github.com/klauspost/pgzip \
 		klauspost:readahead:v1.3.1:klauspost_readahead/vendor/github.com/klauspost/readahead \
 		klauspost:reedsolomon:v1.9.9:klauspost_reedsolomon/vendor/github.com/klauspost/reedsolomon \
-		lib:pq:v1.7.0:lib_pq/vendor/github.com/lib/pq \
+		lib:pq:v1.8.0:lib_pq/vendor/github.com/lib/pq \
 		mailru:easyjson:v0.7.1:mailru_easyjson/vendor/github.com/mailru/easyjson \
 		mattn:go-colorable:v0.1.4:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-ieproxy:v0.0.1:mattn_go_ieproxy/vendor/github.com/mattn/go-ieproxy \
@@ -111,7 +112,7 @@ GH_TUPLE=	${PORTNAME}:${PORTNAME}:${GHTAG}:DEFAULT \
 		minio:cli:v1.22.0:minio_cli/vendor/github.com/minio/cli \
 		minio:highwayhash:v1.0.0:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		minio:md5-simd:v1.1.0:minio_md5_simd/vendor/github.com/minio/md5-simd \
-		minio:minio-go:14ed05478889:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
+		minio:minio-go:755b5633803a:minio_minio_go_v7/vendor/github.com/minio/minio-go/v7 \
 		minio:selfupdate:v0.3.1:minio_selfupdate/vendor/github.com/minio/selfupdate \
 		minio:sha256-simd:v0.1.1:minio_sha256_simd/vendor/github.com/minio/sha256-simd \
 		minio:simdjson-go:v0.1.5:minio_simdjson_go/vendor/github.com/minio/simdjson-go \

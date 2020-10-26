@@ -908,7 +908,8 @@
     SUBDIR += php73-posix
     SUBDIR += php74-fileinfo
     SUBDIR += php74-posix
-    SUBDIR += phpfpm_exporter
+    SUBDIR += php80-fileinfo
+    SUBDIR += php80-posix
     SUBDIR += phybs
     SUBDIR += pick
     SUBDIR += pidof
@@ -922,10 +923,10 @@
     SUBDIR += plasma5-kmenuedit
     SUBDIR += plasma5-ksysguard
     SUBDIR += plasma5-libksysguard
+    SUBDIR += plasma5-plasma-disks
     SUBDIR += plasma5-polkit-kde-agent-1
     SUBDIR += plasma5-powerdevil
     SUBDIR += plasma5-systemsettings
-    SUBDIR += plasma5-user-manager
     SUBDIR += plconfig
     SUBDIR += pmt
     SUBDIR += pnscan

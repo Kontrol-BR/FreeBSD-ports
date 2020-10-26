@@ -168,6 +168,7 @@
     SUBDIR += lua51
     SUBDIR += lua52
     SUBDIR += lua53
+    SUBDIR += lua54
     SUBDIR += luajit
     SUBDIR += luajit-openresty
     SUBDIR += malbolge
@@ -257,6 +258,8 @@
     SUBDIR += php73-extensions
     SUBDIR += php74
     SUBDIR += php74-extensions
+    SUBDIR += php80
+    SUBDIR += php80-extensions
     SUBDIR += picoc
     SUBDIR += plexil
     SUBDIR += pocl

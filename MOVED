@@ -9785,7 +9785,6 @@ audio/linux-mbrola||2018-01-28|Has expired: Depends on expiring audio/mbrolavox
 audio/gigedit||2018-01-28|Has expired: Broken for more than 6 months
 audio/gnomoradio||2018-01-28|Has expired: Broken for more than 6 months
 math/asir2000||2018-01-28|Has expired: Broken for more than 6 months
-multimedia/librespot||2018-01-28|Has expired: Broken for more than 6 months
 multimedia/bombono||2018-01-28|Has expired: Broken for more than 6 months
 lang/gcl||2018-01-28|Has expired: Broken for more than 6 months
 lang/pike78||2018-01-28|Has expired: Broken for more than 6 months
@@ -15547,7 +15546,6 @@ misc/hb||2020-09-19|Has expired: Uses deprecated version of python
 misc/mtail||2020-09-19|Has expired: Uses deprecated version of python
 misc/wotsap||2020-09-19|Has expired: Uses deprecated version of python
 multimedia/freevo||2020-09-19|Has expired: Uses deprecated version of python
-multimedia/quodlibet||2020-09-19|Has expired: Uses deprecated version of python
 multimedia/tovid||2020-09-19|Has expired: Uses deprecated version of python
 net/ceph13|net/ceph14|2020-09-19|Has expired: Uses deprecated version of python
 net/cloud-init-azure||2020-09-19|Has expired: Uses deprecated version of python
@@ -15649,3 +15647,11 @@ sysutils/syslog-ng320|sysutils/syslog-ng|2020-10-12|Has expired: Agreed upon ups
 dns/opendnssec|dns/opendnssec2|2020-10-12|Has expired: EOLed by upstream
 sysutils/syslog-ng323|sysutils/syslog-ng|2020-10-12|Has expired: Agreed upon upstream one year deprecation policy
 devel/libsoup-gnome|devel/libsoup|2020-10-12|Reunited into on package they have the same dependencies
+sysutils/plasma5-user-manager|x11/plasma5-plasma-desktop|2020-10-13|Reintegrated into other plasma5 components
+devel/geany-plugin-geanypy||2020-10-15|Has expired: Uses deprecated version of python
+comms/chirp||2020-10-16|Use deprecated version of python
+x11-toolkits/py-gtk2||2020-10-16|Remove deprecated binding replace by py-gobject
+www/py-unit|www/unit-python|2020-10-21|Rename to be more consistent with the naming convention
+sysutils/phpfpm_exporter|net-mgmt/phpfpm_exporter|2020-10-24|Move to net-mgmt category
+www/rubygem-uglifier27|www/rubygem-uglifier|2020-10-25|Obsolete, please use www/rubygem-uglifier instead
+www/rubygem-webpack-rails-rails60|devel/rubygem-webpacker-rails60|2020-10-25|Has expired: Upstream no longer maintained, use devel/rubygem-webpacker-rails* instead

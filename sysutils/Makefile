@@ -1040,6 +1040,7 @@
     SUBDIR += qchroot
     SUBDIR += qdirstat
     SUBDIR += qjail
+    SUBDIR += qjail54
     SUBDIR += qlogtools
     SUBDIR += qsudo
     SUBDIR += qt5-qtdiag
@@ -1300,6 +1301,7 @@
     SUBDIR += terraform-docs
     SUBDIR += terraform-provider-gridscale
     SUBDIR += terraform-provider-vultr
+    SUBDIR += terraform-switcher
     SUBDIR += terragrunt
     SUBDIR += testdisk
     SUBDIR += thefish

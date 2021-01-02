@@ -13,6 +13,7 @@
     SUBDIR += cordless
     SUBDIR += coyim
     SUBDIR += cutegram
+    SUBDIR += dendrite
     SUBDIR += diligent
     SUBDIR += dino
     SUBDIR += echat
@@ -179,6 +180,7 @@
     SUBDIR += vqcc-gtk
     SUBDIR += xmpp-client
     SUBDIR += yume
+    SUBDIR += zkgroup
     SUBDIR += zoom
 
 .include <bsd.port.subdir.mk>

@@ -50,10 +50,10 @@
     SUBDIR += belier
     SUBDIR += bfbtester
     SUBDIR += binwalk
+    SUBDIR += bitwarden_rs
     SUBDIR += boringssl
     SUBDIR += botan110
     SUBDIR += botan2
-    SUBDIR += broccoli
     SUBDIR += bruteblock
     SUBDIR += bruteforceblocker
     SUBDIR += bsdsfv
@@ -427,7 +427,6 @@
     SUBDIR += openvpn-devel
     SUBDIR += openvpn-mbedtls
     SUBDIR += ophcrack
-    SUBDIR += orthrus
     SUBDIR += ossec-hids
     SUBDIR += ossec-hids-agent
     SUBDIR += ossec-hids-agent-config
@@ -782,10 +781,6 @@
     SUBDIR += pgpdump
     SUBDIR += pgpgpg
     SUBDIR += pgpin
-    SUBDIR += php72-filter
-    SUBDIR += php72-hash
-    SUBDIR += php72-openssl
-    SUBDIR += php72-sodium
     SUBDIR += php73-filter
     SUBDIR += php73-hash
     SUBDIR += php73-openssl
@@ -851,7 +846,6 @@
     SUBDIR += py-artifacts
     SUBDIR += py-asyncssh
     SUBDIR += py-authlib
-    SUBDIR += py-backports.ssl_match_hostname
     SUBDIR += py-bcrypt
     SUBDIR += py-btchip-python
     SUBDIR += py-cerealizer
@@ -951,7 +945,6 @@
     SUBDIR += py-pynacl
     SUBDIR += py-pyotp
     SUBDIR += py-pyotp2289
-    SUBDIR += py-pyptlib
     SUBDIR += py-pysaml2
     SUBDIR += py-pysaml24
     SUBDIR += py-pyscard
@@ -1150,6 +1143,7 @@
     SUBDIR += rubygem-six
     SUBDIR += rubygem-sshkey
     SUBDIR += rubygem-sshkit
+    SUBDIR += rubygem-sslshake
     SUBDIR += rubygem-timfel-krb5
     SUBDIR += rubygem-tpm-key_attestation
     SUBDIR += rubygem-twitter_oauth
@@ -1162,7 +1156,6 @@
     SUBDIR += samhain-client
     SUBDIR += samhain-server
     SUBDIR += sancp
-    SUBDIR += sandsifter
     SUBDIR += sasp
     SUBDIR += scanlogd
     SUBDIR += scanssh
@@ -1214,6 +1207,7 @@
     SUBDIR += sqlmap
     SUBDIR += sqlninja
     SUBDIR += srm
+    SUBDIR += ssb
     SUBDIR += ssdeep
     SUBDIR += ssh-multiadd
     SUBDIR += ssh-vault
@@ -1302,6 +1296,7 @@
     SUBDIR += xml-security
     SUBDIR += xmlsec1
     SUBDIR += xorsearch
+    SUBDIR += xray-core
     SUBDIR += yafic
     SUBDIR += yapet
     SUBDIR += yara

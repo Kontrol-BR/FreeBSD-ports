@@ -772,6 +772,7 @@
     SUBDIR += p5-Feed-Find
     SUBDIR += p5-Feersum
     SUBDIR += p5-File-Mork
+    SUBDIR += p5-Firefox-Marionette
     SUBDIR += p5-Flea
     SUBDIR += p5-Flickr-API
     SUBDIR += p5-Flickr-Upload
@@ -1740,6 +1741,7 @@
     SUBDIR += py-tornado4
     SUBDIR += py-tornado6
     SUBDIR += py-treq
+    SUBDIR += py-ttrv
     SUBDIR += py-tuir
     SUBDIR += py-turbogears2
     SUBDIR += py-tvdb_api
@@ -1758,6 +1760,7 @@
     SUBDIR += py-webassets
     SUBDIR += py-webob
     SUBDIR += py-weboob
+    SUBDIR += py-weboob-qt
     SUBDIR += py-websocket-client
     SUBDIR += py-webunit
     SUBDIR += py-werkzeug
@@ -1803,11 +1806,13 @@
     SUBDIR += rubygem-actioncable50
     SUBDIR += rubygem-actioncable52
     SUBDIR += rubygem-actioncable60
+    SUBDIR += rubygem-actioncable61
     SUBDIR += rubygem-actionpack4
     SUBDIR += rubygem-actionpack5
     SUBDIR += rubygem-actionpack50
     SUBDIR += rubygem-actionpack52
     SUBDIR += rubygem-actionpack60
+    SUBDIR += rubygem-actionpack61
     SUBDIR += rubygem-activeresource
     SUBDIR += rubygem-activeresource4
     SUBDIR += rubygem-acts-as-taggable-on
@@ -1968,6 +1973,10 @@
     SUBDIR += rubygem-mousetrap-rails
     SUBDIR += rubygem-multipart-post
     SUBDIR += rubygem-nanoc
+    SUBDIR += rubygem-nanoc-checking
+    SUBDIR += rubygem-nanoc-cli
+    SUBDIR += rubygem-nanoc-core
+    SUBDIR += rubygem-nanoc-deploying
     SUBDIR += rubygem-nested_form
     SUBDIR += rubygem-net-http
     SUBDIR += rubygem-net-http-digest_auth
@@ -2017,6 +2026,7 @@
     SUBDIR += rubygem-rails50
     SUBDIR += rubygem-rails52
     SUBDIR += rubygem-rails60
+    SUBDIR += rubygem-rails61
     SUBDIR += rubygem-rails_12factor
     SUBDIR += rubygem-rails_autolink
     SUBDIR += rubygem-rails_serve_static_assets
@@ -2026,6 +2036,7 @@
     SUBDIR += rubygem-railties50
     SUBDIR += rubygem-railties52
     SUBDIR += rubygem-railties60
+    SUBDIR += rubygem-railties61
     SUBDIR += rubygem-raindrops
     SUBDIR += rubygem-ramaze
     SUBDIR += rubygem-raphael-rails

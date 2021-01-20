@@ -64,7 +64,6 @@
     SUBDIR += dftbplus
     SUBDIR += dkh
     SUBDIR += dlib-cpp
-    SUBDIR += dlpoly-classic
     SUBDIR += drawxtl
     SUBDIR += dvc
     SUBDIR += eccodes
@@ -317,6 +316,7 @@
     SUBDIR += rubygem-ruby-netcdf
     SUBDIR += scidavis
     SUBDIR += segyio
+    SUBDIR += shelxle
     SUBDIR += siesta
     SUBDIR += sigrok-cli
     SUBDIR += sigrok-firmware

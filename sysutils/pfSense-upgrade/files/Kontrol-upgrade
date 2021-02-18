@@ -3,7 +3,7 @@
 # pfSense-upgrade
 #
 # part of pfSense (https://www.pfsense.org)
-# Copyright (c) 2015-2016 Rubicon Communications, LLC (Netgate)
+# Copyright (c) 2015-2021 Rubicon Communications, LLC (Netgate)
 # All rights reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -179,11 +179,8 @@ fetch_upgrade_packages() {
 	pkg_with_pb "upgrade -F" "Downloading upgrade packages"
 
 	# Workaround for pkg bug https://github.com/freebsd/pkg/issues/1613
-	if pkg-static upgrade -Unq 2>&1 | \
-	    sed '/ will be affected/,/ be REINSTALLED:/ {; d; };' | \
-	    egrep -q '^[[:blank:]]*pkg-[0-9]'; then
-		pkg_with_pb "upgrade -fF pkg" "Downloading pkg"
-	fi
+	# *ALWAYS* download pkg itself to avoid being bitten by it again
+	pkg_with_pb "upgrade -fF pkg" "Downloading pkg"
 }
 
 pkg_lock() {
@@ -1247,9 +1244,9 @@ export ASSUME_ALWAYS_YES=true
 export FETCH_TIMEOUT=5
 export FETCH_RETRY=2
 
-export product=$(php -n /usr/local/sbin/read_global_var product_name pfSense)
+export product=$(php -n /usr/local/sbin/read_global_var product_name Kontrol)
 export pkg_prefix=$(php -n /usr/local/sbin/read_global_var pkg_prefix \
-    pfSense-pkg-)
+    Kontrol-pkg-)
 export platform=$(cat /etc/platform)
 
 USE_MFS_TMPVAR=$(read_xml_tag.sh boolean system/use_mfs_tmpvar)

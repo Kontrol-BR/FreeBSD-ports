@@ -5,16 +5,19 @@
 
     SUBDIR += R-cran-RgoogleMaps
     SUBDIR += R-cran-Rook
+    SUBDIR += R-cran-bslib
     SUBDIR += R-cran-crosstalk
     SUBDIR += R-cran-downloader
     SUBDIR += R-cran-htmlwidgets
     SUBDIR += R-cran-httpuv
     SUBDIR += R-cran-httr
+    SUBDIR += R-cran-jquerylib
     SUBDIR += R-cran-rvest
     SUBDIR += R-cran-scrapeR
     SUBDIR += R-cran-selectr
     SUBDIR += R-cran-servr
     SUBDIR += R-cran-shiny
+    SUBDIR += R-cran-webshot
     SUBDIR += Stikked
     SUBDIR += UniversalFeedCreator
     SUBDIR += adguardhome
@@ -219,17 +222,16 @@
     SUBDIR += gregarius
     SUBDIR += groupoffice
     SUBDIR += grr
-    SUBDIR += gstreamer-plugins-neon
     SUBDIR += gstreamer1-plugins-neon
     SUBDIR += gtkhtml3
     SUBDIR += gtkhtml4
     SUBDIR += guacamole-client
     SUBDIR += guile-www
+    SUBDIR += gurl
     SUBDIR += gwsocket
     SUBDIR += h2o
     SUBDIR += h2o-devel
     SUBDIR += habari
-    SUBDIR += helma
     SUBDIR += hiawatha
     SUBDIR += hiawatha-monitor
     SUBDIR += horde-ansel
@@ -286,13 +288,13 @@
     SUBDIR += kf5-kjsembed
     SUBDIR += kiwix-tools
     SUBDIR += kohana
+    SUBDIR += lagrange
     SUBDIR += larbin
     SUBDIR += libapreq2
     SUBDIR += libdom
     SUBDIR += libecap
     SUBDIR += libepc
     SUBDIR += libevhtp
-    SUBDIR += libgtkhtml
     SUBDIR += libhubbub
     SUBDIR += libjwt
     SUBDIR += libmicrohttpd
@@ -474,8 +476,6 @@
     SUBDIR += onionbalance
     SUBDIR += onionshare
     SUBDIR += opencart
-    SUBDIR += opera
-    SUBDIR += opera-linuxplugins
     SUBDIR += orangehrm
     SUBDIR += osrm-backend
     SUBDIR += osticket
@@ -1106,15 +1106,12 @@
     SUBDIR += p5-REST-Client
     SUBDIR += p5-REST-Google-Apps-Provisioning
     SUBDIR += p5-RPC-ExtDirect
-    SUBDIR += p5-RT-Authen-ExternalAuth
     SUBDIR += p5-RT-Client-REST
     SUBDIR += p5-RT-Extension-CommandByMail
     SUBDIR += p5-RT-Extension-Gravatar
     SUBDIR += p5-RT-Extension-LDAPImport
     SUBDIR += p5-RT-Extension-MandatoryOnTransition
-    SUBDIR += p5-RT-Extension-QuickAssign
     SUBDIR += p5-RT-Extension-RepeatTicket
-    SUBDIR += p5-RT-Extension-SLA
     SUBDIR += p5-RTx-Calendar
     SUBDIR += p5-Reaction
     SUBDIR += p5-Reddit
@@ -1569,7 +1566,6 @@
     SUBDIR += py-djangorestframework-csv
     SUBDIR += py-djangorestframework-filters
     SUBDIR += py-djangorestframework-xml
-    SUBDIR += py-djangorestframework311
     SUBDIR += py-draftjs-exporter
     SUBDIR += py-drf-yasg
     SUBDIR += py-dtflickr
@@ -1643,6 +1639,7 @@
     SUBDIR += py-html5-parser
     SUBDIR += py-html5lib
     SUBDIR += py-httmock
+    SUBDIR += py-httpbin
     SUBDIR += py-httpcore
     SUBDIR += py-httpie
     SUBDIR += py-httplib2
@@ -1741,7 +1738,6 @@
     SUBDIR += py-tornado
     SUBDIR += py-tornado4
     SUBDIR += py-tornado5
-    SUBDIR += py-tornado6
     SUBDIR += py-treq
     SUBDIR += py-ttrv
     SUBDIR += py-tuir
@@ -1798,10 +1794,8 @@
     SUBDIR += rssroll
     SUBDIR += rsstail
     SUBDIR += rsstool
-    SUBDIR += rt42
     SUBDIR += rt44
     SUBDIR += rt50
-    SUBDIR += rtv
     SUBDIR += rubygem-ace-rails-ap
     SUBDIR += rubygem-actioncable5
     SUBDIR += rubygem-actioncable50
@@ -2164,7 +2158,6 @@
     SUBDIR += suphp
     SUBDIR += surf
     SUBDIR += swiggle
-    SUBDIR += syndigator
     SUBDIR += tclhttpd
     SUBDIR += tclwebtest
     SUBDIR += tdiary
@@ -2190,6 +2183,7 @@
     SUBDIR += tokyopromenade
     SUBDIR += tomcat-devel
     SUBDIR += tomcat-native
+    SUBDIR += tomcat10
     SUBDIR += tomcat7
     SUBDIR += tomcat85
     SUBDIR += tomcat9
@@ -2316,6 +2310,7 @@
     SUBDIR += yourls
     SUBDIR += youtube_dl
     SUBDIR += youtube_dlc
+    SUBDIR += yt-dlp
     SUBDIR += ytdl
     SUBDIR += yuicompressor
     SUBDIR += zend-framework

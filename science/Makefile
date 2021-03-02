@@ -58,6 +58,7 @@
     SUBDIR += cp2k
     SUBDIR += cp2k-data
     SUBDIR += crf++
+    SUBDIR += dakota
     SUBDIR += dalton
     SUBDIR += dcl
     SUBDIR += devisor
@@ -120,6 +121,7 @@
     SUBDIR += libccp4
     SUBDIR += libcint
     SUBDIR += libctl
+    SUBDIR += libecpint
     SUBDIR += libefp
     SUBDIR += libgeodecomp
     SUBDIR += libghemical
@@ -340,6 +342,7 @@
     SUBDIR += teem
     SUBDIR += tfel
     SUBDIR += tfel-edf
+    SUBDIR += thermofun
     SUBDIR += tinker
     SUBDIR += udunits
     SUBDIR += v_sim
@@ -352,7 +355,6 @@
     SUBDIR += wxmacmolplt
     SUBDIR += xcrysden
     SUBDIR += xdrawchem
-    SUBDIR += xfce4-equake-plugin
     SUBDIR += xtb
     SUBDIR += yoda
 

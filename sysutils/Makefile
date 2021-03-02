@@ -84,6 +84,10 @@
     SUBDIR += backuppc-devel
     SUBDIR += backuppc4
     SUBDIR += backupuser
+    SUBDIR += bacula11-client
+    SUBDIR += bacula11-client-static
+    SUBDIR += bacula11-docs
+    SUBDIR += bacula11-server
     SUBDIR += bacula9-client
     SUBDIR += bacula9-client-static
     SUBDIR += bacula9-docs
@@ -141,6 +145,7 @@
     SUBDIR += byobu
     SUBDIR += catfish
     SUBDIR += cbsd
+    SUBDIR += cbsd-mq-router
     SUBDIR += ccd2iso
     SUBDIR += cciss_vol_status
     SUBDIR += ccze
@@ -391,7 +396,6 @@
     SUBDIR += fusefs-funionfs
     SUBDIR += fusefs-fusepak
     SUBDIR += fusefs-gitfs
-    SUBDIR += fusefs-gstfs
     SUBDIR += fusefs-hfsfuse
     SUBDIR += fusefs-httpdirfs
     SUBDIR += fusefs-httpfs
@@ -467,12 +471,8 @@
     SUBDIR += gsh
     SUBDIR += gsmartcontrol
     SUBDIR += gstopd
-    SUBDIR += gstreamer-plugins-cdio
-    SUBDIR += gstreamer-plugins-hal
     SUBDIR += gstreamer1-plugins-cdio
     SUBDIR += gtk-imonc
-    SUBDIR += hal
-    SUBDIR += hal-info
     SUBDIR += hardlink
     SUBDIR += hare
     SUBDIR += hared
@@ -487,6 +487,7 @@
     SUBDIR += hexyl
     SUBDIR += hfsexplorer
     SUBDIR += hfsutils
+    SUBDIR += hid-tools
     SUBDIR += highlnk
     SUBDIR += hilite
     SUBDIR += host-setup
@@ -753,6 +754,7 @@
     SUBDIR += neofetch
     SUBDIR += netevent
     SUBDIR += nfcutils
+    SUBDIR += nfs-over-tls
     SUBDIR += nitrogen
     SUBDIR += nix
     SUBDIR += nmrpflash
@@ -769,6 +771,7 @@
     SUBDIR += nut
     SUBDIR += nut-devel
     SUBDIR += nvclock
+    SUBDIR += nvimpager
     SUBDIR += nvme-cli
     SUBDIR += nvramtool
     SUBDIR += oak
@@ -818,6 +821,7 @@
     SUBDIR += p5-Filesys-DiskSpace
     SUBDIR += p5-Filesys-DiskUsage
     SUBDIR += p5-Filesys-Statvfs
+    SUBDIR += p5-Filesys-ZFS
     SUBDIR += p5-Fuse
     SUBDIR += p5-Fuse-Simple
     SUBDIR += p5-Giovanni
@@ -1032,6 +1036,7 @@
     SUBDIR += py-pytsk
     SUBDIR += py-pywatchman
     SUBDIR += py-pyznap
+    SUBDIR += py-qmk
     SUBDIR += py-queuelib
     SUBDIR += py-ranger
     SUBDIR += py-rdiff-backup
@@ -1093,6 +1098,7 @@
     SUBDIR += rhc
     SUBDIR += riak-cs
     SUBDIR += rinse
+    SUBDIR += rmlint
     SUBDIR += rocr
     SUBDIR += roct
     SUBDIR += rovclock
@@ -1118,14 +1124,12 @@
     SUBDIR += rubygem-chef-api
     SUBDIR += rubygem-chef-bin
     SUBDIR += rubygem-chef-config
-    SUBDIR += rubygem-chef-config12
     SUBDIR += rubygem-chef-dk
     SUBDIR += rubygem-chef-telemetry
     SUBDIR += rubygem-chef-utils
     SUBDIR += rubygem-chef-utils15
     SUBDIR += rubygem-chef-vault
     SUBDIR += rubygem-chef-zero
-    SUBDIR += rubygem-chef12
     SUBDIR += rubygem-choria-mcorpc-support
     SUBDIR += rubygem-facter
     SUBDIR += rubygem-fluent-mixin-plaintextformatter
@@ -1161,7 +1165,6 @@
     SUBDIR += rubygem-mothra
     SUBDIR += rubygem-murder
     SUBDIR += rubygem-ohai
-    SUBDIR += rubygem-ohai8
     SUBDIR += rubygem-parallel
     SUBDIR += rubygem-puppet_forge
     SUBDIR += rubygem-puppetfile-resolver
@@ -1419,7 +1422,6 @@
     SUBDIR += udfclient
     SUBDIR += uefi-edk2-bhyve
     SUBDIR += uefi-edk2-bhyve-csm
-    SUBDIR += uefi-edk2-bhyve-devel
     SUBDIR += uefi-edk2-qemu
     SUBDIR += ufetch
     SUBDIR += ufs_copy
@@ -1458,6 +1460,7 @@
     SUBDIR += vimpager
     SUBDIR += virt-what
     SUBDIR += virtualmin
+    SUBDIR += vivid
     SUBDIR += vm-bhyve
     SUBDIR += vmdktool
     SUBDIR += vmtouch
@@ -1487,6 +1490,7 @@
     SUBDIR += wmflame
     SUBDIR += wmmemfree
     SUBDIR += wmmemload
+    SUBDIR += wmscript
     SUBDIR += wmtop
     SUBDIR += wmupmon
     SUBDIR += worldtools
@@ -1508,7 +1512,6 @@
     SUBDIR += xfce4-diskperf-plugin
     SUBDIR += xfce4-fsguard-plugin
     SUBDIR += xfce4-genmon-plugin
-    SUBDIR += xfce4-kbdleds-plugin
     SUBDIR += xfce4-mount-plugin
     SUBDIR += xfce4-netload-plugin
     SUBDIR += xfce4-places-plugin

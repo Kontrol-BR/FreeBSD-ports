@@ -2,12 +2,13 @@
 
 PORTNAME=	arcan
 DISTVERSION=	0.6.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Display Server, Multimedia Framework, Game Engine
 
-LICENSE=	BSD3CLAUSE GPLv2+ LGPL21
+LICENSE=	BSD3CLAUSE GPLv2+ LGPL21+
 LICENSE_COMB=	multi
 LICENSE_FILE_BSD3CLAUSE=${WRKSRC:H}/data/distr/LICENSE.BSD
 LICENSE_FILE_GPLv2+ =	${WRKSRC:H}/data/distr/LICENSE.GPL
@@ -32,7 +33,6 @@ LDFLAGS_i386=	-Wl,-z,notext
 OPTIONS_DEFINE=	ESPEAK FFMPEG LUAJIT SDL SUID TESSERACT UVC VLC VNC WAYLAND
 OPTIONS_DEFAULT=ESPEAK FFMPEG LUAJIT SDL SUID TESSERACT UVC VLC VNC WAYLAND
 OPTIONS_EXCLUDE_aarch64=	LUAJIT # bug 225342
-OPTIONS_EXCLUDE_powerpc64=	LUAJIT
 OPTIONS_SUB=	yes
 
 ESPEAK_DESC=		Text to speech via eSpeak
@@ -74,6 +74,12 @@ WAYLAND_RUN_DEPENDS=	xwayland-devel>0:x11-servers/xwayland-devel
 WAYLAND_USES=		xorg
 WAYLAND_USE=		XORG=xcb
 WAYLAND_CMAKE_BOOL_OFF=	DISABLE_WAYLAND
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc64*}
+LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -i.prefix 's,/usr/local,${PREFIX},g' \

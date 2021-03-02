@@ -644,6 +644,7 @@ include/wine/windows/msxml6.idl
 include/wine/windows/msxml6did.h
 include/wine/windows/msxmldid.h
 include/wine/windows/mtxdm.h
+include/wine/windows/mulres.idl
 include/wine/windows/multimon.h
 include/wine/windows/natupnp.h
 include/wine/windows/natupnp.idl
@@ -753,6 +754,8 @@ include/wine/windows/rasdlg.h
 include/wine/windows/raserror.h
 include/wine/windows/reason.h
 include/wine/windows/regstr.h
+include/wine/windows/relogger.h
+include/wine/windows/relogger.idl
 include/wine/windows/restartmanager.h
 include/wine/windows/restrictederrorinfo.h
 include/wine/windows/restrictederrorinfo.idl
@@ -951,6 +954,8 @@ include/wine/windows/wincred.h
 include/wine/windows/wincrypt.h
 include/wine/windows/windef.h
 include/wine/windows/windns.h
+include/wine/windows/windows.foundation.collections.h
+include/wine/windows/windows.foundation.collections.idl
 include/wine/windows/windows.foundation.h
 include/wine/windows/windows.foundation.idl
 %%STAGING%%include/wine/windows/windows.gaming.input.forcefeedback.h
@@ -960,8 +965,8 @@ include/wine/windows/windows.foundation.idl
 %%STAGING%%include/wine/windows/windows.globalization.h
 %%STAGING%%include/wine/windows/windows.globalization.idl
 include/wine/windows/windows.h
-%%STAGING%%include/wine/windows/windows.media.speechsynthesis.h
-%%STAGING%%include/wine/windows/windows.media.speechsynthesis.idl
+include/wine/windows/windows.media.speechsynthesis.h
+include/wine/windows/windows.media.speechsynthesis.idl
 %%STAGING%%include/wine/windows/windows.system.h
 %%STAGING%%include/wine/windows/windows.system.idl
 %%STAGING%%include/wine/windows/windows.system.userprofile.h
@@ -1015,6 +1020,10 @@ include/wine/windows/wmiutils.idl
 include/wine/windows/wmp.h
 include/wine/windows/wmp.idl
 include/wine/windows/wmpids.h
+include/wine/windows/wmprealestate.h
+include/wine/windows/wmprealestate.idl
+include/wine/windows/wmpservices.h
+include/wine/windows/wmpservices.idl
 include/wine/windows/wmsbuffer.h
 include/wine/windows/wmsbuffer.idl
 include/wine/windows/wmsdk.h
@@ -1389,6 +1398,7 @@ lib/wine/cryptdlg.dll.so
 lib/wine/cryptdll.dll.so
 lib/wine/cryptext.dll.so
 lib/wine/cryptnet.dll.so
+lib/wine/cryptsp.dll.so
 lib/wine/cryptui.dll.so
 lib/wine/cscript.exe.so
 lib/wine/ctapi32.dll.so
@@ -1871,6 +1881,7 @@ lib/wine/fakedlls/cryptdlg.dll
 lib/wine/fakedlls/cryptdll.dll
 lib/wine/fakedlls/cryptext.dll
 lib/wine/fakedlls/cryptnet.dll
+lib/wine/fakedlls/cryptsp.dll
 lib/wine/fakedlls/cryptui.dll
 lib/wine/fakedlls/cscript.exe
 lib/wine/fakedlls/ctapi32.dll
@@ -2481,7 +2492,6 @@ lib/wine/fakedlls/wimgapi.dll
 %%STAGING%%lib/wine/fakedlls/windows.gaming.input.dll
 %%STAGING%%lib/wine/fakedlls/windows.globalization.dll
 %%STAGING%%lib/wine/fakedlls/windows.media.speech.dll
-%%STAGING%%lib/wine/fakedlls/windows.networking.connectivity.dll
 lib/wine/fakedlls/windowscodecs.dll
 lib/wine/fakedlls/windowscodecsext.dll
 lib/wine/fakedlls/wineboot.exe
@@ -2857,6 +2867,7 @@ lib/wine/libvulkan-1.def
 lib/wine/libwbemuuid.a
 lib/wine/libwebservices.def
 lib/wine/libwer.def
+lib/wine/libwevtapi.def
 lib/wine/libwindowscodecs.a
 lib/wine/libwindowscodecsext.def
 lib/wine/libwinecrt0.a
@@ -3247,7 +3258,6 @@ lib/wine/wimgapi.dll.so
 %%STAGING%%lib/wine/windows.gaming.input.dll.so
 %%STAGING%%lib/wine/windows.globalization.dll.so
 %%STAGING%%lib/wine/windows.media.speech.dll.so
-%%STAGING%%lib/wine/windows.networking.connectivity.dll.so
 lib/wine/windowscodecs.dll.so
 lib/wine/windowscodecs.so
 lib/wine/windowscodecsext.dll.so
@@ -3301,6 +3311,7 @@ lib/wine/wmic.exe.so
 lib/wine/wmiutils.dll.so
 lib/wine/wmp.dll.so
 lib/wine/wmphoto.dll.so
+lib/wine/wmphoto.so
 lib/wine/wmplayer.exe.so
 lib/wine/wmvcore.dll.so
 lib/wine/wnaspi32.dll.so

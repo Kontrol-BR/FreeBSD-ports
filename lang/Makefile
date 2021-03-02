@@ -69,6 +69,7 @@
     SUBDIR += expect
     SUBDIR += f2c
     SUBDIR += fasm
+    SUBDIR += fennel
     SUBDIR += ferite
     SUBDIR += ficl
     SUBDIR += fpc
@@ -105,6 +106,7 @@
     SUBDIR += gforth
     SUBDIR += ghc
     SUBDIR += gjs
+    SUBDIR += gleam
     SUBDIR += gnat_util
     SUBDIR += gnatcross-binutils-aarch64
     SUBDIR += gnatcross-sysroot-aarch64
@@ -326,6 +328,7 @@
     SUBDIR += sketchy
     SUBDIR += slib
     SUBDIR += slib-guile
+    SUBDIR += slib-guile1
     SUBDIR += slib-guile2
     SUBDIR += slisp
     SUBDIR += smalltalk

@@ -8,6 +8,7 @@
     SUBDIR += R-cran-RPostgreSQL
     SUBDIR += R-cran-RSQLite
     SUBDIR += R-cran-RSQLite.extfuns
+    SUBDIR += R-cran-cachem
     SUBDIR += R-cran-fastmap
     SUBDIR += R-cran-sqldf
     SUBDIR += WWWdb
@@ -164,6 +165,7 @@
     SUBDIR += linux-oracle-instantclient-basic
     SUBDIR += linux-oracle-instantclient-sdk
     SUBDIR += liquibase
+    SUBDIR += litestream
     SUBDIR += lmdb
     SUBDIR += lua-lsqlite3
     SUBDIR += lua-resty-redis
@@ -734,12 +736,14 @@
     SUBDIR += py-Pyrseas
     SUBDIR += py-aesqlapius
     SUBDIR += py-agate-sql
+    SUBDIR += py-aiomysql
     SUBDIR += py-aiopg
     SUBDIR += py-aioredis
     SUBDIR += py-aiosqlite
     SUBDIR += py-alembic
     SUBDIR += py-apsw
     SUBDIR += py-asyncpg
+    SUBDIR += py-berkeleydb
     SUBDIR += py-bsddb3
     SUBDIR += py-carbon
     SUBDIR += py-cassandra-driver

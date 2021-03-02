@@ -214,7 +214,6 @@
     SUBDIR += gsocket
     SUBDIR += gspoof
     SUBDIR += gssdp
-    SUBDIR += gstreamer-plugins-libmms
     SUBDIR += gstreamer1-plugins-libmms
     SUBDIR += gstreamer1-plugins-srtp
     SUBDIR += gtk-vnc
@@ -389,6 +388,7 @@
     SUBDIR += libproxy-gnome3
     SUBDIR += libproxy-kde
     SUBDIR += libproxy-mozjs
+    SUBDIR += libproxy-pacrunner
     SUBDIR += libproxy-perl
     SUBDIR += libproxy-python
     SUBDIR += libproxy-webkit3
@@ -636,6 +636,11 @@
     SUBDIR += p5-Net-CascadeCopy
     SUBDIR += p5-Net-Cassandra
     SUBDIR += p5-Net-Cassandra-Easy
+    SUBDIR += p5-Net-Connection
+    SUBDIR += p5-Net-Connection-Match
+    SUBDIR += p5-Net-Connection-Sort
+    SUBDIR += p5-Net-Connection-lsof
+    SUBDIR += p5-Net-Connection-ncnetstat
     SUBDIR += p5-Net-DAV-Server
     SUBDIR += p5-Net-DHCP
     SUBDIR += p5-Net-DHCP-Watch
@@ -1054,6 +1059,7 @@
     SUBDIR += py-pygeoip
     SUBDIR += py-pyicap
     SUBDIR += py-pynamecheap
+    SUBDIR += py-pynmsg
     SUBDIR += py-pynsq
     SUBDIR += py-pypcap
     SUBDIR += py-pyroute2
@@ -1257,6 +1263,7 @@
     SUBDIR += rubygem-google-cloud-storage
     SUBDIR += rubygem-grpc
     SUBDIR += rubygem-grpc124
+    SUBDIR += rubygem-grpc130
     SUBDIR += rubygem-hangouts-chat
     SUBDIR += rubygem-http-parser
     SUBDIR += rubygem-http_parser.rb
@@ -1474,7 +1481,6 @@
     SUBDIR += tsocks
     SUBDIR += tunneller
     SUBDIR += turnserver
-    SUBDIR += twitux
     SUBDIR += u6rd
     SUBDIR += ucarp
     SUBDIR += udpbroadcastrelay

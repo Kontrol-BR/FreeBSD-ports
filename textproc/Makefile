@@ -25,6 +25,7 @@
     SUBDIR += R-cran-rex
     SUBDIR += R-cran-rio
     SUBDIR += R-cran-rmarkdown
+    SUBDIR += R-cran-sass
     SUBDIR += R-cran-stringi
     SUBDIR += R-cran-stringr
     SUBDIR += R-cran-utf8
@@ -435,6 +436,7 @@
     SUBDIR += markdownfmt
     SUBDIR += markdownpart
     SUBDIR += mathml-xsd
+    SUBDIR += md4c
     SUBDIR += mdbook
     SUBDIR += mdocml
     SUBDIR += meld
@@ -1237,6 +1239,7 @@
     SUBDIR += py-autopep8
     SUBDIR += py-awesome-slugify
     SUBDIR += py-bibtexparser
+    SUBDIR += py-bracex
     SUBDIR += py-cchardet
     SUBDIR += py-chardet
     SUBDIR += py-citeproc-py
@@ -1267,6 +1270,7 @@
     SUBDIR += py-elementpath
     SUBDIR += py-empy
     SUBDIR += py-enchant
+    SUBDIR += py-enrich
     SUBDIR += py-et_xmlfile
     SUBDIR += py-fastavro
     SUBDIR += py-feedparser
@@ -1276,12 +1280,12 @@
     SUBDIR += py-gambit-elasticsearch
     SUBDIR += py-genshi
     SUBDIR += py-gensim
-    SUBDIR += py-gfm
     SUBDIR += py-googletrans
     SUBDIR += py-grako
     SUBDIR += py-guess-language
     SUBDIR += py-hexdump
     SUBDIR += py-hieroglyph
+    SUBDIR += py-hjson
     SUBDIR += py-html2text
     SUBDIR += py-html2text2018
     SUBDIR += py-humanfriendly
@@ -1358,6 +1362,7 @@
     SUBDIR += py-pyjade
     SUBDIR += py-pykwalify
     SUBDIR += py-pylons-sphinx-themes
+    SUBDIR += py-pyls-spyder
     SUBDIR += py-pypa-docs-theme
     SUBDIR += py-pypandoc
     SUBDIR += py-pyphen
@@ -1370,6 +1375,7 @@
     SUBDIR += py-python-docs-theme
     SUBDIR += py-python-docx
     SUBDIR += py-python-gettext
+    SUBDIR += py-python-language-server
     SUBDIR += py-python-slugify
     SUBDIR += py-python-xmp-toolkit
     SUBDIR += py-pytidylib
@@ -1401,12 +1407,12 @@
     SUBDIR += py-sphinx-issues
     SUBDIR += py-sphinx-me
     SUBDIR += py-sphinx-tabs
-    SUBDIR += py-sphinx18
     SUBDIR += py-sphinx_press_theme
     SUBDIR += py-sphinx_rtd_theme
     SUBDIR += py-sphinx_wikipedia
     SUBDIR += py-sphinxcontrib-adadomain
     SUBDIR += py-sphinxcontrib-applehelp
+    SUBDIR += py-sphinxcontrib-autoprogram
     SUBDIR += py-sphinxcontrib-bitbucket
     SUBDIR += py-sphinxcontrib-devhelp
     SUBDIR += py-sphinxcontrib-fulltoc
@@ -1420,14 +1426,15 @@
     SUBDIR += py-sphinxcontrib-qthelp
     SUBDIR += py-sphinxcontrib-serializinghtml
     SUBDIR += py-sphinxcontrib-websupport
-    SUBDIR += py-sphinxcontrib-websupport11
     SUBDIR += py-spylls
     SUBDIR += py-stemming
     SUBDIR += py-tabletext
     SUBDIR += py-tablib
     SUBDIR += py-terminaltables
+    SUBDIR += py-textdistance
     SUBDIR += py-textfsm
     SUBDIR += py-texttable
+    SUBDIR += py-three-merge
     SUBDIR += py-tinycss
     SUBDIR += py-tinycss2
     SUBDIR += py-toml
@@ -1441,6 +1448,7 @@
     SUBDIR += py-ttp
     SUBDIR += py-ucl
     SUBDIR += py-ufal.udpipe
+    SUBDIR += py-wcmatch
     SUBDIR += py-whoosh
     SUBDIR += py-wordcloud
     SUBDIR += py-wordnet
@@ -1545,6 +1553,7 @@
     SUBDIR += rubygem-cucumber-gherkin
     SUBDIR += rubygem-cucumber-gherkin15
     SUBDIR += rubygem-cucumber-html-formatter
+    SUBDIR += rubygem-cucumber-html-formatter9
     SUBDIR += rubygem-diff-lcs
     SUBDIR += rubygem-diff_match_patch
     SUBDIR += rubygem-diffy
@@ -1576,6 +1585,9 @@
     SUBDIR += rubygem-github-markup17
     SUBDIR += rubygem-gitlab-grit
     SUBDIR += rubygem-gitlab-markup
+    SUBDIR += rubygem-google-cloud-translate
+    SUBDIR += rubygem-google-cloud-translate-v2
+    SUBDIR += rubygem-google-cloud-translate-v3
     SUBDIR += rubygem-heredoc_unindent
     SUBDIR += rubygem-hikidoc
     SUBDIR += rubygem-html-pipeline
@@ -1804,6 +1816,7 @@
     SUBDIR += texi2db
     SUBDIR += texi2html
     SUBDIR += texi2mdoc
+    SUBDIR += textnote
     SUBDIR += textogif
     SUBDIR += textql
     SUBDIR += the_silver_searcher
@@ -1871,6 +1884,7 @@
     SUBDIR += wv2
     SUBDIR += xalan-c
     SUBDIR += xalan-j
+    SUBDIR += xenv
     SUBDIR += xerces-c3
     SUBDIR += xerces-j
     SUBDIR += xfce4-dict-plugin
@@ -1885,7 +1899,6 @@
     SUBDIR += xlreader
     SUBDIR += xml-commons
     SUBDIR += xml-format
-    SUBDIR += xml-i18n-tools
     SUBDIR += xml-lite.el
     SUBDIR += xml2rfc
     SUBDIR += xmlada

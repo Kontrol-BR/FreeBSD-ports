@@ -1,8 +1,7 @@
 # $FreeBSD$
 
 PORTNAME=	kodi
-DISTVERSION=	19.0RC1
-PORTREVISION=	2
+DISTVERSION=	19.0
 CATEGORIES=	multimedia java
 
 MAINTAINER=	yzrh@noema.org
@@ -231,7 +230,7 @@ WAYLAND_LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 			libwayland-client++.so:graphics/waylandpp
 
 X11_USES=		xorg gl
-X11_USE=		XORG=x11,xext,xrandr GL=egl,gl,glu
+X11_USE=		XORG=x11,xext,xrandr GL=egl,gbm,gl,glu
 X11_LIB_DEPENDS=	libdrm.so:graphics/libdrm
 
 .include <bsd.port.options.mk>

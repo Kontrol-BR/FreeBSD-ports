@@ -4,7 +4,7 @@
 PORTNAME=	qgis
 DISTVERSIONPREFIX=	final-
 DISTVERSION=	3_10_14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 PKGNAMESUFFIX=	-ltr
 
@@ -101,7 +101,7 @@ RUN_DEPENDS=	astyle:devel/astyle \
 
 ### Fortran is needed by numpy, GRASS, etc.
 USES=		bison cmake compiler:features cpe desktop-file-utils \
-		fortran gl gmake gnome pgsql pyqt:5 python:3.6+ qca qt:5 \
+		fortran gl gmake gnome pgsql pyqt:5 python:3.7+ qca qt:5 \
 		shebangfix sqlite:3
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME:tu}
@@ -137,8 +137,6 @@ CMAKE_OFF+=	SUPPRESS_QT_WARNINGS
 .endif
 
 CONFLICTS_INSTALL=	qgis
-
-SUB_FILES=	pkg-message
 
 PLIST_SUB=	DISTVERSION=${PORTVERSION}
 

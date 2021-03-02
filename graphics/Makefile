@@ -78,6 +78,7 @@
     SUBDIR += blender-doc
     SUBDIR += bmeps
     SUBDIR += bmp2html
+    SUBDIR += bonzomatic
     SUBDIR += box
     SUBDIR += bsd-plotutils
     SUBDIR += c-a-i-r
@@ -92,6 +93,7 @@
     SUBDIR += cegui
     SUBDIR += cenon
     SUBDIR += cfdg
+    SUBDIR += chafa
     SUBDIR += charls
     SUBDIR += cimg
     SUBDIR += clutter
@@ -136,6 +138,7 @@
     SUBDIR += djview4
     SUBDIR += djvulibre
     SUBDIR += dmtx-utils
+    SUBDIR += drawing
     SUBDIR += drawpile
     SUBDIR += drm-current-kmod
     SUBDIR += drm-devel-kmod
@@ -296,15 +299,6 @@
     SUBDIR += graphviz
     SUBDIR += grx
     SUBDIR += gscan2pdf
-    SUBDIR += gstreamer-plugins-aalib
-    SUBDIR += gstreamer-plugins-cairo
-    SUBDIR += gstreamer-plugins-gdkpixbuf
-    SUBDIR += gstreamer-plugins-gl
-    SUBDIR += gstreamer-plugins-jpeg
-    SUBDIR += gstreamer-plugins-libcaca
-    SUBDIR += gstreamer-plugins-libpng
-    SUBDIR += gstreamer-plugins-libvisual
-    SUBDIR += gstreamer-plugins-opencv
     SUBDIR += gstreamer1-plugins-aalib
     SUBDIR += gstreamer1-plugins-cairo
     SUBDIR += gstreamer1-plugins-gdkpixbuf
@@ -398,6 +392,7 @@
     SUBDIR += kf5-kplotting
     SUBDIR += kf5-kquickcharts
     SUBDIR += kf5-prison
+    SUBDIR += kgeotag
     SUBDIR += kgraphviewer
     SUBDIR += kimageannotator
     SUBDIR += kimagemapeditor
@@ -584,8 +579,6 @@
     SUBDIR += opencolorio-tools
     SUBDIR += opencsg
     SUBDIR += opencv
-    SUBDIR += opencv-core
-    SUBDIR += opencv-java
     SUBDIR += opendx
     SUBDIR += openexr
     SUBDIR += openfx-arena
@@ -834,7 +827,6 @@
     SUBDIR += py-glfw
     SUBDIR += py-glooey
     SUBDIR += py-gphoto2
-    SUBDIR += py-graph-core
     SUBDIR += py-graphviz
     SUBDIR += py-graphy
     SUBDIR += py-gvgen
@@ -855,7 +847,6 @@
     SUBDIR += py-nwdiag
     SUBDIR += py-open3d-python
     SUBDIR += py-opencolorio
-    SUBDIR += py-opencv
     SUBDIR += py-openimageio
     SUBDIR += py-openshadinglanguage
     SUBDIR += py-photocollage
@@ -876,6 +867,7 @@
     SUBDIR += py-pygeos
     SUBDIR += py-pyglet
     SUBDIR += py-pyglet150
+    SUBDIR += py-pygraph
     SUBDIR += py-pygraphviz
     SUBDIR += py-pyinsane2
     SUBDIR += py-pymaging

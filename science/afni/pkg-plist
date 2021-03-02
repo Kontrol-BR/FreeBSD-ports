@@ -477,6 +477,8 @@ bin/Xphace
 bin/abids_json_info.py
 bin/abids_json_tool.py
 bin/abids_tool.py
+bin/adjunct_apqc_tsnr_no_mask
+bin/adjunct_apqc_tsnr_with_mask
 bin/adjunct_aw_tableize_roi_info.py
 bin/adjunct_calc_mont_dims.py
 bin/adjunct_combine_str.py
@@ -484,6 +486,8 @@ bin/adjunct_is_label.py
 bin/adjunct_make_script_and_rst.py
 bin/adjunct_select_str.py
 bin/adjunct_simplify_cost.py
+bin/adjunct_suma_fs_mask_and_qc
+bin/adjunct_suma_fs_roi_info
 bin/adjunct_tort_plot_dp_align
 bin/adjunct_tort_read_dp_align.py
 bin/adwarp

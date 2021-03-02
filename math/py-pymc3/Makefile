@@ -2,7 +2,7 @@
 
 PORTNAME=	pymc3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.0
+DISTVERSION=	3.11.1
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}theano>=1.0.5:math/py-theano@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_GITHUB=	yes
 GH_ACCOUNT=	pymc-devs
 USE_PYTHON=	distutils concurrent autoplist

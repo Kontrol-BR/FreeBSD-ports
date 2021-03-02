@@ -1137,7 +1137,7 @@ pkg_delete() {
 	    ignore_result
 }
 
-# Delete every pfSense-pkg-* package
+# Delete every Kontrol-pkg-* package
 pkg_delete_all() {
 	for _package in $(pkg-static query -e '%a == 0' %n); do
 		case ${_package} in "${pkg_prefix}"* )

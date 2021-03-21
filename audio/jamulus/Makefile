@@ -2,10 +2,9 @@
 
 PORTNAME=	jamulus
 DISTVERSIONPREFIX=	r
-DISTVERSION=	3_6_2
+DISTVERSION=	3_7_0
+PORTREVISION=	2
 CATEGORIES=	audio
-#MASTER_SITES=	SF/llcon/${NAME}/${DISTVERSION}/ # it is unclear whether SF or GH should be used because SF doesn't have 3.6.0, but README on GH claims that it is hosted on SF
-DISTNAME=	${NAME}-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Internet jam session software
@@ -20,18 +19,30 @@ USE_QT=		concurrent core gui network widgets xml buildtools_build linguisttools_
 USE_GL=		gl
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	corrados
+GH_ACCOUNT=	jamulussoftware
 
-NAME=		Jamulus
+PLIST_FILES=	bin/${PORTNAME} \
+		share/applications/jamulus.desktop \
+		share/applications/jamulus-server.desktop \
+		share/pixmaps/jamulus.png \
+		share/pixmaps/jamulus-server.png
 
-DESKTOP_ENTRIES=	"${NAME}" "${COMMENT}" "${NAME}" \
-			"${PORTNAME}" "AudioVideo;Audio;Mixer;Qt;" true
+QMAKE_ARGS=	CONFIG+="noupcasename"
 
-PLIST_FILES=	bin/${NAME} \
-		share/pixmaps/jamulus.png
+PORTSCOUT=	limit:^r\d+_ # prevent malformatted tags, like 'latest'
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${NAME} ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/src/res/fronticon.png ${STAGEDIR}${PREFIX}/share/pixmaps/jamulus.png
+post-install:
+		# workaround for https://gitlab.xfce.org/xfce/xfdesktop/-/issues/131
+		${MV} ${STAGEDIR}${PREFIX}/share/icons/hicolor/512x512/apps/jamulus.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+		${RM} -r ${STAGEDIR}${PREFIX}/share/icons
+		# add Jamulus Server menu item which is simply 'jamulus -s' with a special icon
+		${CP} ${STAGEDIR}${PREFIX}/share/applications/jamulus.desktop ${STAGEDIR}${PREFIX}/share/applications/jamulus-server.desktop
+		${REINPLACE_CMD} -i '' ' \
+			s|Name=Jamulus|Name=Jamulus Server| ; \
+			s|Comment=Jam Session|Comment=Jam Session Server| ; \
+			s|Exec=jamulus|Exec=jamulus -s| ; \
+			s|Icon=jamulus|Icon=jamulus-server| ; \
+			' ${STAGEDIR}${PREFIX}/share/applications/jamulus-server.desktop
+		${INSTALL_DATA} ${WRKSRC}/src/res/fronticonserver.png ${STAGEDIR}${PREFIX}/share/pixmaps/jamulus-server.png
 
 .include <bsd.port.mk>

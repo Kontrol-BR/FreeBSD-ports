@@ -417,8 +417,6 @@
     SUBDIR += mongrel2
     SUBDIR += monolith
     SUBDIR += moodle310
-    SUBDIR += moodle35
-    SUBDIR += moodle38
     SUBDIR += moodle39
     SUBDIR += morty
     SUBDIR += mozplugger
@@ -1405,6 +1403,7 @@
     SUBDIR += py-WebError
     SUBDIR += py-WebFlash
     SUBDIR += py-WebTest
+    SUBDIR += py-adblock
     SUBDIR += py-aioh2
     SUBDIR += py-aiohttp
     SUBDIR += py-aiohttp-middlewares
@@ -1782,6 +1781,7 @@
     SUBDIR += quark
     SUBDIR += qutebrowser
     SUBDIR += radicale
+    SUBDIR += rearx
     SUBDIR += redmine4
     SUBDIR += rejik
     SUBDIR += reportmagic
@@ -1875,8 +1875,6 @@
     SUBDIR += rubygem-gitlab-flowdock-git-hook
     SUBDIR += rubygem-gitlab-gollum-lib
     SUBDIR += rubygem-gitlab-gollum-rugged_adapter
-    SUBDIR += rubygem-gitlab-puma
-    SUBDIR += rubygem-gitlab-puma_worker_killer
     SUBDIR += rubygem-gitlab-turbolinks-classic
     SUBDIR += rubygem-goldfinger
     SUBDIR += rubygem-gollum
@@ -2257,6 +2255,7 @@
     SUBDIR += vdr-plugin-live
     SUBDIR += vdradmin-am
     SUBDIR += vertx
+    SUBDIR += vger
     SUBDIR += vimb
     SUBDIR += visitors
     SUBDIR += volta
@@ -2282,6 +2281,7 @@
     SUBDIR += webstone
     SUBDIR += webstone-ssl
     SUBDIR += webtrees
+    SUBDIR += webtrees20
     SUBDIR += wgetpaste
     SUBDIR += wikicalc
     SUBDIR += wordpress

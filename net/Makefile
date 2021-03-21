@@ -167,6 +167,7 @@
     SUBDIR += freerdp
     SUBDIR += freeswitch
     SUBDIR += freevrrpd
+    SUBDIR += frp
     SUBDIR += frr7
     SUBDIR += frr7-pythontools
     SUBDIR += fspclient
@@ -240,6 +241,7 @@
     SUBDIR += hlmaster
     SUBDIR += honeyd
     SUBDIR += hostapd
+    SUBDIR += hostapd-devel
     SUBDIR += hping
     SUBDIR += hping3
     SUBDIR += hsflowd
@@ -523,6 +525,7 @@
     SUBDIR += nyancat
     SUBDIR += nylon
     SUBDIR += ocserv
+    SUBDIR += oha
     SUBDIR += olsrd
     SUBDIR += omnitty
     SUBDIR += onedrive
@@ -545,6 +548,7 @@
     SUBDIR += opennx
     SUBDIR += openpgm
     SUBDIR += openradius
+    SUBDIR += openrsync
     SUBDIR += openslp
     SUBDIR += opentracker
     SUBDIR += openvswitch
@@ -1016,6 +1020,7 @@
     SUBDIR += py-eventlet
     SUBDIR += py-flask-xml-rpc
     SUBDIR += py-gdown
+    SUBDIR += py-geopy
     SUBDIR += py-gntp
     SUBDIR += py-gspread
     SUBDIR += py-h11
@@ -1524,6 +1529,7 @@
     SUBDIR += widentd
     SUBDIR += wireguard
     SUBDIR += wireguard-go
+    SUBDIR += wireguard-kmod
     SUBDIR += wireshark
     SUBDIR += wireshark-lite
     SUBDIR += wlan2eth

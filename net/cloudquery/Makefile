@@ -2,7 +2,7 @@
 
 PORTNAME=	cloudquery
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
+DISTVERSION=	0.11.6
 CATEGORIES=	net
 
 MAINTAINER=	nc@FreeBSD.org
@@ -99,4 +99,3 @@ GH_TUPLE=	\
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
-

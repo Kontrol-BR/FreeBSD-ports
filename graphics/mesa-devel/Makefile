@@ -1,13 +1,12 @@
 # $FreeBSD$
 
 PORTNAME=	mesa
-DISTVERSION=	21.0-branchpoint-2294
-DISTVERSIONSUFFIX=	-g05d0514a8fc
+DISTVERSION=	21.0-branchpoint-3716
+DISTVERSIONSUFFIX=	-gba8ddc0c683
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	9f52b5177728.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
 PATCHFILES+=	55822330540d.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
 PATCHFILES+=	f6c7569ad9ea.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/1598
 PATCHFILES+=	cb8f7a253934.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/3568
@@ -120,7 +119,7 @@ VDPAU_MESON_ENABLED=	gallium-vdpau
 
 VULKAN_DESC=		Vulkan drivers and layers
 VULKAN_BUILD_DEPENDS=	glslangValidator:graphics/glslang
-VULKAN_MESON_TRUE=	vulkan-device-select-layer vulkan-overlay-layer
+VULKAN_MESON_ON=	-Dvulkan-layers=device-select,overlay
 anv_DESC=		Haswell and newer
 radv_DESC=		Southern Islands and newer
 

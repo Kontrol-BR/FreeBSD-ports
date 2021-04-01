@@ -5,6 +5,40 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20210328:
+  AFFECTS: users of www/caddy
+  AUTHOR: adamw@FreeBSD.org
+
+  The default locations for caddy runtime files have changed.
+
+  - Caddy's runtime log is now /var/log/caddy/caddy.log
+    (was /var/log/caddy.log)
+
+  - Automatic SSL certs are now stored in /var/db/caddy/data/caddy
+    (was /root/.local/share/caddy)
+
+  - Configuration autosaves are now stored in /var/db/caddy/config/caddy
+    (was /root/.config/caddy)
+
+  You can change these defaults. See /usr/local/etc/rc.d/caddy for the
+  list of settings.
+
+20210322:
+  AFFECTS: users of net/wireguard
+  AUTHOR: decke@FreeBSD.org
+
+  A wireguard kernel implementation supporting FreeBSD 12.1 and newer was
+  added as net/wireguard-kmod recently.
+
+  The new default for users of net/wireguard is the kernel module.
+
+  If you experience problems with it you can switch back to wireguard-go
+  by removing net/wireguard-kmod and making sure net/wireguard-go is
+  installed.
+  The userland tools wg-quick(8) and wg(8) try to use kernel support if
+  the kernel module is available and otherwise fall back to wireguard-go
+  automatically. Config files are fully compatible.
+
 20210317:
   AFFECTS: users of security/strongswan
   AUTHOR: driesm.michiels@gmail.com

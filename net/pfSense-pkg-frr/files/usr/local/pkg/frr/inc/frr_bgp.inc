@@ -275,7 +275,7 @@ function frr_bgp_generate_router() {
 				$frr_bgp_config_address_family[$af_pre] .= "  redistribute $redist\n";
 			} elseif (!in_array($frr_bgp_conf['redistribute' . $redist], array('no', 'yes', 'ipv4', 'ipv6')) &&
 					in_array($frr_bgp_conf['redistribute' . $redist], frr_get_list_values(frr_get_routemap_list(false, true)))) {
-					$frr_bgp_config_address_family[$af_pre] .= "  redistribute $redist route-map {$frr_bgp_conf['redistribute' . $source]}\n";
+					$frr_bgp_config_address_family[$af_pre] .= "  redistribute $redist route-map {$frr_bgp_conf['redistribute' . $redist]}\n";
 			}
 		}
 		foreach ($frr_bgp_conf['row'] as $net) {
@@ -586,8 +586,16 @@ function frr_bgp_generate_neighbors() {
 			}
 		}
 
-		if (in_array($neighbor['capability'], array('dynamic', 'extended-nexthop', 'orf'))) {
-			$nconf .= " neighbor {$neighbor['peer']} capability {$neighbor['capability']}\n";
+		if (!empty($neighbor['capability'])) {
+			$nconf .= " neighbor {$neighbor['peer']} capability dynamic\n";
+		}
+
+		if (!empty($neighbor['capability_nexthop'])) {
+			$nconf .= " neighbor {$neighbor['peer']} capability extended-nexthop\n";
+		}
+
+		if (in_array($neighbor['capability_orf'], array('send', 'receive', 'both'))) {
+			$nconf .= " neighbor {$neighbor['peer']} capability orf prefix-list {$neighbor['capability_orf']}\n";
 		}
 
 		if (!empty($neighbor['dontcapabilitynegotiate'])) {
@@ -634,7 +642,7 @@ function frr_bgp_generate_neighbors() {
 		/* Address family neighbor configuration items */
 		foreach(PKG_FRR_BGP_ADDRESS_FAMILIES as $af) {
 			/* Check if neighbor is enabled for the current address family */
-			if (!($nei_af_flag[$af])) {
+			if (!($nei_af_flag[$af]) && ($ntype == 'peer')) {
 				continue;
 			}
 

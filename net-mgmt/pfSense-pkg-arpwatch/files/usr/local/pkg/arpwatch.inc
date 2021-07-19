@@ -73,14 +73,16 @@ function arpwatch_install_command() {
 
 	$rc['stop'] = '/usr/bin/killall -q arpwatch';
 
-	write_rcfile($rc);
-
 	if ($arpwatch_config['enable']) {
+		write_rcfile($rc);
 		if (!platform_booting()) {
 			restart_service("arpwatch");
 		}
 	} else {
-		stop_service("arpwatch");
+		unlink_if_exists("/usr/local/etc/rc.d/arpwatch.sh");
+		if (is_process_running("arpwatch")) {
+			killbyname("arpwatch");
+		}
 	}
 }
 
@@ -233,7 +235,7 @@ $message = stream_get_contents($fd);
 fclose($fd);
 
 if ((false !== $message) && ((false === strpos($message, ': Cron ')) ||
-    ($config['installedpackages']['arpwatch']['config'][0]['cron_disable'] != 'on'))) {
+    ($config['installedpackages']['arpwatch']['config'][0]['disable_cron'] != 'on'))) {
 	$subject = array();
 	preg_match('/^Subject: (.*)$/m', $message, $subject);
 	init_config_arr(array('installedpackages', 'arpwatch', 'config', 0, 'row'));
@@ -249,8 +251,15 @@ if ((false !== $message) && ((false === strpos($message, ': Cron ')) ||
 	$message = preg_replace('/^To: .*$/m', '', $message);
 	$message = preg_replace('/^Subject: .*$/m', '', $message);
 	$message = preg_replace("/^(\n){4}/", '', $message);
+	$send_subject = "{$config['system']['hostname']}.{$config['system']['domain']} - Arpwatch Notification : {$subject[1]}";
 
-	send_smtp_message($message, "{$config['system']['hostname']}.{$config['system']['domain']} - Arpwatch Notification : {$subject[1]}");
+	send_smtp_message($message, $send_subject);
+	if (function_exists('notify_via_telegram')) {
+		notify_via_telegram($send_subject . " - " . $message);
+	}
+	if (function_exists('notify_via_pushover')) {
+		notify_via_pushover($send_subject . " - " . $message);
+	}
 }
 
 ?>

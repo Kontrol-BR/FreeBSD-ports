@@ -237,6 +237,9 @@ foreach ($databases as $db) {
 			case "mbuf":
 				$system[$db_name] = "Mbuf Clusters";
 				break;
+			case "sensors":
+				$system[$db_name] = "Thermal Sensors";
+				break;
 			default:
 				$system[$db_name] = $db_arr[1];
 				break;
@@ -478,6 +481,7 @@ display_top_tabs($tab_array);
 						<option value="system-processor" selected>Processes</option>
 						<option value="system-memory">Memory</option>
 						<option value="system-mbuf">Mbuf Clusters</option>
+						<option value="system-sensors">Thermal Sensors</option>
 					</select>
 
 					<span class="help-block">Graph</span>
@@ -709,6 +713,7 @@ events.push(function() {
 		"processor": "Utilization, Number",
 		"memory": "Utilization, Percent",
 		"mbuf": "Utilization, Percent",
+		"sensors": "Temperature, °C",
 		"packets": "Packets Per Second",
 		"vpnusers": "Users",
 		"quality": "Milliseconds, Percent",
@@ -727,6 +732,7 @@ events.push(function() {
 		"processor": ".2f",
 		"memory": ".2f",
 		"mbuf": ".2s",
+		"sensors": ".2s",
 		"packets": ".2s",
 		"vpnusers": ".2f",
 		"quality": ".2f",
@@ -1364,7 +1370,7 @@ events.push(function() {
 				d3.select('#monitoring-chart svg')
 					.append("text")
 					.attr("x", 100)
-					.attr("y", 415)
+					.attr("y", 400)
 					.attr("id", "system-name")
 					.text(systemName);
 
@@ -1373,7 +1379,7 @@ events.push(function() {
 				d3.select('#monitoring-chart svg')
 					.append("text")
 					.attr("x", 400)
-					.attr("y", 415)
+					.attr("y", 400)
 					.attr("id", "time-period")
 					.text("Time Period: " + timePeriod);
 
@@ -1382,7 +1388,7 @@ events.push(function() {
 				d3.select('#monitoring-chart svg')
 					.append("text")
 					.attr("x", 570)
-					.attr("y", 415)
+					.attr("y", 400)
 					.attr("id", "resolution")
 					.text("Resolution: " + stepLookup[data[0].step]);
 
@@ -1391,7 +1397,7 @@ events.push(function() {
 				d3.select('#monitoring-chart svg')
 					.append("text")
 					.attr("x", 755)
-					.attr("y", 415)
+					.attr("y", 400)
 					.attr("id", "current-date")
 					.text(currentDate);
 

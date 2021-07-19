@@ -1705,6 +1705,7 @@ EOD;
 	chmod($filename, 0640);
 
 
+	freeradius_sync_on_changes();
 	if ($restart_svc === true) {
 		restart_service("radiusd");
 	}
@@ -1940,6 +1941,7 @@ EOD;
 
 	// We don't need a restart at this time because there are
 	// additional changes needed in freeradius_settings_resync()
+	freeradius_sync_on_changes();
 	freeradius_settings_resync();
 }
 
@@ -2671,6 +2673,9 @@ function freeradius_all_after_XMLRPC_resync() {
 	freeradius_users_resync(true);
 	// Do not restart service yet - $restart_svc = false, $via_rpc = true
 	freeradius_authorizedmacs_resync(false, true);
+	freeradius_sqlconf_resync();
+	freeradius_eapconf_resync(false);
+	freeradius_modulesldap_resync(false);
 	// Restart now when XMLRPC sync is completely finished
 	freeradius_clients_resync();
 
@@ -3238,6 +3243,7 @@ ldap ldap2 {
 		control:NT-Password		:= 'ntPassword'
 		control:LM-Password		:= 'sambaLmPassword'
 		control:NT-Password		:= 'sambaNtPassword'
+		control:NT-Password		:= 'ipaNTHash'
 		control:LM-Password		:= 'dBCSPwd'
 		control:Password-With-Header	+= 'userPassword'
 		control:SMB-Account-CTRL-TEXT	:= 'acctFlags'
@@ -3341,6 +3347,7 @@ EOD;
 	// freeradius_serverdefault_resync() needs to restart other dependencies so
 	// we are pointing directly to freeradius_settings_resync()
 	freeradius_serverdefault_resync();
+	freeradius_sync_on_changes();
 	if ($restart_svc === true) {
 		restart_service("radiusd");
 	}
@@ -4635,6 +4642,44 @@ function freeradius_validate_ldap($post, &$input_errors) {
 	 * Group Membership Options - Groupname Attribute, Group Membership Filter, Group Membership Attribute
 	 */
 
+}
+
+function freeradius_plugin_certificates($pluginparams) {
+	global $config;
+	$result = array();
+	init_config_arr(array('installedpackages', 'freeradiuseapconf', 'config'));
+	$eapconf = $config['installedpackages']['freeradiuseapconf']['config'][0];
+
+	if (($pluginparams['type'] == 'certificates') && !empty($eapconf)) {
+		if (($pluginparams['event'] == 'used_ca') && !empty($eapconf['ssl_ca_cert'])) {
+			$result['pkgname'] = "FreeRADIUS";
+			$result['certificatelist'] = array();
+			$item = array();
+			$cert = $eapconf['ssl_ca_cert'];
+			$item['usedby'] = 'TLS CA Certificate';
+			$result['certificatelist'][$cert][] = $item;
+		}
+
+		if (($pluginparams['event'] == 'used_certificates') && !empty($eapconf['ssl_server_cert'])) {
+			$result['pkgname'] = "FreeRADIUS";
+			$result['certificatelist'] = array();
+			$item = array();
+			$cert = $eapconf['ssl_server_cert'];
+			$item['usedby'] = 'TLS Server Certificate';
+			$result['certificatelist'][$cert][] = $item;
+		}
+
+		if (($pluginparams['event'] == 'used_crl') && !empty($eapconf['ssl_ca_crl'])) {
+			$result['pkgname'] = "FreeRADIUS";
+			$result['certificatelist'] = array();
+			$item = array();
+			$cert = $eapconf['ssl_ca_crl'];
+			$item['usedby'] = 'TLS Revocation List';
+			$result['certificatelist'][$cert][] = $item;
+		}
+	}
+
+	return $result;
 }
 
 ?>
